@@ -1,8 +1,14 @@
-<header class="header-desktop">
-    <div class="section__content section__content--p30">
+<header class="header-desktop  d-none d-sm-none d-md-none d-lg-block .d-xl-block" style="left:0px">
+    <div class="section__content">
         <div class="container-fluid">
-            <div class="header-wrap float-right">
-                <div class="header-button  ">
+            <div class="header-wrap ">
+                <div  style="width:300px; background:none;left:0;">
+                    <a href="{{route('dashboard')}}">
+                        <img src="{{asset('storage/app-images/mobile-logo.png')}}" alt="Proyecto bodas" />
+                    </a>
+                </div>
+
+                <div class="header-button ">
                     <div class="account-wrap">
                         <div class="account-item clearfix js-item-menu">
                             <div class="image" >

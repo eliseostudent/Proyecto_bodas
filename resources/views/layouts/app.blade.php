@@ -49,8 +49,12 @@
             @include('layouts.header_mobile')
             <!-- END HEADER MOBILE-->
 
+
             <!-- MENU SIDEBAR-->
-            @include('layouts.menu_sidebar')
+            @if(isset($menu_sidebar))
+                {{$menu_sidebar}}
+            @endif
+
             <!-- END MENU SIDEBAR-->
 
             <!-- PAGE CONTAINER-->
