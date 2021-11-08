@@ -18,12 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('raiz');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [EventoController::class,'index']
+)->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/evento', function () {
     return view('evento_inicio');
 })->name('evento');
 
 Route::resource('evento', EventoController::class)->middleware('auth');
+Route::post('/evento', [EventoController::class,'unirEvento'])->name('unir-evento');

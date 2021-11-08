@@ -15,10 +15,9 @@ class CreateEventosTable extends Migration
     {
         Schema::create('eventos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
             $table->string('nombre_evento')->default('nuevo_evento');
             $table->string('contraseña_del_evento');
-            $table->boolean('seccion_imagenes');
+            $table->boolean('seccion_imagenes')->default('0');
             $table->timestamps();
             $table->softDeletes();
         });

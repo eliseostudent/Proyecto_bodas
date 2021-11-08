@@ -12,7 +12,6 @@ class Evento extends Model
     use SoftDeletes;
     protected $fillable = [
         'evento_id',
-        'user_id',
         'nombre_evento',
         'contraseña_del_evento',
         'seccion_imagenes'

@@ -10,12 +10,16 @@
         <div class="row">
             <div class="col-md-12">
                 <div>
-                    <h3>Aqui se listaran tus proyectos</h3>
+                    <h2>Aqui se listaran tus proyectos</h2>
                     <br>
                     <ul>
-                        <li><a href="#">proyecto  1</a></li>
-                        <li><a href="#">proyecto  2</a></li>
-                        <li><a href="#">proyecto  3</a></li>
+                        @foreach ($eventos as $evento )
+                            <li>
+                                <a href={{route('evento.show',$evento->id)}}>
+                                    {{$evento->id}} : {{$evento->nombre_evento}}
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -29,12 +33,12 @@
                         <small>Al crear se tomara la contraseña escrita.</small>
                     </div>
                     <div class="card-body card-block">
-                        <form id="EventForm" name="EventForm"  method="get" >
+                        <form id="EventForm" name="EventForm"  method="POST" >
                             @csrf
 
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" id="id_evento" name="id_evento" placeholder="Id evento o nombre del evento a crear" class="form-control">
+                                    <input type="text" id="evento_id_nombre" name="evento_id_nombre" placeholder="Id evento o nombre del evento a crear" class="form-control">
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
                                     </div>
@@ -42,17 +46,26 @@
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="password" id="password_evento" name="password_evento" placeholder="Contraseña del evento" class="form-control">
+                                    <input type="password" id="contraseña_del_evento" name="contraseña_del_evento" placeholder="Contraseña del evento" class="form-control">
                                     <div class="input-group-addon">
                                         <i class="fas fa-key"></i>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-actions form-group">
-                                <button type="submit" class="btn btn-secondary btn-sm"  onclick= "document.EventForm.action = '{{route('evento')}}';
+                                <button type="submit" class="btn btn-secondary btn-sm"  onclick= "document.EventForm.action = '{{route('evento.index')}}';
                                 document.EventForm.submit()">Unirse</button>
-                                <button type="submit" class="btn btn-secondary btn-sm" onclick= "document.EventForm.action = '{{route('raiz')}}';
+                                <button type="submit" class="btn btn-secondary btn-sm" onclick= "document.EventForm.action = '{{route('unir-evento')}}';
                                 document.EventForm.submit()">Crear</button>
+                                 @if ($errors->any())
+                                 <div class="alert alert-danger">
+                                     <ul>
+                                         @foreach ($errors->all() as $error)
+                                             <li>{{ $error }}</li>
+                                         @endforeach
+                                     </ul>
+                                 </div>
+                             @endif
                             </div>
                         </form>
                     </div>
