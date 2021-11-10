@@ -17,7 +17,7 @@ class User extends Authenticatable implements MustVerifyEmail
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
-
+    private $evento_actual;
     /**
      * The attributes that are mass assignable.
      *
@@ -61,5 +61,11 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function eventos(){
         return $this->belongsToMany(Evento::class);
+    }
+    public function getEventoActual(){
+        return $this->evento_actual;
+    }
+    public function setEventoActual($id){
+        $this->evento_actual=$id;
     }
 }

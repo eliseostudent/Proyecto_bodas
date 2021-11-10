@@ -48,6 +48,22 @@
                             </li>
                         </ul>
                 </li>
+                <li>
+                    <a  href={{route('evento.show', Auth::user()->getEventoActual())}}>
+                        <i class="far fa-calendar" ></i>Evento</a>
+                </li>
+                <li >
+                    <a  href="#">
+                        <i class="fas fa-clipboard-list" ></i>invitados</a>
+                </li>
+                <li >
+                    <a  href="#">
+                        <i class="fa fa-send" ></i>enviar invitaciones</a>
+                </li>
+                <li >
+                    <a  href={{route('vista_previa',Auth::user()->getEventoActual())}}>
+                        <i class="material-icons">streetview</i>vista previa</a>
+                </li>
 
 
             </ul>

@@ -64,6 +64,7 @@ class EventoController extends Controller
      */
     public function show(Evento $evento)
     {
+        Auth::user()->setEventoActual($evento);
         return view('evento/eventoShow',compact('evento'));
     }
 
@@ -124,5 +125,9 @@ class EventoController extends Controller
 
         }
         return redirect()->route('evento.index');
+    }
+    public function vistaPrevia($evento){
+        Auth::user()->setEventoActual($evento);
+        return view('vista_previa',compact('evento'));
     }
 }

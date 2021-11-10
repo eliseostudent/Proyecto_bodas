@@ -46,7 +46,9 @@
     <body class="font-sans antialiased">
         <div class="page-wrapper">
             <!-- HEADER MOBILE-->
-            @include('layouts.header_mobile')
+            @if(isset($header_mobile))
+            {{$header_mobile}}
+            @endif
             <!-- END HEADER MOBILE-->
 
 
