@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Evento;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class EventoController extends Controller
 {
@@ -26,7 +27,7 @@ class EventoController extends Controller
      */
     public function create()
     {
-        //
+        //dentro de index se encuentra la vista de crear
     }
 
     /**
@@ -37,12 +38,6 @@ class EventoController extends Controller
      */
     public function store(Request $request)
     {
-        /**
-         * Validar datos
-         * Crear instancia del modelo
-         * Asignar propiedades del modelo (columnas)
-         * redireccionar a index
-         */
         $request->validate([
             'evento_id_nombre' => 'required',//aqui el evento_id representa el nombre del evento para no hacer un formulario mas
             'contraseña_del_evento'=> 'required|max:40|min:8'
@@ -64,6 +59,7 @@ class EventoController extends Controller
      */
     public function show(Evento $evento)
     {
+        //aqui vamos a mostrar la vista previa
         Auth::user()->setEventoActual($evento);
         return view('evento/eventoShow',compact('evento'));
     }
@@ -76,7 +72,8 @@ class EventoController extends Controller
      */
     public function edit(Evento $evento)
     {
-        //
+        Auth::user()->setEventoActual($evento);
+        return view('evento/eventoEdit',compact('evento'));
     }
 
     /**
@@ -88,7 +85,32 @@ class EventoController extends Controller
      */
     public function update(Request $request, Evento $evento)
     {
-        //
+        Auth::user()->setEventoActual($evento);
+
+        if($request->foto_novios!=null){
+            $request->validate([
+                'nombre_1' => 'required|max:64',
+                'nombre_2'=> 'required|max:64',
+                'foto_novios'=>'required|mimes:jpg,jpeg,png',
+                'mensaje_principal'=>'required'
+
+            ]);
+            Storage::delete($evento->ruta_foto_novios);
+            $ruta=$request->file('foto_novios')->store('images');
+            $request->merge([
+                'ruta_foto_novios'=>$ruta
+            ]);
+        }else{
+            $request->validate([
+                'nombre_1' => 'required|max:64',
+                'nombre_2'=> 'required|max:64',
+                'mensaje_principal'=>'required'
+
+            ]);
+        }
+
+        Evento::where('id',$evento->id)->update($request->except('_token','_method','foto_novios'));
+        return redirect()->route('evento.edit',$evento)->with('success','Los cambios se han guaradado');
     }
 
     /**
@@ -105,7 +127,7 @@ class EventoController extends Controller
     {
         //Aqui se unira un usuario a un evento a travez del identificador y su contraseña
         $request->validate([
-            'evento_id_nombre' => 'required',//aqui el evento_id representa el nombre del evento para no hacer un formulario mas
+            'evento_id_nombre' => 'required',
             'contraseña_del_evento'=> 'required|max:40|min:8'
         ]);
         $evento=Evento::where('id',$request->evento_id_nombre)->where('contraseña_del_evento',$request->contraseña_del_evento)->first();
@@ -125,9 +147,5 @@ class EventoController extends Controller
 
         }
         return redirect()->route('evento.index');
-    }
-    public function vistaPrevia($evento){
-        Auth::user()->setEventoActual($evento);
-        return view('vista_previa',compact('evento'));
     }
 }

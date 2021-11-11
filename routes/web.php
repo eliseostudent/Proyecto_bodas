@@ -26,5 +26,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/evento', function () {
 })->name('evento');
 
 Route::resource('evento', EventoController::class)->middleware('auth');
+
 Route::post('/evento', [EventoController::class,'unirEvento'])->name('unir-evento');
-Route::get('/vistaprevia/{evento}', [EventoController::class,'vistaPrevia'])->name('vista_previa');
+
+Route::post('store', [EventoController::class,'store'])->name('store_evento');
+

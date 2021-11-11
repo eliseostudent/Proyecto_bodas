@@ -53,9 +53,9 @@
                                 </div>
                             </div>
                             <div class="form-actions form-group">
-                                <button type="submit" class="btn btn-secondary btn-sm"  onclick= "document.EventForm.action = '{{route('evento.index')}}';
+                                <button type="submit" class="btn btn-secondary btn-sm"  onclick= "document.EventForm.action = '{{route('unir-evento')}}';
                                 document.EventForm.submit()">Unirse</button>
-                                <button type="submit" class="btn btn-secondary btn-sm" onclick= "document.EventForm.action = '{{route('unir-evento')}}';
+                                <button type="submit" class="btn btn-secondary btn-sm" onclick= "document.EventForm.action = '{{route('store_evento')}}';
                                 document.EventForm.submit()">Crear</button>
                                  @if ($errors->any())
                                  <div class="alert alert-danger">
