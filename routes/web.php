@@ -48,3 +48,4 @@ Route::resource('invitado', InvitadoController::class, ['except' => ['index']])-
 
 Route::get('/invitado/{evento}/index', [InvitadoController::class,'index'])->middleware('auth')->name('index_invitados');
 
+Route::get('/evento/{evento}/invitado/{invitado}', [EventoController::class,'invitacion'])->name('invitacion');

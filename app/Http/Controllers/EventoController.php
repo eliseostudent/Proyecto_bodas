@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Lugar;
 use App\Models\Banco;
+use App\Models\Invitado;
 
 class EventoController extends Controller
 {
@@ -166,5 +167,25 @@ class EventoController extends Controller
         }
         return redirect()->route('evento.index');
     }
+    /**
+     * Muestra la invitacion de un evento segun su invitado.
+     *
+     * @param  \App\Models\Evento  $evento
+     * @return \Illuminate\Http\Response
+     */
+    public function invitacion(Evento $evento, Invitado $inivitado)
+    {
+        if(in_array($inivitado,$evento->invitados)){
+            $evento->load('lugar');
+            $evento->load('mesas');
+            $evento->load('fotos');
+            return view('vista_invitacion',compact('evento'));
+        }
+        dd("no estas invitado perro");
+        return view('vista_invitacion',compact('evento'));
+    }
 
 }
+/*if (Invitado::where('evento_id', '=', $evento)->exists()) {
+            // user found
+         } */

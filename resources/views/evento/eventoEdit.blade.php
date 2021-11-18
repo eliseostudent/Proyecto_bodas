@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="row form-group">
                                     <div class="col col-md-4">
-                                        <label for="hora_evento" class=" form-control-label">Fecha</label>
+                                        <label for="hora_evento" class=" form-control-label">Hora</label>
                                     </div>
                                     <div class="col-12 col-md-8">
                                         <input type="time" id="hora_evento" name="hora_evento" class="form-control" value={{$evento->hora_evento ?? '15:00'}}>
@@ -205,9 +205,9 @@
                                     </div>
                                     <div class="col-12 ">
                                         @if ($evento->lugar->ruta_foto_ceremonia!="")
-                                            <img src="{{Storage::url($evento->lugar->ruta_foto_ceremonia)}}" alt="Foto lugar ceremonia" style="width: 100%">
+                                            <img src="{{Storage::url($evento->lugar->ruta_foto_ceremonia)}}" alt="Foto lugar ceremonia" style="width: 100%;">
                                         @else
-                                            <img src="{{asset('storage/app-images/foto_ceremonia_default.jpg')}}" alt="Foto lugar salon"style="width: 100%">
+                                            <img src="{{asset('storage/app-images/foto_ceremonia_default.jpg')}}" alt="Foto lugar ceremonia"style="width: 100%;">
                                         @endif
                                         <br>
                                     </div>
@@ -254,9 +254,9 @@
                                     </div>
                                     <div class="col-12 ">
                                         @if ($evento->lugar->ruta_foto_salon!="")
-                                            <img src="{{Storage::url($evento->lugar->ruta_foto_salon)}}" alt="Foto lugar salon" style="width: 100%">
+                                            <img src="{{Storage::url($evento->lugar->ruta_foto_salon)}}" alt="Foto lugar salon" style="width: 100%;">
                                         @else
-                                            <img src="{{asset('storage/app-images/foto_salon_default.jpg')}}" alt="Foto lugar salon"style="width: 100%">
+                                            <img src="{{asset('storage/app-images/foto_salon_default.jpg')}}" alt="Foto lugar salon"style="width: 100%;">
                                         @endif
                                         <br>
                                     </div>
@@ -341,8 +341,8 @@
                                         <label for="cuenta_banco" class=" form-control-label">Cuenta</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="cuenta_banco" name="cuenta_banco" placeholder="XXXX-XXXX-XXXX-XXXX" class="form-control" value="{{$evento->banco->cuenta_banco ?? ''}}">
-                                        <small class="form-text text-muted">Ingrese el nombre numero de la cuenta (se mostrara esta informacion en la invitacion)</small>
+                                        <input type="text" id="cuenta_banco" name="cuenta_banco" placeholder="XXXX-XXXX-XXXX-XXXX (Banco)" class="form-control" value="{{$evento->banco->cuenta_banco ?? ''}}">
+                                        <small class="form-text text-muted">Ingrese el nombre numero de la cuenta y coloque entre parentesis el nombre del banco al que pertenece la cuenta (se mostrara esta informacion en la invitacion)</small>
                                     </div>
                                 </div>
                                 <div class="row form-group">
