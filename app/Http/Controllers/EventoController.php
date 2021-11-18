@@ -6,6 +6,8 @@ use App\Models\Evento;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Lugar;
+use App\Models\Banco;
 
 class EventoController extends Controller
 {
@@ -48,6 +50,9 @@ class EventoController extends Controller
         ]);
         $evento=Evento::create($request->all());
         $evento->users()->attach(Auth::id());
+        Lugar::create(['evento_id' => $evento->id]);
+        Banco::create(['evento_id' => $evento->id]);
+
         return redirect()->route('evento.index');
     }
 
@@ -73,6 +78,9 @@ class EventoController extends Controller
     public function edit(Evento $evento)
     {
         Auth::user()->setEventoActual($evento);
+        $evento->load('lugar');
+        $evento->load('mesas');
+        $evento->load('fotos');
         return view('evento/eventoEdit',compact('evento'));
     }
 
@@ -112,7 +120,6 @@ class EventoController extends Controller
         Evento::where('id',$evento->id)->update($request->except('_token','_method','foto_novios'));
         return redirect()->route('evento.edit',$evento)->with('success','Los cambios se han guaradado');
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -121,9 +128,17 @@ class EventoController extends Controller
      */
     public function destroy(Evento $evento)
     {
-        //
+        $evento->delete();
+        return redirect()->route('evento.index');
     }
-    public function unirEvento(Request $request)
+
+    /**
+     * Une a un usuario a un evento.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function unir(Request $request)
     {
         //Aqui se unira un usuario a un evento a travez del identificador y su contraseña
         $request->validate([
@@ -148,4 +163,5 @@ class EventoController extends Controller
         }
         return redirect()->route('evento.index');
     }
+
 }

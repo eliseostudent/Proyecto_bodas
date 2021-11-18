@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\BancoController;
 use App\Http\Controllers\EventoController;
+use App\Http\Controllers\FotoController;
+use App\Http\Controllers\InvitadoController;
+use App\Http\Controllers\LugarController;
+use App\Http\Controllers\MesaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,16 +23,28 @@ Route::get('/', function () {
     return view('welcome');
 })->name('raiz');
 
+Route::get('/invitacion', function () {
+    return view('vista_invitacion');
+})->name('invitacion_prueba');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [EventoController::class,'index']
 )->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/evento', function () {
-    return view('evento_inicio');
-})->name('evento');
+Route::post('unir', [EventoController::class,'unir'])->name('unir_evento');
+
+Route::post('store', [MesaController::class,'store'])->name('store_mesa');
 
 Route::resource('evento', EventoController::class)->middleware('auth');
 
-Route::post('/evento', [EventoController::class,'unirEvento'])->name('unir-evento');
+Route::resource('lugar', LugarController::class,['only' => ['update']])->middleware('auth');
 
-Route::post('store', [EventoController::class,'store'])->name('store_evento');
+Route::resource('mesa', MesaController::class, ['only' => ['destroy']])->middleware('auth');
+
+Route::resource('banco', BancoController::class,['only' => ['update']])->middleware('auth');
+
+Route::resource('foto', FotoController::class, ['only' => ['store','destroy']])->middleware('auth');
+
+Route::resource('invitado', InvitadoController::class, ['except' => ['index']])->middleware('auth');
+
+Route::get('/invitado/{evento}/index', [InvitadoController::class,'index'])->middleware('auth')->name('index_invitados');
 

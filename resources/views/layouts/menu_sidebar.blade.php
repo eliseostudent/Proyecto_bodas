@@ -9,7 +9,7 @@
                         <i class="far fa-calendar" ></i>Evento</a>
                 </li>
                 <li >
-                    <a  href="#">
+                    <a  href={{route('index_invitados',Auth::user()->getEventoActual())}}>
                         <i class="fas fa-clipboard-list" ></i>Invitados</a>
                 </li>
                 <li >

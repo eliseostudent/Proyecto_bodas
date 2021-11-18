@@ -5,7 +5,7 @@
     <x-slot name="menu_sidebar">
         @include('layouts.menu_sidebar')
     </x-slot>
-
+    <h2>Esta es una vista previa de tu evento (modificala en el apartado de evento)</h2>
     <h3>Hola que hay</h3>
 
 </x-app-layout>

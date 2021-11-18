@@ -38,7 +38,7 @@
                                         <label for="nombre_1" class=" form-control-label">Nombre</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="nombre_1" name="nombre_1" placeholder="Nombre" class="form-control" value={{$evento->nombre_1 ?? ''}}>
+                                        <input type="text" id="nombre_1" name="nombre_1" placeholder="Nombre" class="form-control" value="{{$evento->nombre_1 ?? ''}}">
                                         <small class="form-text text-muted">Ingrese el nombre de la novia o novio</small>
                                     </div>
                                 </div>
@@ -47,7 +47,7 @@
                                         <label for="nombre_2" class=" form-control-label">Nombre</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="nombre_2" name="nombre_2" placeholder="Nombre" class="form-control" value={{$evento->nombre_2 ?? ''}}>
+                                        <input type="text" id="nombre_2" name="nombre_2" placeholder="Nombre" class="form-control" value="{{$evento->nombre_2 ?? ''}}">
                                         <small class="form-text text-muted">Ingrese el nombre de la novia o novio</small>
                                     </div>
                                 </div>
@@ -164,7 +164,9 @@
                             </form>
 
 
-                            <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            <form action="{{route('lugar.update',$evento->lugar)}}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                @method('PATCH')
+                                @csrf
                                 <div class="row form-group">
                                     <div class="col-12 card-header">
                                         <strong>Ceremonia religiosa</strong>
@@ -175,7 +177,7 @@
                                         <label for="nombre_ceremonia" class=" form-control-label">Nombre del lugar</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="nombre_ceremonia" name="nombre_ceremonia" placeholder="Nombre" class="form-control">
+                                        <input type="text" id="nombre_ceremonia" name="nombre_ceremonia" placeholder="Nombre" class="form-control" value="{{$evento->lugar->nombre_ceremonia ?? ''}}">
                                         <small class="form-text text-muted">Ingrese el nombre del lugar donde sera la ceremonia</small>
                                     </div>
                                 </div>
@@ -184,13 +186,30 @@
                                         <label for="direccion_ceremonia" class=" form-control-label">Direccion del lugar</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="direccion_ceremonia" name="direccion_ceremonia" placeholder="Direccion" class="form-control">
+                                        <input type="text" id="direccion_ceremonia" name="direccion_ceremonia" placeholder="Direccion" class="form-control" value="{{$evento->lugar->direccion_ceremonia ?? ''}}">
                                         <small class="form-text text-muted">Ingrese la direccion donde sera la ceremonia</small>
                                     </div>
                                 </div>
                                 <div class="row form-group">
                                     <div class="col col-md-4">
+                                        <label for="fecha_ceremonia" class=" form-control-label">Fecha y hora de la ceremonia</label>
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <input type="datetime-local" id="fecha_ceremonia" name="fecha_ceremonia"  class="form-control" value="{{$evento->lugar->fecha_ceremonia ?? ''}}">
+                                        <small class="form-text text-muted">Ingrese la fecha y hora de la ceremonia</small>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-4">
                                         <label for="foto_ceremonia" class=" form-control-label">Foto del lugar</label>
+                                    </div>
+                                    <div class="col-12 ">
+                                        @if ($evento->lugar->ruta_foto_ceremonia!="")
+                                            <img src="{{Storage::url($evento->lugar->ruta_foto_ceremonia)}}" alt="Foto lugar ceremonia" style="width: 100%">
+                                        @else
+                                            <img src="{{asset('storage/app-images/foto_ceremonia_default.jpg')}}" alt="Foto lugar salon"style="width: 100%">
+                                        @endif
+                                        <br>
                                     </div>
                                     <div class="col-12 col-md-8">
                                         <input type="file" id="foto_ceremonia" name="foto_ceremonia" class="form-control-file" accept="image/png, image/jpeg">
@@ -207,7 +226,7 @@
                                         <label for="nombre_salon" class=" form-control-label">Nombre del lugar</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="nombre_salon" name="nombre_salon" placeholder="Nombre" class="form-control">
+                                        <input type="text" id="nombre_salon" name="nombre_salon" placeholder="Nombre" class="form-control" value="{{$evento->lugar->nombre_salon ?? ''}}">
                                         <small class="form-text text-muted">Ingrese el nombre del lugar donde sera la celebracion</small>
                                     </div>
                                 </div>
@@ -216,13 +235,30 @@
                                         <label for="direccion_salon" class=" form-control-label">Direccion del lugar</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="direccion_salon" name="direccion_salon" placeholder="Direccion" class="form-control">
+                                        <input type="text" id="direccion_salon" name="direccion_salon" placeholder="Direccion" class="form-control" value="{{$evento->lugar->direccion_salon ?? ''}}">
                                         <small class="form-text text-muted">Ingrese la direccion donde sera la celebracion</small>
                                     </div>
                                 </div>
                                 <div class="row form-group">
                                     <div class="col col-md-4">
+                                        <label for="fecha_salon" class=" form-control-label">Fecha y hora del evento</label>
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <input type="datetime-local" id="fecha_salon" name="fecha_salon"  class="form-control" value="{{$evento->lugar->fecha_ceremonia ?? ''}}">
+                                        <small class="form-text text-muted">Ingrese la fecha y hora del evento</small>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-4">
                                         <label for="foto_salon" class=" form-control-label">Foto del lugar</label>
+                                    </div>
+                                    <div class="col-12 ">
+                                        @if ($evento->lugar->ruta_foto_salon!="")
+                                            <img src="{{Storage::url($evento->lugar->ruta_foto_salon)}}" alt="Foto lugar salon" style="width: 100%">
+                                        @else
+                                            <img src="{{asset('storage/app-images/foto_salon_default.jpg')}}" alt="Foto lugar salon"style="width: 100%">
+                                        @endif
+                                        <br>
                                     </div>
                                     <div class="col-12 col-md-8">
                                         <input type="file" id="foto_salon" name="foto_salon" class="form-control-file" accept="image/png, image/jpeg">
@@ -236,20 +272,27 @@
 
                                 </div>
                             </form>
-                            <form action="" method="post"  class="form-horizontal">
-                                <div class="row form-group">
-                                    <div class="col-12 card-header">
-                                        <strong>Mesa de regalos</strong>
-                                    </div>
+                            <div class="row form-group">
+                                <div class="col-12 card-header">
+                                    <strong>Mesa de regalos</strong>
                                 </div>
-                                <ul>
-                                    <li>Nombre:enlace <button class="btn btn-danger btn-sm"><i class="fa fa-ban"></i> Eliminar</button></li>
+                            </div>
+                            <ul>
+                                @foreach ($evento->mesas as $mesa )
+                                    <form action="{{route('mesa.destroy',$mesa)}}" method='POST'>
+                                        @method('DELETE')
+                                        @csrf
+                                        <li>
+                                            {{$mesa->nombre_enlace . ' '}} <button type="submit"class="btn btn-danger btn-sm"><i class="fa fa-ban"></i> Eliminar</button>
+                                        </li>
+                                    </form>
                                     <br>
-                                    <li>Nombre:enlace <button class="btn btn-danger btn-sm"><i class="fa fa-ban"></i> Eliminar</button></li>
-                                    <br>
-                                    <li>Nombre:enlaces <button class="btn btn-danger btn-sm"><i class="fa fa-ban"></i> Eliminar</button></li>
-                                    <br>
-                                </ul>
+                                @endforeach
+                            </ul>
+                            <form action="{{route('store_mesa')}}" method="POST"  class="form-horizontal">
+                                @csrf
+                                <input type="hidden" name="evento_id" value="{{$evento->id}}">
+
                                 <div class="row form-group">
                                     <div class="col col-md-4">
                                         <label for="nombre_mesa" class=" form-control-label">Nombre de la mesa</label>
@@ -276,7 +319,9 @@
 
                                 </div>
                             </form>
-                            <form action="" method="post"  class="form-horizontal">
+                            <form action="{{route('banco.update',$evento->banco)}}" method="post"  class="form-horizontal">
+                                @method('PATCH')
+                                @csrf
                                 <div class="row form-group">
                                     <div class="col-12 card-header">
                                         <strong>Datos bancarios</strong>
@@ -287,7 +332,7 @@
                                         <label for="titular_banco" class=" form-control-label">Nombre del titular</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="titular_banco" name="titular_banco" placeholder="Titular" class="form-control">
+                                        <input type="text" id="titular_banco" name="titular_banco" placeholder="Titular" class="form-control" value="{{$evento->banco->titular_banco ?? ''}}">
                                         <small class="form-text text-muted">Ingrese el nombre del titular de la cuenta (se mostrara esta informacion en la invitacion)</small>
                                     </div>
                                 </div>
@@ -296,7 +341,7 @@
                                         <label for="cuenta_banco" class=" form-control-label">Cuenta</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="cuenta_banco" name="cuenta_banco" placeholder="XXXX-XXXX-XXXX-XXXX" class="form-control">
+                                        <input type="text" id="cuenta_banco" name="cuenta_banco" placeholder="XXXX-XXXX-XXXX-XXXX" class="form-control" value="{{$evento->banco->cuenta_banco ?? ''}}">
                                         <small class="form-text text-muted">Ingrese el nombre numero de la cuenta (se mostrara esta informacion en la invitacion)</small>
                                     </div>
                                 </div>
@@ -305,7 +350,7 @@
                                         <label for="clabe_banco" class=" form-control-label">Cuenta CLABE</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="clabe_banco" name="clabe_banco" placeholder="XXXXXXXXXXXXXXXXXX" class="form-control">
+                                        <input type="text" id="clabe_banco" name="clabe_banco" placeholder="XXXXXXXXXXXXXXXXXX" class="form-control" value="{{$evento->banco->clabe_banco ?? ''}}">
                                         <small class="form-text text-muted">Ingrese el numero de la cuenta CLABE (se mostrara esta informacion en la invitacion)</small>
                                     </div>
                                 </div>
@@ -328,30 +373,62 @@
                         <div class="card-header">
                             <strong>Carrusel de fotografias</strong>
                         </div>
-                        <div class="card-body card-block">
+                        <div class="col-12 ">
                             <ul>
-                                <li>Fotografia <button class="btn btn-danger btn-sm"><i class="fa fa-ban"></i> Eliminar</button></li>
-                                <br>
-                                <li>Fotografia <button class="btn btn-danger btn-sm"><i class="fa fa-ban"></i> Eliminar</button></li>
-                                <br>
-                                <li>Fotografia <button class="btn btn-danger btn-sm"><i class="fa fa-ban"></i> Eliminar</button></li>
-                                <br>
+                                @foreach ($evento->fotos as $foto )
+                                    <form action="{{route('foto.destroy',$foto)}}" method='POST'>
+                                        @method('DELETE')
+                                        @csrf
+                                        <li>
+                                            <img src="{{Storage::url($foto->ruta_foto)}}" alt="Foto carrousel" style="width: 100%"> <button type="submit"class="btn btn-danger btn-sm" style="margin-top: 20px"><i class="fa fa-ban"></i> Eliminar</button>
+                                        </li>
+                                    </form>
+                                    <br>
+                                @endforeach
                             </ul>
-                            <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        </div>
+
+                        <div class="card-body card-block">
+
+                            <form action="{{route('foto.store')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                @csrf
+                                <input type="hidden" name="evento_id" value="{{$evento->id}}">
                                 <div class="row form-group">
                                     <div class="col col-md-3">
                                         <label for="Fotografia_carrusel" class=" form-control-label">Fotografia nueva</label>
                                     </div>
                                     <div class="col-12 col-md-9">
                                         <input type="file" id="Fotografia_carrusel" name="Fotografia_carrusel" class="form-control-file">
+                                        <small class="form-text text-muted">Suba fotografias para que sus invitados puedan verlas (se recomienda utilizar la relacion de aspecto 16:9)</small>
                                     </div>
+                                </div>
+                                <div class="row form-group " style=" padding-left: 5px">
+                                    <button type="submit" class="btn btn-primary btn-sm"  >
+                                        <i class="fa fa-dot-circle-o"></i> Agregar
+                                    </button>
+
                                 </div>
                             </form>
                         </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong>Eliminar evento</strong>
+                        </div>
+
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary btn-sm">
-                                <i class="fa fa-dot-circle-o"></i> Agregar
-                            </button>
+                            <form action="{{route('evento.destroy',$evento)}}" method='POST'>
+                                @method('DELETE')
+                                @csrf
+                                <p>Cuidado esto eliminara el evento completamente.</p>
+                                <br>
+                                <button type="submit"class="btn btn-danger btn-sm"><i class="fa fa-ban"></i> Eliminar</button>
+                            </form>
                         </div>
                     </div>
 
@@ -361,3 +438,5 @@
 
     </div>
 </x-app-layout>
+
+

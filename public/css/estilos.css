@@ -1,0 +1,29 @@
+.blanco_bordes{
+    color: #fff;
+    text-shadow: 0 0 2px #000;
+}
+  .carousel-inner img {
+
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+  }
+  .carousel-caption h3 {
+    color: #fff !important;
+  }
+  footer {
+    background-color: #f5f5f5;
+    color: #2d2d30;
+    padding: 32px;
+  }
+  footer a {
+    color: #2d2d30;
+  }
+  footer a:hover {
+    color: #000;
+    text-decoration: none;
+  }
+  .form-control {
+    border-radius: 0;
+  }
+
+

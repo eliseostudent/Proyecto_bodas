@@ -27,5 +27,20 @@ class Evento extends Model
     public function users(){
         return $this->belongsToMany(User::class);
     }
+    public function lugar(){
+        return $this->hasOne(Lugar::class);
+    }
+    public function banco(){
+        return $this->hasOne(Banco::class);
+    }
+    public function mesas(){
+        return $this->hasMany(Mesa::class);
+    }
+    public function fotos(){
+        return $this->hasMany(Foto::class);
+    }
+    public function invitados(){
+        return $this->hasMany(Invitado::class);
+    }
 }
 
