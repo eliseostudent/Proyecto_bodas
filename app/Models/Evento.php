@@ -42,5 +42,21 @@ class Evento extends Model
     public function invitados(){
         return $this->hasMany(Invitado::class);
     }
+    //nombre_enlace
+    public function getFechaFormatoAttribute(){
+        $year=substr($this->fecha_evento,0,4);
+        $month=substr($this->fecha_evento,5,2);
+        $day=substr($this->fecha_evento,8,2);
+        $hour=intval(substr($this->hora_evento,0,2));
+        if ($hour>12){
+            $horario='PM';
+            $hour=$hour-12;
+        }
+        else{
+            $horario='AM';
+        }
+        $minutes=substr($this->hora_evento,3,2);
+        return $month . '/' . $day . '/' . $year . ' ' . strval($hour) . ':' . $minutes . ' ' . $horario;
+    }
 }
 

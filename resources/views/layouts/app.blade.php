@@ -39,11 +39,13 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
         @livewireStyles
-
+        @if(isset($estilos))
+        {{$estilos}}
+        @endif
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased" id="inicio" data-spy="scroll" data-target=".navbar" data-offset="50">
         <div class="page-wrapper">
             <!-- HEADER MOBILE-->
             @if(isset($header_mobile))
@@ -86,7 +88,10 @@
         @stack('modals')
 
         @livewireScripts
-
+        <!-- MENU SIDEBAR-->
+        @if(isset($scriptsExtras))
+        {{$scriptsExtras}}
+        @endif
         <!-- Jquery JS-->
         <script src="{{asset('cool_admin/vendor/jquery-3.2.1.min.js')}}"></script>
         <!-- Bootstrap JS-->

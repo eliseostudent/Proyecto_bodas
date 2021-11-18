@@ -66,6 +66,9 @@ class EventoController extends Controller
     {
         //aqui vamos a mostrar la vista previa
         Auth::user()->setEventoActual($evento);
+        $evento->load('lugar');
+        $evento->load('mesas');
+        $evento->load('fotos');
         return view('evento/eventoShow',compact('evento'));
     }
 

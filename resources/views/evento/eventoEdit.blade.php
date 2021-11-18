@@ -146,7 +146,7 @@
                                         <label for="mensaje_principal" class=" form-control-label">Mensaje principal</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <textarea name="mensaje_principal" id="mensaje_principal" rows="9" placeholder="Nuestra boda" class="form-control" >{{$evento->mensaje_principal ?? ''}}</textarea>
+                                        <input type="text" name="mensaje_principal" id="mensaje_principal" placeholder="Nuestra boda" class="form-control" value="{{$evento->mensaje_principal ?? ''}}">
                                     </div>
                                 </div>
                                 @if ($message = Session::get('success'))
