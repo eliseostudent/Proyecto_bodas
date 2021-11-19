@@ -50,9 +50,9 @@
                                         </td>
                                         <td>
                                             <div class="table-data-feature">
-                                                <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Enviar invitacion">
+                                                <a href="{{route('enviar_invitacion',[$invitado->evento , $invitado])}}" style="margin-right: 5px"><button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Enviar invitacion">
                                                     <i class="zmdi zmdi-mail-send"></i>
-                                                </button>
+                                                </button></a>
                                                 <form action="{{route('invitado.destroy',$invitado)}}" method='POST'>
                                                     @method('DELETE')
                                                     @csrf
@@ -71,6 +71,13 @@
                         </table>
                     </div>
                     <!-- END DATA TABLE -->
+                    <br>
+                    <div class="table-data__tool">
+                        <div class="table-data__tool-right">
+                            <button class="btn btn-primary ">
+                                <i class="fa fa-send"></i> Enviar todos</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

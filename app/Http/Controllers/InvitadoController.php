@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\invitacionMail;
 use App\Models\Evento;
 use App\Models\Invitado;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class InvitadoController extends Controller
 {
@@ -82,7 +84,12 @@ class InvitadoController extends Controller
      */
     public function update(Request $request, Invitado $invitado)
     {
-        //
+        $request->validate([
+            'confirmacion' => 'required'
+
+        ]);
+        Invitado::where('id',$invitado->id)->update($request->except('_token','_method'));
+        return redirect()->back()->with('success','Se ha enviado la confirmacion');
     }
 
     /**
@@ -96,5 +103,9 @@ class InvitadoController extends Controller
         $evento=$invitado->evento;
         $invitado->delete();
         return redirect()->route('index_invitados',$evento);
+    }
+    public function enviarInvitacion(Evento $evento, Invitado $invitado){
+        mail::to($invitado->correo_invitado)->send(new invitacionMail($evento,$invitado));
+        return redirect()->back();
     }
 }

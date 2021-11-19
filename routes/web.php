@@ -23,16 +23,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('raiz');
 
-Route::get('/invitacion', function () {
-    return view('vista_invitacion');
-})->name('invitacion_prueba');
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [EventoController::class,'index']
 )->name('dashboard');
 
-Route::post('unir', [EventoController::class,'unir'])->name('unir_evento');
+Route::post('unir', [EventoController::class,'unir'])->middleware('auth')->name('unir_evento');
 
-Route::post('store', [MesaController::class,'store'])->name('store_mesa');
+Route::post('store', [MesaController::class,'store'])->middleware('auth')->name('store_mesa');
 
 Route::resource('evento', EventoController::class)->middleware('auth');
 
@@ -46,6 +42,8 @@ Route::resource('foto', FotoController::class, ['only' => ['store','destroy']])-
 
 Route::resource('invitado', InvitadoController::class, ['except' => ['index']])->middleware('auth');
 
-Route::get('/invitado/{evento}/index', [InvitadoController::class,'index'])->middleware('auth')->name('index_invitados');
+Route::get('/invitados/{evento}/index', [InvitadoController::class,'index'])->middleware('auth')->name('index_invitados');
 
 Route::get('/evento/{evento}/invitado/{invitado}', [EventoController::class,'invitacion'])->name('invitacion');
+
+Route::get('/evento/{evento}/envioinvitacion/{invitado}', [InvitadoController::class,'enviarInvitacion'])->middleware('auth')->name('enviar_invitacion');

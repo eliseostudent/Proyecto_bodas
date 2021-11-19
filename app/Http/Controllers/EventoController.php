@@ -173,19 +173,16 @@ class EventoController extends Controller
      * @param  \App\Models\Evento  $evento
      * @return \Illuminate\Http\Response
      */
-    public function invitacion(Evento $evento, Invitado $inivitado)
+    public function invitacion(Evento $evento, Invitado $invitado)
     {
-        if(in_array($inivitado,$evento->invitados)){
+        if($invitado->evento==$evento){
             $evento->load('lugar');
             $evento->load('mesas');
             $evento->load('fotos');
-            return view('vista_invitacion',compact('evento'));
+            return view('vista_invitacion',compact('evento','invitado'));
         }
-        dd("no estas invitado perro");
-        return view('vista_invitacion',compact('evento'));
+        return view('vista_no_invitado');
     }
 
+
 }
-/*if (Invitado::where('evento_id', '=', $evento)->exists()) {
-            // user found
-         } */

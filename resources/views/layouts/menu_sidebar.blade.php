@@ -13,10 +13,6 @@
                         <i class="fas fa-clipboard-list" ></i>Invitados</a>
                 </li>
                 <li >
-                    <a  href="#">
-                        <i class="fa fa-send" ></i>Enviar invitaciones</a>
-                </li>
-                <li >
                     <a  href={{route('evento.show',Auth::user()->getEventoActual())}}>
                         <i class="material-icons">streetview</i>Vista previa</a>
                 </li>
