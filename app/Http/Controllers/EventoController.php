@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Lugar;
 use App\Models\Banco;
 use App\Models\Invitado;
+use App\Exports\InvitadosExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Mail\invitacionMail;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Gate;
 
 class EventoController extends Controller
 {
@@ -54,7 +59,7 @@ class EventoController extends Controller
         Lugar::create(['evento_id' => $evento->id]);
         Banco::create(['evento_id' => $evento->id]);
 
-        return redirect()->route('evento.index');
+        return redirect()->route('evento.index')->with('success','Se ha creado tu evento nuevo.');
     }
 
     /**
@@ -65,6 +70,9 @@ class EventoController extends Controller
      */
     public function show(Evento $evento)
     {
+        if (! Gate::allows('es_propietario-evento', $evento)) {
+            abort(403);
+        }
         //aqui vamos a mostrar la vista previa
         Auth::user()->setEventoActual($evento);
         $evento->load('lugar');
@@ -81,6 +89,9 @@ class EventoController extends Controller
      */
     public function edit(Evento $evento)
     {
+        if (! Gate::allows('es_propietario-evento', $evento)) {
+            abort(403);
+        }
         Auth::user()->setEventoActual($evento);
         $evento->load('lugar');
         $evento->load('mesas');
@@ -97,13 +108,16 @@ class EventoController extends Controller
      */
     public function update(Request $request, Evento $evento)
     {
+        if (! Gate::allows('es_propietario-evento', $evento)) {
+            abort(403);
+        }
         Auth::user()->setEventoActual($evento);
 
         if($request->foto_novios!=null){
             $request->validate([
                 'nombre_1' => 'required|max:64',
                 'nombre_2'=> 'required|max:64',
-                'foto_novios'=>'required|mimes:jpg,jpeg,png',
+                'foto_novios'=>'mimes:jpg,jpeg,png',
                 'mensaje_principal'=>'required'
 
             ]);
@@ -122,7 +136,7 @@ class EventoController extends Controller
         }
 
         Evento::where('id',$evento->id)->update($request->except('_token','_method','foto_novios'));
-        return redirect()->route('evento.edit',$evento)->with('success','Los cambios se han guaradado');
+        return redirect()->route('evento.edit',$evento)->with('success','Los cambios de la informacion general se han guaradado');
     }
     /**
      * Remove the specified resource from storage.
@@ -132,8 +146,11 @@ class EventoController extends Controller
      */
     public function destroy(Evento $evento)
     {
+        if (! Gate::allows('es_propietario-evento', $evento)) {
+            abort(403);
+        }
         $evento->delete();
-        return redirect()->route('evento.index');
+        return redirect()->route('evento.index')->with('success','Se ha eliminado el evento');
     }
 
     /**
@@ -152,20 +169,17 @@ class EventoController extends Controller
         $evento=Evento::where('id',$request->evento_id_nombre)->where('contraseña_del_evento',$request->contraseña_del_evento)->first();
         if($evento !=null){
             $eventos=Auth::user()->eventos;
-            $flag=true;
             foreach ($eventos as $e){
                 if($e->id==$evento->id)//este evento ya pertenece al usuario
                 {
-                    $flag=false;
-                    break;
+                    return redirect()->route('evento.index')->with('error','Ya perteneces a este evento.');
                 }
             }
-            if($flag){
-                $evento->users()->attach(Auth::id());
-            }
+            $evento->users()->attach(Auth::id());
 
+            return redirect()->route('evento.index')->with('success','Te has unido correctamente al evento.');
         }
-        return redirect()->route('evento.index');
+        return redirect()->route('evento.index')->with('error','Los datos de acceso son incorrectos');
     }
     /**
      * Muestra la invitacion de un evento segun su invitado.
@@ -183,6 +197,23 @@ class EventoController extends Controller
         }
         return view('vista_no_invitado');
     }
-
+    public function exportar(Evento $evento)
+    {
+        if (! Gate::allows('es_propietario-evento', $evento)) {
+            abort(403);
+        }
+        return Excel::download(new InvitadosExport($evento), 'inivitados.xlsx');
+    }
+    public function enviarInvitacionesRestantes(Evento $evento){
+        if (! Gate::allows('es_propietario-evento', $evento)) {
+            abort(403);
+        }
+        $invitados=$evento->invitados;
+        foreach($invitados as $invitado){
+            if($invitado->confirmacion=='2')
+            mail::to($invitado->correo_invitado)->send(new invitacionMail($evento,$invitado));
+        }
+        return redirect()->back()->with('success','Los correos se han enviado a los invitados no confirmados.');
+    }
 
 }

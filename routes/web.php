@@ -47,3 +47,7 @@ Route::get('/invitados/{evento}/index', [InvitadoController::class,'index'])->mi
 Route::get('/evento/{evento}/invitado/{invitado}', [EventoController::class,'invitacion'])->name('invitacion');
 
 Route::get('/evento/{evento}/envioinvitacion/{invitado}', [InvitadoController::class,'enviarInvitacion'])->middleware('auth')->name('enviar_invitacion');
+
+Route::get('evento/{evento}/export/', [EventoController::class,'exportar'])->middleware('auth')->name('exportar_invitados');
+
+Route::get('evento/{evento}/enviarInvitacionesRestantes/', [EventoController::class,'enviarInvitacionesRestantes'])->middleware('auth')->name('enviar_invitaciones');

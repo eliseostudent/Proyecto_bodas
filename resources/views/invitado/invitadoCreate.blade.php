@@ -14,7 +14,7 @@
                             <label for="nombre_invitado" class=" form-control-label">Nombre del invitado</label>
                         </div>
                         <div class="col-12 col-md-8">
-                            <input type="text" id="nombre_invitado" name="nombre_invitado" placeholder="Fam. Perez" class="form-control" >
+                            <input type="text" id="nombre_invitado" name="nombre_invitado" placeholder="Fam. Perez" class="form-control" required>
                             <small class="form-text text-muted">Ingrese el nombre del invitado o familia</small>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                             <label for="correo_invitado" class=" form-control-label">Correo del invitado</label>
                         </div>
                         <div class="col-12 col-md-8">
-                            <input type="email" id="correo_invitado" name="correo_invitado" placeholder="perez@familia.com" class="form-control" >
+                            <input type="email" id="correo_invitado" name="correo_invitado" placeholder="perez@familia.com" class="form-control" required>
                             <small class="form-text text-muted">Ingrese una direccion de correo a donde sera enviada la invitacion</small>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                             <label for="numero_boletos" class=" form-control-label">Numero de boletos</label>
                         </div>
                         <div class="col-12 col-md-8">
-                            <input type="number" id="numero_boletos" name="numero_boletos" value="1" class="form-control" >
+                            <input type="number" id="numero_boletos" name="numero_boletos" value="1" class="form-control" required min="1">
                             <small class="form-text text-muted">Ingrese el numero de boletos para esta invitacion</small>
                         </div>
                     </div>

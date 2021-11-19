@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Lugar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 
 class LugarController extends Controller
@@ -20,6 +21,9 @@ class LugarController extends Controller
      */
     public function update(Request $request, Lugar $lugar)
     {
+        if (! Gate::allows('es_propietario-lugar', $lugar)) {
+            abort(403);
+        }
         Auth::user()->setEventoActual($lugar->evento_id);
         $request->validate([
             'nombre_ceremonia' => 'required',
@@ -47,7 +51,7 @@ class LugarController extends Controller
             ]);
         }
         Lugar::where('id',$lugar->id)->update($request->except('_token','_method','foto_salon','foto_ceremonia'));
-        return redirect()->route('evento.edit',$lugar->evento)->with('success','Los cambios se han guaradado');
+        return redirect()->route('evento.edit',$lugar->evento)->with('success','Los cambios en la informacion del lugar de ceremonia y salon se han guaradado');
     }
 
 

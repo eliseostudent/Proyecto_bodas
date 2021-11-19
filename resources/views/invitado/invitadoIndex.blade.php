@@ -7,6 +7,18 @@
     </x-slot>
     <div class="section__content section__content--p30">
         <div class="container-fluid">
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>{{ $message }}</strong>
+                </div>
+            @endif
+            @if ($message = Session::get('error'))
+                <div class="alert alert-danger alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>{{ $message }}</strong>
+                </div>
+            @endif
             @include('invitado.invitadoCreate')
 
             <div class="row">
@@ -15,8 +27,9 @@
                     <h3 class="title-5 m-b-35">Lista de invitados</h3>
                     <div class="table-data__tool">
                         <div class="table-data__tool-right">
-                            <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                            <a href="{{route('exportar_invitados',$evento)}}"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
                                 <i class="fas fa-file-excel"></i>Exportar</button>
+                            </a>
                         </div>
                     </div>
                     <div class="table-responsive table-responsive-data2">
@@ -74,8 +87,9 @@
                     <br>
                     <div class="table-data__tool">
                         <div class="table-data__tool-right">
-                            <button class="btn btn-primary ">
+                            <a href="{{route('enviar_invitaciones',$evento)}}"><button class="btn btn-primary ">
                                 <i class="fa fa-send"></i> Enviar todos</button>
+                            </a>
                         </div>
                     </div>
                 </div>

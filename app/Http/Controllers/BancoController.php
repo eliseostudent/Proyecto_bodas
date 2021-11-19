@@ -25,6 +25,6 @@ class BancoController extends Controller
 
         ]);
         Banco::where('id',$banco->id)->update($request->except('_token','_method'));
-        return redirect()->route('evento.edit',$banco->evento)->with('success','Los cambios se han guaradado');
+        return redirect()->route('evento.edit',$banco->evento)->with('success','Los cambios en la informacion del banco se han guaradado');
     }
 }

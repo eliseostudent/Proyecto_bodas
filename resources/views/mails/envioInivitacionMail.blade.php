@@ -37,6 +37,9 @@
         </div>
     </div>
     <div style="width: 100%;">
+        Recuerda confirmar tu asistencia al evento utilizando el formulario al final de la invitacion.
+    </div>
+    <div style="width: 100%;">
         Mira tu invitacion aqui-> {{route('invitacion',[$evento,$invitado])}}.
     </div>
 </body>

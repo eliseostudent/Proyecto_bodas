@@ -7,6 +7,18 @@
     </x-slot>
     <div class="section__content section__content--p30">
         <div class="container-fluid">
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>{{ $message }}</strong>
+                </div>
+            @endif
+            @if ($message = Session::get('error'))
+                <div class="alert alert-danger alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>{{ $message }}</strong>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-lg-8">
                     <div class="card">
@@ -38,7 +50,7 @@
                                         <label for="nombre_1" class=" form-control-label">Nombre</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="nombre_1" name="nombre_1" placeholder="Nombre" class="form-control" value="{{$evento->nombre_1 ?? ''}}">
+                                        <input type="text" id="nombre_1" name="nombre_1" placeholder="Nombre" class="form-control" value="{{$evento->nombre_1 ?? ''}}" required maxlength="64">
                                         <small class="form-text text-muted">Ingrese el nombre de la novia o novio</small>
                                     </div>
                                 </div>
@@ -47,7 +59,7 @@
                                         <label for="nombre_2" class=" form-control-label">Nombre</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="nombre_2" name="nombre_2" placeholder="Nombre" class="form-control" value="{{$evento->nombre_2 ?? ''}}">
+                                        <input type="text" id="nombre_2" name="nombre_2" placeholder="Nombre" class="form-control" value="{{$evento->nombre_2 ?? ''}}" required maxlength="64">
                                         <small class="form-text text-muted">Ingrese el nombre de la novia o novio</small>
                                     </div>
                                 </div>
@@ -56,7 +68,7 @@
                                         <label for="fecha_evento" class=" form-control-label">Fecha</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="date" id="fecha_evento" name="fecha_evento" class="form-control" value={{$evento->fecha_evento ?? ''}}>
+                                        <input type="date" id="fecha_evento" name="fecha_evento" class="form-control" value={{$evento->fecha_evento ?? ''}} required>
                                         <small class="help-block form-text">Ingresa la fecha del gran dia</small>
                                     </div>
                                 </div>
@@ -65,7 +77,7 @@
                                         <label for="hora_evento" class=" form-control-label">Hora</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="time" id="hora_evento" name="hora_evento" class="form-control" value={{$evento->hora_evento ?? '15:00'}}>
+                                        <input type="time" id="hora_evento" name="hora_evento" class="form-control" value={{$evento->hora_evento ?? '15:00'}} required>
                                         <small class="help-block form-text">Ingresa la hora del gran evento</small>
                                     </div>
                                 </div>
@@ -127,7 +139,7 @@
                                 </div>
                                 <div class="row form-group">
                                     <div class="col col-md-4">
-                                        <label for="foto_novios" class=" form-control-label">Foto principal</label>
+                                        <label for="foto_novios" class=" form-control-label" >Foto principal</label>
                                     </div>
                                     <div class="col-12 ">
                                         @if ($evento->ruta_foto_novios!="")
@@ -138,7 +150,7 @@
                                         <br>
                                     </div>
                                     <div class="col-12 col-md-7">
-                                        <input type="file" id="foto_novios" name="foto_novios" class="form-control-file" >
+                                        <input type="file" id="foto_novios" name="foto_novios" class="form-control-file"  accept="image/png, image/jpeg">
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -146,15 +158,9 @@
                                         <label for="mensaje_principal" class=" form-control-label">Mensaje principal</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" name="mensaje_principal" id="mensaje_principal" placeholder="Nuestra boda" class="form-control" value="{{$evento->mensaje_principal ?? ''}}">
+                                        <input type="text" name="mensaje_principal" id="mensaje_principal" placeholder="Nuestra boda" class="form-control" value="{{$evento->mensaje_principal ?? ''}}" required>
                                     </div>
                                 </div>
-                                @if ($message = Session::get('success'))
-                                    <div class="alert alert-success alert-block">
-                                        <button type="button" class="close" data-dismiss="alert">×</button>
-                                            <strong>{{ $message }}</strong>
-                                    </div>
-                                @endif
                                 <div class="row form-group " style=" padding-left: 5px">
                                         <button type="submit" class="btn btn-primary btn-sm"  >
                                             <i class="fa fa-dot-circle-o"></i> Guardar
@@ -177,7 +183,7 @@
                                         <label for="nombre_ceremonia" class=" form-control-label">Nombre del lugar</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="nombre_ceremonia" name="nombre_ceremonia" placeholder="Nombre" class="form-control" value="{{$evento->lugar->nombre_ceremonia ?? ''}}">
+                                        <input type="text" id="nombre_ceremonia" name="nombre_ceremonia" placeholder="Nombre" class="form-control" value="{{$evento->lugar->nombre_ceremonia ?? ''}}" required>
                                         <small class="form-text text-muted">Ingrese el nombre del lugar donde sera la ceremonia</small>
                                     </div>
                                 </div>
@@ -186,7 +192,7 @@
                                         <label for="direccion_ceremonia" class=" form-control-label">Direccion del lugar</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="direccion_ceremonia" name="direccion_ceremonia" placeholder="Direccion" class="form-control" value="{{$evento->lugar->direccion_ceremonia ?? ''}}">
+                                        <input type="text" id="direccion_ceremonia" name="direccion_ceremonia" placeholder="Direccion" class="form-control" value="{{$evento->lugar->direccion_ceremonia ?? ''}}" required>
                                         <small class="form-text text-muted">Ingrese la direccion donde sera la ceremonia</small>
                                     </div>
                                 </div>
@@ -195,7 +201,7 @@
                                         <label for="fecha_ceremonia" class=" form-control-label">Fecha y hora de la ceremonia</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="datetime-local" id="fecha_ceremonia" name="fecha_ceremonia"  class="form-control" value="{{$evento->lugar->fecha_ceremonia ?? ''}}">
+                                        <input type="datetime-local" id="fecha_ceremonia" name="fecha_ceremonia"  class="form-control" value="{{$evento->lugar->fecha_ceremonia ?? ''}}" required>
                                         <small class="form-text text-muted">Ingrese la fecha y hora de la ceremonia</small>
                                     </div>
                                 </div>
@@ -226,7 +232,7 @@
                                         <label for="nombre_salon" class=" form-control-label">Nombre del lugar</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="nombre_salon" name="nombre_salon" placeholder="Nombre" class="form-control" value="{{$evento->lugar->nombre_salon ?? ''}}">
+                                        <input type="text" id="nombre_salon" name="nombre_salon" placeholder="Nombre" class="form-control" value="{{$evento->lugar->nombre_salon ?? ''}}" required>
                                         <small class="form-text text-muted">Ingrese el nombre del lugar donde sera la celebracion</small>
                                     </div>
                                 </div>
@@ -235,7 +241,7 @@
                                         <label for="direccion_salon" class=" form-control-label">Direccion del lugar</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="direccion_salon" name="direccion_salon" placeholder="Direccion" class="form-control" value="{{$evento->lugar->direccion_salon ?? ''}}">
+                                        <input type="text" id="direccion_salon" name="direccion_salon" placeholder="Direccion" class="form-control" value="{{$evento->lugar->direccion_salon ?? ''}}" required>
                                         <small class="form-text text-muted">Ingrese la direccion donde sera la celebracion</small>
                                     </div>
                                 </div>
@@ -244,7 +250,7 @@
                                         <label for="fecha_salon" class=" form-control-label">Fecha y hora del evento</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="datetime-local" id="fecha_salon" name="fecha_salon"  class="form-control" value="{{$evento->lugar->fecha_ceremonia ?? ''}}">
+                                        <input type="datetime-local" id="fecha_salon" name="fecha_salon"  class="form-control" value="{{$evento->lugar->fecha_ceremonia ?? ''}}" required>
                                         <small class="form-text text-muted">Ingrese la fecha y hora del evento</small>
                                     </div>
                                 </div>
@@ -298,7 +304,7 @@
                                         <label for="nombre_mesa" class=" form-control-label">Nombre de la mesa</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="nombre_mesa" name="nombre_mesa" placeholder="Nombre" class="form-control">
+                                        <input type="text" id="nombre_mesa" name="nombre_mesa" placeholder="Nombre" class="form-control" required>
                                         <small class="form-text text-muted">Ingrese el nombre del provedor (ejemplo: liverpool)</small>
                                     </div>
                                 </div>
@@ -307,7 +313,7 @@
                                         <label for="enlace_mesa" class=" form-control-label">Enlace a mesa</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="enlace_mesa" name="enlace_mesa" placeholder="" class="form-control">
+                                        <input type="text" id="enlace_mesa" name="enlace_mesa" placeholder="" class="form-control" required>
                                         <small class="form-text text-muted">Copie y pegue el enlace a la mesa de regalos generado por el provedor.</small>
                                     </div>
                                 </div>
@@ -332,7 +338,7 @@
                                         <label for="titular_banco" class=" form-control-label">Nombre del titular</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="titular_banco" name="titular_banco" placeholder="Titular" class="form-control" value="{{$evento->banco->titular_banco ?? ''}}">
+                                        <input type="text" id="titular_banco" name="titular_banco" placeholder="Titular" class="form-control" value="{{$evento->banco->titular_banco ?? ''}}" required>
                                         <small class="form-text text-muted">Ingrese el nombre del titular de la cuenta (se mostrara esta informacion en la invitacion)</small>
                                     </div>
                                 </div>
@@ -341,7 +347,7 @@
                                         <label for="cuenta_banco" class=" form-control-label">Cuenta</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="cuenta_banco" name="cuenta_banco" placeholder="XXXX-XXXX-XXXX-XXXX (Banco)" class="form-control" value="{{$evento->banco->cuenta_banco ?? ''}}">
+                                        <input type="text" id="cuenta_banco" name="cuenta_banco" placeholder="XXXX-XXXX-XXXX-XXXX (Banco)" class="form-control" value="{{$evento->banco->cuenta_banco ?? ''}}" required>
                                         <small class="form-text text-muted">Ingrese el nombre numero de la cuenta y coloque entre parentesis el nombre del banco al que pertenece la cuenta (se mostrara esta informacion en la invitacion)</small>
                                     </div>
                                 </div>
@@ -350,7 +356,7 @@
                                         <label for="clabe_banco" class=" form-control-label">Cuenta CLABE</label>
                                     </div>
                                     <div class="col-12 col-md-8">
-                                        <input type="text" id="clabe_banco" name="clabe_banco" placeholder="XXXXXXXXXXXXXXXXXX" class="form-control" value="{{$evento->banco->clabe_banco ?? ''}}">
+                                        <input type="text" id="clabe_banco" name="clabe_banco" placeholder="XXXXXXXXXXXXXXXXXX" class="form-control" value="{{$evento->banco->clabe_banco ?? ''}}" required>
                                         <small class="form-text text-muted">Ingrese el numero de la cuenta CLABE (se mostrara esta informacion en la invitacion)</small>
                                     </div>
                                 </div>
@@ -398,7 +404,7 @@
                                         <label for="Fotografia_carrusel" class=" form-control-label">Fotografia nueva</label>
                                     </div>
                                     <div class="col-12 col-md-9">
-                                        <input type="file" id="Fotografia_carrusel" name="Fotografia_carrusel" class="form-control-file">
+                                        <input type="file" id="Fotografia_carrusel" name="Fotografia_carrusel" class="form-control-file" required>
                                         <small class="form-text text-muted">Suba fotografias para que sus invitados puedan verlas (se recomienda utilizar la relacion de aspecto 16:9)</small>
                                     </div>
                                 </div>
