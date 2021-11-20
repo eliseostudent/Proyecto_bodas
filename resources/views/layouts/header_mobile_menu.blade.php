@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="header-mobile-inner">
                 <a class="logo" href="{{route('dashboard')}}">
-                    <img src="{{asset('storage/app-images/mobile-logo.png')}}" alt="Proyecto bodas" width="250"  />
+                    <img src="{{asset('app-images/mobile-logo.png')}}" alt="Proyecto bodas" width="250"  />
                 </a>
                 <button class="hamburger hamburger--slider" type="button">
                     <span class="hamburger-box">

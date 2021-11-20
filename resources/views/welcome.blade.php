@@ -51,7 +51,7 @@
                     <div class="container-fluid">
                         <div class="header-mobile-inner">
                             <a class="logo" href="{{route('raiz')}}">
-                                <img src="{{asset('storage/app-images/mobile-logo.png')}}" alt="Proyecto bodas" width="250"  />
+                                <img src="{{asset('app-images/mobile-logo.png')}}" alt="Proyecto bodas" width="250"  />
                             </a>
                             <button class="hamburger hamburger--slider" type="button">
                                 <span class="hamburger-box">
@@ -100,7 +100,7 @@
                             <div class="header-wrap ">
                                 <div  style="width:300px; background:none;left:0;">
                                     <a href="{{route('raiz')}}">
-                                        <img src="{{asset('storage/app-images/mobile-logo.png')}}" alt="Proyecto bodas" />
+                                        <img src="{{asset('app-images/mobile-logo.png')}}" alt="Proyecto bodas" />
                                     </a>
                                 </div>
                                 @if (Route::has('login'))
@@ -125,9 +125,26 @@
                 <!-- MAIN CONTENT-->
                 <div class="main-content">
                     <!-- Page Content -->
-                    <main>
-                            <h1>Bienvenido</h1>
-                            <h3>Que esperas para crear tu evento registrate y comienza a trabajar.</h3>
+                    <main class="text-center">
+                        <div class="w-100" >
+                            <h1 style="font-size:60px;">Bienvenido</h1>
+                            <div class="row">
+                                <div class="col"></div>
+                                <div class="col-md-8">
+                                    <img style="width: 100%" src="{{asset('app-images/welcome_image.jpg')}}" alt="Proyecto bodas imagen de ejemplo de la aplicacion." />
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                            <h3 style="font-size:20px">Que esperas para crear tu evento registrate y comienza a trabajar.</h3>
+                            <div class="row">
+                                <div class="col"></div>
+                                <div class="col-md-8">
+                                    <img style="width: 100%" src="{{asset('app-images/welcome_image_2.jpg')}}" alt="Proyecto bodas imagen de ejemplo de la aplicacion." />
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                            <h3 style="font-size:20px">Agrega a la lista y envia tus invitaciones.</h3>
+                        </div>
                     </main>
 
                 </div>

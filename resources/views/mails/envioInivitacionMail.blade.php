@@ -18,20 +18,41 @@
       .cursiva{
           font-family: 'Great Vibes', cursive;
       }
+      .boton_principal{
+        color: #5a5f64;
+        background-color: transparent;
+        background-image: none;
+        border-color: #5a5f64;
+        font-size:20px;
+        margin-top:20px;
+        margin-bottom:20px;
+        border-radius: 5px;
+      }
+      .boton_principal:hover{
+        background-color: #5a5f64;
+        color:#fff;
+      }
 </style>
-<body style="text-align: center; color:white; background-color: rgb(185, 185, 185);">
+<body style="text-align: center; color:rgb(78, 78, 78); background-color:white;">
 
-    <div class="blanco_bordes cursiva" style="width: 100%;font-size:25px">
+    <div class="blanco_bordes cursiva" style="width: 100%;font-size:60px">
         {{($evento->nombre_1)}} & {{$evento->nombre_2}}
+    </div>
+    <div style="width: 100%;">
+        @if ($evento->ruta_foto_novios!="")
+            <img src="{{$message->embed(Storage::url($evento->ruta_foto_novios))}}" alt="Foto novios" style="width: 100%">
+        @else
+            <img src="{{$message->embed(asset('app-images/foto_novios_default.jpg'))}}" alt="Foto novios"style="width: 100%">
+        @endif
     </div>
     <div style="width: 100%;">
         {{$invitado->nombre_invitado}} estamos muy felices de invitarte a nuestra boda.
     </div>
-    <div class="container-fluid" style="height: 200px">
+    <div class="container-fluid" >
         <div class="row">
             <div class="col"></div>
-            <div class="col-5">
-                <a href="{{route('invitacion',[$evento,$invitado])}}"><button style="margin-top:100px;border-radius: 5px;background-color: #555555;color: white;">Ver invitacion</button></a>
+            <div class="col-8">
+                <a href="{{route('invitacion',[$evento,$invitado])}}"><button class="boton_principal">Ver invitacion</button></a>
             </div>
             <div class="col"></div>
         </div>

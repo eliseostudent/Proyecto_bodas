@@ -4,7 +4,7 @@
             <div class="header-wrap ">
                 <div  style="width:300px; background:none;left:0;">
                     <a href="{{route('dashboard')}}">
-                        <img src="{{asset('storage/app-images/mobile-logo.png')}}" alt="Proyecto bodas" />
+                        <img src="{{asset('app-images/mobile-logo.png')}}" alt="Proyecto bodas" />
                     </a>
                 </div>
 

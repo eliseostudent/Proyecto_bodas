@@ -145,7 +145,7 @@
                                         @if ($evento->ruta_foto_novios!="")
                                             <img src="{{Storage::url($evento->ruta_foto_novios)}}" alt="Foto novios" style="width: 100%">
                                         @else
-                                            <img src="{{asset('storage/app-images/foto_novios_default.jpg')}}" alt="Foto novios"style="width: 100%">
+                                            <img src="{{asset('app-images/foto_novios_default.jpg')}}" alt="Foto novios"style="width: 100%">
                                         @endif
                                         <br>
                                     </div>
@@ -213,7 +213,7 @@
                                         @if ($evento->lugar->ruta_foto_ceremonia!="")
                                             <img src="{{Storage::url($evento->lugar->ruta_foto_ceremonia)}}" alt="Foto lugar ceremonia" style="width: 100%;">
                                         @else
-                                            <img src="{{asset('storage/app-images/foto_ceremonia_default.jpg')}}" alt="Foto lugar ceremonia"style="width: 100%;">
+                                            <img src="{{asset('app-images/foto_ceremonia_default.jpg')}}" alt="Foto lugar ceremonia"style="width: 100%;">
                                         @endif
                                         <br>
                                     </div>
@@ -262,7 +262,7 @@
                                         @if ($evento->lugar->ruta_foto_salon!="")
                                             <img src="{{Storage::url($evento->lugar->ruta_foto_salon)}}" alt="Foto lugar salon" style="width: 100%;">
                                         @else
-                                            <img src="{{asset('storage/app-images/foto_salon_default.jpg')}}" alt="Foto lugar salon"style="width: 100%;">
+                                            <img src="{{asset('app-images/foto_salon_default.jpg')}}" alt="Foto lugar salon"style="width: 100%;">
                                         @endif
                                         <br>
                                     </div>

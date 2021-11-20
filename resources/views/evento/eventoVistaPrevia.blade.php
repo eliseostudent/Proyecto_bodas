@@ -9,7 +9,7 @@
     @if ($evento->ruta_foto_novios!="")
         <img src="{{Storage::url($evento->ruta_foto_novios)}}" alt="Foto novios" style="width: 100%">
     @else
-        <img src="{{asset('storage/app-images/foto_novios_default.jpg')}}" alt="Foto novios"style="width: 100%">
+        <img src="{{asset('app-images/foto_novios_default.jpg')}}" alt="Foto novios"style="width: 100%">
     @endif
     <div  style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);font-size: 5vw;">
         <div class="row">
@@ -69,7 +69,7 @@
 
 </div>
 <div id="datosDeInvitacion" class="container-fluid" style="padding:0px; position: relative;">
-  <img  src="{{asset('storage/app-images/fondo_boleto.jpg')}}" alt="Fondo boleto"style="width: 100%; height:400px">
+  <img  src="{{asset('app-images/fondo_boleto.jpg')}}" alt="Fondo boleto"style="width: 100%; height:400px">
   <div  style="font-size:5vw; position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);">
     <div class="row">
       <div class="col">
@@ -111,7 +111,7 @@
                     @if ($evento->lugar->ruta_foto_ceremonia!="")
                         <img src="{{Storage::url($evento->lugar->ruta_foto_ceremonia)}}" alt="Foto lugar ceremonia" style="width: 100%;height: 300px;">
                     @else
-                        <img src="{{asset('storage/app-images/foto_ceremonia_default.jpg')}}" alt="Foto lugar salon"style="width: 100%;height: 300px;">
+                        <img src="{{asset('app-images/foto_ceremonia_default.jpg')}}" alt="Foto lugar salon"style="width: 100%;height: 300px;">
                     @endif
               </div>
               <div class="form-group">
@@ -139,7 +139,7 @@
                 @if ($evento->lugar->ruta_foto_salon!="")
                     <img src="{{Storage::url($evento->lugar->ruta_foto_salon)}}" alt="Foto lugar salon" style="width: 100%; height: 300px;">
                 @else
-                    <img src="{{asset('storage/app-images/foto_salon_default.jpg')}}" alt="Foto lugar salon"style="width: 100%; height: 300px;">
+                    <img src="{{asset('app-images/foto_salon_default.jpg')}}" alt="Foto lugar salon"style="width: 100%; height: 300px;">
                 @endif
               </div>
               <div class="form-group">
@@ -165,13 +165,13 @@
         <div class="col"></div>
         <div class="col-3">
             @if ($evento->codigo_de_vestimenta=="0")
-                <img src="{{asset('storage/app-images/white_tie_icon.jpg')}}" alt="white_tie_icon"style="width: 100%; ">
+                <img src="{{asset('app-images/white_tie_icon.jpg')}}" alt="white_tie_icon"style="width: 100%; ">
             @elseif ($evento->codigo_de_vestimenta=="1")
-                <img src="{{asset('storage/app-images/black_tie_icon.jpg')}}" alt="black_tie_icon"style="width: 100%; ">
+                <img src="{{asset('app-images/black_tie_icon.jpg')}}" alt="black_tie_icon"style="width: 100%; ">
             @elseif ($evento->codigo_de_vestimenta=="2")
-                <img src="{{asset('storage/app-images/formal_icon.jpg')}}" alt="formal_icon"style="width: 100%; ">
+                <img src="{{asset('app-images/formal_icon.jpg')}}" alt="formal_icon"style="width: 100%; ">
             @else
-                <img src="{{asset('storage/app-images/cocktail_icon.png')}}" alt="cocktail_icon"style="width: 100%; ">
+                <img src="{{asset('app-images/cocktail_icon.png')}}" alt="cocktail_icon"style="width: 100%; ">
             @endif
         </div>
         <div class="col"></div>
@@ -326,7 +326,7 @@
     <div class="col"></div>
     <div class="col-sm-5">
         <div style="width:100%; background:none;">
-                <img src="{{asset('storage/app-images/mobile-logo.png')}}" alt="Proyecto bodas" />
+                <img src="{{asset('app-images/mobile-logo.png')}}" alt="Proyecto bodas" />
 
           </div>
     </div>
