@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Hash;
 
 class InvitadoController extends Controller
 {
@@ -19,12 +20,12 @@ class InvitadoController extends Controller
      */
     public function index(Evento $evento)
     {
-        if (! Gate::allows('es_propietario-evento', $evento)) {
+        if (!Gate::allows('es_propietario-evento', $evento)) {
             abort(403);
         }
         Auth::user()->setEventoActual($evento);
-        $invitados=$evento->invitados;
-        return view('invitado/invitadoIndex',compact('invitados','evento'));
+        $invitados = $evento->invitados;
+        return view('invitado/invitadoIndex', compact('invitados', 'evento'));
     }
 
     /**
@@ -52,10 +53,13 @@ class InvitadoController extends Controller
             'numero_boletos' => 'required|integer'
 
         ]);
+        $request->merge([
+            'hash' => Hash::make($request->nombre_invitado . random_int(0, 100))
+        ]);
 
-        $invitado=Invitado::create($request->all());
-        $evento=$invitado->evento;
-        return redirect()->route('index_invitados',$evento)->with('success','Se creo el usuario correctamente');
+        $invitado = Invitado::create($request->all());
+        $evento = $invitado->evento;
+        return redirect()->route('index_invitados', $evento)->with('success', 'Se creo el usuario correctamente');
     }
 
     /**
@@ -88,16 +92,13 @@ class InvitadoController extends Controller
      */
     public function update(Request $request, Invitado $invitado)
     {
-        if (! Gate::allows('es_propietario-invitado', $invitado)) {
-            abort(403);
-        }
         $request->validate([
             'confirmacion' => 'required'
 
         ]);
-        $invitado->confirmacion=$request->confirmacion;
+        $invitado->confirmacion = $request->confirmacion;
         $invitado->save();
-        return redirect()->back()->with('success','Se ha enviado la confirmacion.');
+        return redirect()->back()->with('success', 'Se ha enviado la confirmacion.');
     }
 
     /**
@@ -108,19 +109,19 @@ class InvitadoController extends Controller
      */
     public function destroy(Invitado $invitado)
     {
-        if (! Gate::allows('es_propietario-invitado', $invitado)) {
+        if (!Gate::allows('es_propietario-invitado', $invitado)) {
             abort(403);
         }
-        $evento=$invitado->evento;
+        $evento = $invitado->evento;
         $invitado->delete();
-        return redirect()->route('index_invitados',$evento)->with('success','Se elimino el usuario correctamente.');
+        return redirect()->route('index_invitados', $evento)->with('success', 'Se elimino el usuario correctamente.');
     }
-    public function enviarInvitacion(Evento $evento, Invitado $invitado){
-        if (! Gate::allows('es_propietario-invitado', $invitado)) {
+    public function enviarInvitacion(Evento $evento, Invitado $invitado)
+    {
+        if (!Gate::allows('es_propietario-invitado', $invitado)) {
             abort(403);
         }
-        mail::to($invitado->correo_invitado)->send(new invitacionMail($evento,$invitado));
-        return redirect()->back()->with('success','Se han enviado el correo correctamente.');
+        mail::to($invitado->correo_invitado)->send(new invitacionMail($evento, $invitado));
+        return redirect()->back()->with('success', 'Se han enviado el correo correctamente.');
     }
-
 }

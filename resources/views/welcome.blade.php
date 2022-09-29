@@ -74,7 +74,7 @@
                     <ul class="navbar-mobile__list list-unstyled">
                         @auth
                             <li class="has-sub">
-                                <a href="{{ url('/dashboard') }}" class="js-arrow">Tablero</a>
+                                <a href="{{ url('/dashboard') }}">Tablero</a>
                             </li>
                         @else
                             <li class="has-sub">
@@ -84,7 +84,7 @@
 
                             @if (Route::has('register'))
                                 <li class="has-sub">
-                                    <a href="{{ route('register') }}" class="js-arrow">Registrarse</a>
+                                    <a href="{{ route('register') }}">Registrarse</a>
                                 </li>
                             @endif
                         @endauth

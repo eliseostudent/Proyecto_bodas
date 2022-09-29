@@ -24,8 +24,8 @@ class EventoController extends Controller
      */
     public function index()
     {
-        $eventos=Auth::user()->eventos;
-        return view('dashboard',compact('eventos'));
+        $eventos = Auth::user()->eventos;
+        return view('dashboard', compact('eventos'));
     }
 
     /**
@@ -47,19 +47,19 @@ class EventoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'evento_id_nombre' => 'required',//aqui el evento_id representa el nombre del evento para no hacer un formulario mas
-            'contraseña_del_evento'=> 'required|max:40|min:8'
+            'evento_id_nombre' => 'required', //aqui el evento_id representa el nombre del evento para no hacer un formulario mas
+            'contraseña_del_evento' => 'required|max:40|min:8'
 
         ]);
         $request->merge([
-            'nombre_evento'=>$request->evento_id_nombre
+            'nombre_evento' => $request->evento_id_nombre
         ]);
-        $evento=Evento::create($request->all());
+        $evento = Evento::create($request->all());
         $evento->users()->attach(Auth::id());
         Lugar::create(['evento_id' => $evento->id]);
         Banco::create(['evento_id' => $evento->id]);
 
-        return redirect()->route('evento.index')->with('success','Se ha creado tu evento nuevo.');
+        return redirect()->route('evento.index')->with('success', 'Se ha creado tu evento nuevo.');
     }
 
     /**
@@ -70,7 +70,7 @@ class EventoController extends Controller
      */
     public function show(Evento $evento)
     {
-        if (! Gate::allows('es_propietario-evento', $evento)) {
+        if (!Gate::allows('es_propietario-evento', $evento)) {
             abort(403);
         }
         //aqui vamos a mostrar la vista previa
@@ -78,7 +78,7 @@ class EventoController extends Controller
         $evento->load('lugar');
         $evento->load('mesas');
         $evento->load('fotos');
-        return view('evento/eventoShow',compact('evento'));
+        return view('evento/eventoShow', compact('evento'));
     }
 
     /**
@@ -89,14 +89,14 @@ class EventoController extends Controller
      */
     public function edit(Evento $evento)
     {
-        if (! Gate::allows('es_propietario-evento', $evento)) {
+        if (!Gate::allows('es_propietario-evento', $evento)) {
             abort(403);
         }
         Auth::user()->setEventoActual($evento);
         $evento->load('lugar');
         $evento->load('mesas');
         $evento->load('fotos');
-        return view('evento/eventoEdit',compact('evento'));
+        return view('evento/eventoEdit', compact('evento'));
     }
 
     /**
@@ -108,35 +108,35 @@ class EventoController extends Controller
      */
     public function update(Request $request, Evento $evento)
     {
-        if (! Gate::allows('es_propietario-evento', $evento)) {
+        if (!Gate::allows('es_propietario-evento', $evento)) {
             abort(403);
         }
         Auth::user()->setEventoActual($evento);
 
-        if($request->foto_novios!=null){
+        if ($request->foto_novios != null) {
             $request->validate([
                 'nombre_1' => 'required|max:64',
-                'nombre_2'=> 'required|max:64',
-                'foto_novios'=>'mimes:jpg,jpeg,png',
-                'mensaje_principal'=>'required'
+                'nombre_2' => 'required|max:64',
+                'foto_novios' => 'mimes:jpg,jpeg,png',
+                'mensaje_principal' => 'required'
 
             ]);
             Storage::delete($evento->ruta_foto_novios);
-            $ruta=$request->file('foto_novios')->store('images');
+            $ruta = $request->file('foto_novios')->store('images');
             $request->merge([
-                'ruta_foto_novios'=>$ruta
+                'ruta_foto_novios' => $ruta
             ]);
-        }else{
+        } else {
             $request->validate([
                 'nombre_1' => 'required|max:64',
-                'nombre_2'=> 'required|max:64',
-                'mensaje_principal'=>'required'
+                'nombre_2' => 'required|max:64',
+                'mensaje_principal' => 'required'
 
             ]);
         }
 
-        Evento::where('id',$evento->id)->update($request->except('_token','_method','foto_novios'));
-        return redirect()->route('evento.edit',$evento)->with('success','Los cambios de la informacion general se han guaradado');
+        Evento::where('id', $evento->id)->update($request->except('_token', '_method', 'foto_novios'));
+        return redirect()->route('evento.edit', $evento)->with('success', 'Los cambios de la informacion general se han guaradado');
     }
     /**
      * Remove the specified resource from storage.
@@ -146,11 +146,11 @@ class EventoController extends Controller
      */
     public function destroy(Evento $evento)
     {
-        if (! Gate::allows('es_propietario-evento', $evento)) {
+        if (!Gate::allows('es_propietario-evento', $evento)) {
             abort(403);
         }
         $evento->delete();
-        return redirect()->route('evento.index')->with('success','Se ha eliminado el evento');
+        return redirect()->route('evento.index')->with('success', 'Se ha eliminado el evento');
     }
 
     /**
@@ -164,22 +164,22 @@ class EventoController extends Controller
         //Aqui se unira un usuario a un evento a travez del identificador y su contraseña
         $request->validate([
             'evento_id_nombre' => 'required',
-            'contraseña_del_evento'=> 'required|max:40|min:8'
+            'contraseña_del_evento' => 'required|max:40|min:8'
         ]);
-        $evento=Evento::where('id',$request->evento_id_nombre)->where('contraseña_del_evento',$request->contraseña_del_evento)->first();
-        if($evento !=null){
-            $eventos=Auth::user()->eventos;
-            foreach ($eventos as $e){
-                if($e->id==$evento->id)//este evento ya pertenece al usuario
+        $evento = Evento::where('id', $request->evento_id_nombre)->where('contraseña_del_evento', $request->contraseña_del_evento)->first();
+        if ($evento != null) {
+            $eventos = Auth::user()->eventos;
+            foreach ($eventos as $e) {
+                if ($e->id == $evento->id) //este evento ya pertenece al usuario
                 {
-                    return redirect()->route('evento.index')->with('error','Ya perteneces a este evento.');
+                    return redirect()->route('evento.index')->with('error', 'Ya perteneces a este evento.');
                 }
             }
             $evento->users()->attach(Auth::id());
 
-            return redirect()->route('evento.index')->with('success','Te has unido correctamente al evento.');
+            return redirect()->route('evento.index')->with('success', 'Te has unido correctamente al evento.');
         }
-        return redirect()->route('evento.index')->with('error','Los datos de acceso son incorrectos');
+        return redirect()->route('evento.index')->with('error', 'Los datos de acceso son incorrectos');
     }
     /**
      * Muestra la invitacion de un evento segun su invitado.
@@ -189,31 +189,46 @@ class EventoController extends Controller
      */
     public function invitacion(Evento $evento, Invitado $invitado)
     {
-        if($invitado->evento==$evento){
+        if ($invitado->evento == $evento) {
             $evento->load('lugar');
             $evento->load('mesas');
             $evento->load('fotos');
-            return view('vista_invitacion',compact('evento','invitado'));
+            return view('vista_invitacion', compact('evento', 'invitado'));
         }
         return view('vista_no_invitado');
     }
     public function exportar(Evento $evento)
     {
-        if (! Gate::allows('es_propietario-evento', $evento)) {
+        if (!Gate::allows('es_propietario-evento', $evento)) {
             abort(403);
         }
         return Excel::download(new InvitadosExport($evento), 'inivitados.xlsx');
     }
-    public function enviarInvitacionesRestantes(Evento $evento){
-        if (! Gate::allows('es_propietario-evento', $evento)) {
+    public function enviarInvitacionesRestantes(Evento $evento)
+    {
+        if (!Gate::allows('es_propietario-evento', $evento)) {
             abort(403);
         }
-        $invitados=$evento->invitados;
-        foreach($invitados as $invitado){
-            if($invitado->confirmacion=='2')
-            mail::to($invitado->correo_invitado)->send(new invitacionMail($evento,$invitado));
+        $invitados = $evento->invitados;
+        foreach ($invitados as $invitado) {
+            if ($invitado->confirmacion == '2')
+                mail::to($invitado->correo_invitado)->send(new invitacionMail($evento, $invitado));
         }
-        return redirect()->back()->with('success','Los correos se han enviado a los invitados no confirmados.');
+        return redirect()->back()->with('success', 'Los correos se han enviado a los invitados no confirmados.');
     }
+    public function invitacion_hash($hash)
+    {
+        $invitado = Invitado::where('hash', $hash)->first();
+        $evento = Evento::where('id', 4)->first();
+        if ($invitado != null) {
+            if ($invitado->evento == $evento) {
+                $evento->load('lugar');
+                $evento->load('mesas');
+                $evento->load('fotos');
+                return view('vista_invitacion', compact('evento', 'invitado'));
+            }
+        }
 
+        return view('vista_no_invitado');
+    }
 }

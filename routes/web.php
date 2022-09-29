@@ -23,31 +23,35 @@ Route::get('/', function () {
     return view('welcome');
 })->name('raiz');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [EventoController::class,'index']
+Route::middleware(['auth:sanctum', 'verified'])->get(
+    '/dashboard',
+    [EventoController::class, 'index']
 )->name('dashboard');
 
-Route::post('unir', [EventoController::class,'unir'])->middleware('auth')->name('unir_evento');
+Route::post('unir', [EventoController::class, 'unir'])->middleware('auth')->name('unir_evento');
 
-Route::post('store', [MesaController::class,'store'])->middleware('auth')->name('store_mesa');
+Route::post('store', [MesaController::class, 'store'])->middleware('auth')->name('store_mesa');
 
 Route::resource('evento', EventoController::class)->middleware('auth');
 
-Route::resource('lugar', LugarController::class,['only' => ['update']])->middleware('auth');
+Route::resource('lugar', LugarController::class, ['only' => ['update']])->middleware('auth');
 
 Route::resource('mesa', MesaController::class, ['only' => ['destroy']])->middleware('auth');
 
-Route::resource('banco', BancoController::class,['only' => ['update']])->middleware('auth');
+Route::resource('banco', BancoController::class, ['only' => ['update']])->middleware('auth');
 
-Route::resource('foto', FotoController::class, ['only' => ['store','destroy']])->middleware('auth');
+Route::resource('foto', FotoController::class, ['only' => ['store', 'destroy']])->middleware('auth');
 
 Route::resource('invitado', InvitadoController::class, ['except' => ['index']])->middleware('auth');
 
-Route::get('/invitados/{evento}/index', [InvitadoController::class,'index'])->middleware('auth')->name('index_invitados');
+Route::get('/invitados/{evento}/index', [InvitadoController::class, 'index'])->middleware('auth')->name('index_invitados');
 
-Route::get('/evento/{evento}/invitado/{invitado}', [EventoController::class,'invitacion'])->name('invitacion');
+Route::get('/evento/{evento}/invitado/{invitado}', [EventoController::class, 'invitacion'])->name('invitacion');
 
-Route::get('/evento/{evento}/envioinvitacion/{invitado}', [InvitadoController::class,'enviarInvitacion'])->middleware('auth')->name('enviar_invitacion');
+Route::get('/inv/{hash}', [EventoController::class, 'invitacion_hash'])->name('invitacion_hash');
 
-Route::get('evento/{evento}/export/', [EventoController::class,'exportar'])->middleware('auth')->name('exportar_invitados');
+Route::get('/evento/{evento}/envioinvitacion/{invitado}', [InvitadoController::class, 'enviarInvitacion'])->middleware('auth')->name('enviar_invitacion');
 
-Route::get('evento/{evento}/enviarInvitacionesRestantes/', [EventoController::class,'enviarInvitacionesRestantes'])->middleware('auth')->name('enviar_invitaciones');
+Route::get('evento/{evento}/export/', [EventoController::class, 'exportar'])->middleware('auth')->name('exportar_invitados');
+
+Route::get('evento/{evento}/enviarInvitacionesRestantes/', [EventoController::class, 'enviarInvitacionesRestantes'])->middleware('auth')->name('enviar_invitaciones');
