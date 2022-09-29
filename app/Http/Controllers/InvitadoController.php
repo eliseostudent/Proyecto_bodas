@@ -124,4 +124,14 @@ class InvitadoController extends Controller
         mail::to($invitado->correo_invitado)->send(new invitacionMail($evento, $invitado));
         return redirect()->back()->with('success', 'Se han enviado el correo correctamente.');
     }
+    public function confirm(Request $request, Invitado $invitado)
+    {
+        $request->validate([
+            'confirmacion' => 'required'
+
+        ]);
+        $invitado->confirmacion = $request->confirmacion;
+        $invitado->save();
+        return redirect()->back()->with('success', 'Se ha enviado la confirmacion.');
+    }
 }

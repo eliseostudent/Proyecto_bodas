@@ -32,6 +32,8 @@ Route::post('unir', [EventoController::class, 'unir'])->middleware('auth')->name
 
 Route::post('store', [MesaController::class, 'store'])->middleware('auth')->name('store_mesa');
 
+Route::patch('confirm/{invitado}', [InvitadoController::class, 'confirm'])->name('confirm');
+
 Route::resource('evento', EventoController::class)->middleware('auth');
 
 Route::resource('lugar', LugarController::class, ['only' => ['update']])->middleware('auth');
