@@ -54,7 +54,7 @@ class InvitadoController extends Controller
 
         ]);
         $request->merge([
-            'hash' => Hash::make($request->nombre_invitado . random_int(0, 100))
+            'hash' => str_replace('/', '', Hash::make($request->nombre_invitado . random_int(0, 100)))
         ]);
 
         $invitado = Invitado::create($request->all());
