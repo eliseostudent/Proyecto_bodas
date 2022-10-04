@@ -67,7 +67,7 @@
 
                                                 <button class="item" data-toggle="tooltip" data-placement="top"
                                                     title="" data-original-title="Copiar url"
-                                                    onclick={()=>navigator.clipboard.writeText({{ $invitado->hash }})}>
+                                                    onclick="()=>navigator.clipboard.writeText({{ $invitado->hash }} )">
                                                     <i class="zmdi zmdi-copy"></i>
                                                 </button>
                                                 <a href="{{ route('enviar_invitacion', [$invitado->evento, $invitado]) }}"
