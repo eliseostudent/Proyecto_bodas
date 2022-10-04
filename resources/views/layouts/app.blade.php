@@ -121,6 +121,7 @@
     <script>
         function copyurl(id) {
             navigator.clipboard.writeText(id);
+            alert("Copied the text: " + id);
         }
     </script>
 </body>
