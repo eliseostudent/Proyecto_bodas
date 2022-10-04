@@ -10,13 +10,13 @@
             @if ($message = Session::get('success'))
                 <div class="alert alert-success alert-block">
                     <button type="button" class="close" data-dismiss="alert">×</button>
-                        <strong>{{ $message }}</strong>
+                    <strong>{{ $message }}</strong>
                 </div>
             @endif
             @if ($message = Session::get('error'))
                 <div class="alert alert-danger alert-block">
                     <button type="button" class="close" data-dismiss="alert">×</button>
-                        <strong>{{ $message }}</strong>
+                    <strong>{{ $message }}</strong>
                 </div>
             @endif
             @include('invitado.invitadoCreate')
@@ -27,8 +27,9 @@
                     <h3 class="title-5 m-b-35">Lista de invitados</h3>
                     <div class="table-data__tool">
                         <div class="table-data__tool-right">
-                            <a href="{{route('exportar_invitados',$evento)}}"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                <i class="fas fa-file-excel"></i>Exportar</button>
+                            <a href="{{ route('exportar_invitados', $evento) }}"><button
+                                    class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                    <i class="fas fa-file-excel"></i>Exportar</button>
                             </a>
                         </div>
                     </div>
@@ -46,15 +47,15 @@
                             <tbody>
                                 @foreach ($invitados as $invitado)
                                     <tr class="tr-shadow">
-                                        <td>{{$invitado->nombre_invitado}}</td>
+                                        <td>{{ $invitado->nombre_invitado }}</td>
                                         <td>
-                                            <span class="block-email">{{$invitado->correo_invitado}}</span>
+                                            <span class="block-email">{{ $invitado->correo_invitado }}</span>
                                         </td>
-                                        <td class="desc">{{$invitado->numero_boletos}}</td>
+                                        <td class="desc">{{ $invitado->numero_boletos }}</td>
                                         <td>
-                                            @if ($invitado->confirmacion=='0')
+                                            @if ($invitado->confirmacion == '0')
                                                 <span class="status--process">Asistire</span>
-                                            @elseif ($invitado->confirmacion=='1')
+                                            @elseif ($invitado->confirmacion == '1')
                                                 <span class="status--denied">No asistire</span>
                                             @else
                                                 Por confirmar
@@ -63,13 +64,25 @@
                                         </td>
                                         <td>
                                             <div class="table-data-feature">
-                                                <a href="{{route('enviar_invitacion',[$invitado->evento , $invitado])}}" style="margin-right: 5px"><button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Enviar invitacion">
-                                                    <i class="zmdi zmdi-mail-send"></i>
-                                                </button></a>
-                                                <form action="{{route('invitado.destroy',$invitado)}}" method='POST'>
+
+                                                <button class="item" data-toggle="tooltip" data-placement="top"
+                                                    title="" data-original-title="Copiar url"
+                                                    onclick="copyurl('{{ $invitado->hash }}')">
+                                                    <i class="zmdi zmdi-copy"></i>
+                                                </button>
+                                                <a href="{{ route('enviar_invitacion', [$invitado->evento, $invitado]) }}"
+                                                    style="margin-right: 5px"><button class="item"
+                                                        data-toggle="tooltip" data-placement="top" title=""
+                                                        data-original-title="Enviar invitacion">
+                                                        <i class="zmdi zmdi-mail-send"></i>
+                                                    </button></a>
+                                                <form action="{{ route('invitado.destroy', $invitado) }}"
+                                                    method='POST'>
                                                     @method('DELETE')
                                                     @csrf
-                                                    <button type="submit" class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar">
+                                                    <button type="submit" class="item" data-toggle="tooltip"
+                                                        data-placement="top" title=""
+                                                        data-original-title="Eliminar">
                                                         <i class="zmdi zmdi-delete"></i>
                                                     </button>
                                                 </form>
@@ -87,8 +100,8 @@
                     <br>
                     <div class="table-data__tool">
                         <div class="table-data__tool-right">
-                            <a href="{{route('enviar_invitaciones',$evento)}}"><button class="btn btn-primary ">
-                                <i class="fa fa-send"></i> Enviar todos</button>
+                            <a href="{{ route('enviar_invitaciones', $evento) }}"><button class="btn btn-primary ">
+                                    <i class="fa fa-send"></i> Enviar todos</button>
                             </a>
                         </div>
                     </div>

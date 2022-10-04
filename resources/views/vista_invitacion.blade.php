@@ -45,14 +45,28 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 
         .blanco_bordes {
             color: #fff;
             text-shadow: 0 0 2px #000;
         }
 
+        .baskerville {
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .KhatijaCalligraphy {
+            font-family: "KhatijaCalligraphy", sans-serif;
+        }
+
+        .MelodyVintage {
+            font-family: "MelodyVintage", sans-serif;
+        }
+
         .cursiva {
-            font-family: 'Great Vibes', cursive;
+            /*font-family: 'Great Vibes', cursive;*/
+            font-family: "MelodyVintage", sans-serif;
         }
 
         .activo {
@@ -129,7 +143,7 @@
         <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);font-size: 5vw;">
             <div class="row">
                 <div class="col">
-                    <p class="blanco_bordes text-center ">{{ $evento->nombre_1 }} & {{ $evento->nombre_2 }}</p>
+                    <p class="KhatijaCalligraphy text-center ">{{ $evento->nombre_1 }} & {{ $evento->nombre_2 }}</p>
                 </div>
             </div>
             <div class="row">
@@ -270,7 +284,8 @@
                             </p>
                         </div>
                         <div class="form-group">
-                            <a href="{{ 'https://www.google.com.mx/maps/search/' . $evento->lugar->direccion_salon }}"><button
+                            <a
+                                href="{{ 'https://www.google.com.mx/maps/search/' . $evento->lugar->direccion_salon }}"><button
                                     class="btn btn-secondary btn-lg">Mapa</button></a>
                         </div>
                     </div>
