@@ -120,9 +120,9 @@
     <script src="{{ asset('cool_admin/js/main.js') }}"></script>
     <script>
         function copyurl(id) {
-            navigator.clipboard.writeText(id);
-            alert("Copied the text: " + id);
+		navigator.clipboard.writeText(id);
         }
+
     </script>
 </body>
 

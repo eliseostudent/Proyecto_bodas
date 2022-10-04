@@ -11,7 +11,7 @@
             <tr>
                 <td style="color: #000">{{ $invitado->nombre_invitado }}</td>
                 <td style="color: #24FF00">{{ $invitado->numero_boletos }}</td>
-                <td style="color: #24FF00">http://celi-y-eli.fun/inv/{{ $invitado->hash }}</td>
+                <td style="color: #24FF00">https://celi-y-eli.fun/inv/{{ $invitado->hash }}</td>
             </tr>
         @endforeach
     </tbody>
