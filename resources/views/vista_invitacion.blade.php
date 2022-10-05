@@ -51,10 +51,18 @@
             color: #fff;
             text-shadow: 0 0 2px #000;
         }
+	
+	h1 {
+
+	font-weight: normal;
+	}
 
         .baskerville {
             font-family: 'Libre Baskerville', serif;
-        }
+	}
+	.body{
+	    font-family: 'Libre Baskerville',serif;
+	}
 
         .KhatijaCalligraphy {
             font-family: "KhatijaCalligraphy", sans-serif;
@@ -119,11 +127,11 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#inicio">
-                    <h3>{{ $evento->nombre_1 }} & {{ $evento->nombre_2 }}</h3>
+                    <h3 class="baskerville ">{{ $evento->nombre_1 }} & {{ $evento->nombre_2 }}</h3>
                 </a>
 
             </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
+            <div class="collapse navbar-collapse baskerville " id="myNavbar">
                 <ul class="nav navbar-nav navbar-right d-inline">
                     <li><a href="#datosDeInvitacion">Datos de invitacion</a></li>
                     <li><a href="#dondeYCuando">Donde y cuando</a></li>
@@ -140,10 +148,10 @@
         @else
             <img src="{{ asset('app-images/foto_novios_default.jpg') }}" alt="Foto novios"style="width: 100%">
         @endif
-        <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);font-size: 5vw;">
+        <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);font-size:5vw;">
             <div class="row">
                 <div class="col">
-                    <p class="KhatijaCalligraphy text-center ">{{ $evento->nombre_1 }} & {{ $evento->nombre_2 }}</p>
+                    <p class="KhatijaCalligraphy text-center blanco_bordes" style="font-size: 7vw">{{ $evento->nombre_1 }} & {{ $evento->nombre_2 }}</p>
                 </div>
             </div>
             <div class="row">
@@ -156,7 +164,7 @@
             <div class="row" style="font-size: 3vw;">
                 <div class="col-xs-3 ">
                     <div class="row">
-                        <p id="dias" class="text-center blanco_bordes"></p>
+                        <p id="dias" class="text-center baskerville blanco_bordes"></p>
                     </div>
                     <div class="row">
                         <p class="text-center blanco_bordes">Dias.</p>
@@ -193,18 +201,18 @@
 
     </div>
     <div id="datosDeInvitacion" class="container-fluid" style="padding:0px; position: relative;">
-        <img src="{{ asset('app-images/fondo_boleto.jpg') }}" alt="Foto novios"style="width: 100%; height:400px">
-        <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <img src="{{ asset('app-images/fondo_boleto.jpg') }}" alt="fondo boleto"style="width: 100%; height:400px">
+        <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%); ">
             <div class="row">
                 <div class="col">
-                    <h1 class="text-center  cursiva">
+                    <h1 class="text-center  cursiva" >
                         Datos del invitado
                     </h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <h1 class=" text-center ">{{ $invitado->nombre_invitado }}</h1>
+                    <h1 class=" text-center baskerville" >{{ $invitado->nombre_invitado }}</h1>
                 </div>
             </div>
             <div class="row">
@@ -217,7 +225,7 @@
             <div class="row">
                 <div class="col">
                     @if (!$evento->no_niños)
-                        <h1 class=" text-center ">No niños</h1>
+                        <h6 class=" text-center baskerville">No niños</h6>
                     @endif
                 </div>
             </div>
@@ -228,7 +236,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <strong>Ceremonia</strong>
+                        <strong class=" baskerville">Ceremonia</strong>
                     </div>
                     <div class="card-body card-block">
                         <div class="form-group">
@@ -241,19 +249,19 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <p class="form-control-static"><b>{{ $evento->lugar->nombre_ceremonia }}</b></p>
+                            <p class="form-control-static baskerville"><b>{{ $evento->lugar->nombre_ceremonia }}</b></p>
                         </div>
                         <div class="form-group">
-                            <p class="form-control-static"> <b>Cuando:</b> {{ $evento->lugar->fecha_ceremonia }}</p>
+                            <p class="form-control-static baskerville"> <b>Cuando:</b> {{ $evento->lugar->fecha_ceremonia }}</p>
                         </div>
                         <div class="form-group">
-                            <p class="form-control-static"> <b>Direccion:</b>
+                            <p class="form-control-static baskerville"> <b>Direccion:</b>
                                 {{ $evento->lugar->direccion_ceremonia }}</p>
                         </div>
-                        <div class="form-group">
-                            <a
+                        <div class="form-group" style="text-align:center;" >
+                            <a style="width:50%;"
                                 href="{{ 'https://www.google.com.mx/maps/search/' . $evento->lugar->direccion_ceremonia }}"><button
-                                    class="btn btn-secondary btn-lg">Mapa</button></a>
+                                   style="width:100%;" class="btn btn-secondary btn-lg baskerville">Mapa</button></a>
                         </div>
                     </div>
                 </div>
@@ -261,7 +269,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <strong>Evento</strong>
+                        <strong class="baskerville">Evento</strong>
                     </div>
                     <div class="card-body card-block">
                         <div class="form-group">
@@ -274,19 +282,19 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <p class="form-control-static"><b>{{ $evento->lugar->nombre_salon }}</b></p>
+                            <p class="form-control-static baskerville"><b>{{ $evento->lugar->nombre_salon }}</b></p>
                         </div>
                         <div class="form-group">
-                            <p class="form-control-static"> <b>Cuando:</b> {{ $evento->lugar->fecha_ceremonia }}</p>
+                            <p class="form-control-static baskerville"> <b>Cuando:</b> {{ $evento->lugar->fecha_ceremonia }}</p>
                         </div>
                         <div class="form-group">
-                            <p class="form-control-static"> <b>Direccion:</b> {{ $evento->lugar->direccion_salon }}
+                            <p class="form-control-static baskerville"> <b>Direccion:</b> {{ $evento->lugar->direccion_salon }}
                             </p>
                         </div>
-                        <div class="form-group">
-                            <a
+                        <div class="form-group" style="text-align:center;">
+                            <a style="width:50%;"
                                 href="{{ 'https://www.google.com.mx/maps/search/' . $evento->lugar->direccion_salon }}"><button
-                                    class="btn btn-secondary btn-lg">Mapa</button></a>
+                                    class="btn btn-secondary btn-lg baskerville" style="width:100%;">Mapa</button></a>
                         </div>
                     </div>
                 </div>
@@ -313,13 +321,13 @@
             <div class="col"></div>
         </div>
         @if ($evento->codigo_de_vestimenta == '0')
-            <h3>White tie</h3>
+            <h3 class=" baskerville">White tie</h3>
         @elseif ($evento->codigo_de_vestimenta == '1')
-            <h3>Black Tie</h3>
+            <h3 class=" baskerville" >Black Tie</h3>
         @elseif ($evento->codigo_de_vestimenta == '2')
-            <h3>Formal</h3>
+            <h3 class=" baskerville">Formal</h3>
         @else
-            <h3>Cocktail</h3>
+            <h3 class=" baskerville">Cocktail</h3>
         @endif
         <br>
     </div>
@@ -385,7 +393,7 @@
 
     <div id="mesaDeRegalos" class="container text-center">
         <h1 class="cursiva" style="padding-top:30px">Mesa de regalos</h1>
-        <p>
+        <p class=" baskerville">
             Tu presencia es nuestro mayor regalo, pero si deseas obsequiarnos algo te adjuntamos algunas opciones
         </p>
         <div class="row">
@@ -398,10 +406,11 @@
             @endforeach
         </div>
         <br>
-        <div class="row">
-            <p class="w-100" style="font-size: 24px; margin-bottom:20px">
+
+        <div class="row"style="width:75%; padding-left: 25%;">
+            <p class="w-100 baskerville" style="font-size: 24px; margin-bottom:20px">
                 <a class="btn btn-outline-secondary w-100" data-toggle="collapse" href="#datosbancarios"
-                    role="button" aria-expanded="false" aria-controls="datosbancarios" style="font-size: 24px;">
+                    role="button" aria-expanded="false" aria-controls="datosbancarios" style="font-size: large;">
                     Datos bancarios
                 </a>
 
@@ -409,20 +418,20 @@
             <div class="collapse w-100" id="datosbancarios">
                 <div class="card card-body">
                     <div class="row">
-                        <p style="padding-left:10%"><b>Titular:</b> {{ $evento->banco->titular_banco }}</p>
+                        <p class="baskerville" style="padding-left:10%"><b>Titular:</b> {{ $evento->banco->titular_banco }}</p>
                     </div>
                     <div class="row">
-                        <p style="padding-left:10%"><b>Cuenta banco:</b> {{ $evento->banco->cuenta_banco }}</p>
+                        <p class="baskerville"  style="padding-left:10%"><b>Cuenta banco:</b> {{ $evento->banco->cuenta_banco }}</p>
                     </div>
                     <div class="row">
-                        <p style="padding-left:10%"><b>Cuenta CLABE:</b> {{ $evento->banco->clabe_banco }}</p>
+                        <p class="baskerville" style="padding-left:10%"><b>Cuenta CLABE:</b> {{ $evento->banco->clabe_banco }}</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div id="confirmarAsistencia" class="container-fluid bg-secondary w-100 "
-        style="position:relative; height:300px; padding:0px;">
+        style="position:relative; height:400px; padding:0px;">
         <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);">
             <div class="row">
                 <div class="col">
@@ -435,25 +444,25 @@
                 @method('PATCH')
                 @csrf
                 <div class="row form-group">
-                    <p class="form-control-static text-white" style="padding-left: 16px"><b>Nombre:
+                    <p class="form-control-static text-white baskerville" style="padding-left: 16px"><b>Nombre:
                         </b>{{ $invitado->nombre_invitado }}</p>
                 </div>
                 <div class="row form-group">
                     <div class="col ">
-                        <label class="form-control-label text-white">Confirmo que:</label>
+                        <label class="form-control-label text-white baskerville">Confirmo que:</label>
                     </div>
                     <div class="col ">
                         <div class="form-check">
                             <div class="radio">
-                                <label for="radio1" class="form-check-label text-white">
+                                <label for="radio1" class="form-check-label text-white baskerville">
                                     <input type="radio" id="radio1" name="confirmacion" value="0"
-                                        class="form-check-input" checked>Asistire
+                                        class="form-check-input baskerville" checked>Asistire
                                 </label>
                             </div>
                             <div class="radio">
-                                <label for="radio2" class="form-check-label text-white">
+                                <label for="radio2" class="form-check-label text-white baskerville">
                                     <input type="radio" id="radio2" name="confirmacion" value="1"
-                                        class="form-check-input">No asistire</label>
+                                        class="form-check-input baskerville">No asistire</label>
                             </div>
                         </div>
                     </div>
@@ -465,7 +474,7 @@
                     </div>
                 @endif
                 <div class="row form-group">
-                    <button type="submit" class="btn btn-outline-light w-100"
+                    <button type="submit" class="btn btn-outline-light w-100 baskerville"
                         style="font-size: 20px;">Enviar</button>
                 </div>
             </form>
@@ -477,19 +486,14 @@
 
     <!-- Footer -->
     <footer id="contact" class="text-center">
-        <h3 class="text-center">Quieres crear una invitacion asi?</h3>
         <div class="row">
             <div class="col"></div>
             <div class="col-sm-5">
-                <div style="width:100%; background:none;">
-                    <a href="{{ route('raiz') }}">
-                        <img src="{{ asset('app-images/mobile-logo.png') }}" alt="Proyecto bodas" />
-                    </a>
-                </div>
+		<h1 class="cursiva"> Gracias por honrarnos con tu presencia </h1>
             </div>
             <div class="col"></div>
         </div>
-        <a class="up-arrow" href="#inicio" data-toggle="tooltip" title="TO TOP">
+        <a class="up-arrow" href="#inicio" data-toggle="tooltip" title="Inicio">
             <span class="glyphicon glyphicon-chevron-up"></span>
         </a>
     </footer>
