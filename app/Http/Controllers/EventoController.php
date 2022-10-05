@@ -12,6 +12,7 @@ use App\Models\Invitado;
 use App\Exports\InvitadosExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Mail\invitacionMail;
+use DateTime;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Gate;
 
@@ -225,7 +226,9 @@ class EventoController extends Controller
                 $evento->load('lugar');
                 $evento->load('mesas');
                 $evento->load('fotos');
-                return view('vista_invitacion', compact('evento', 'invitado'));
+                $f_cer = new DateTime($evento->lugar->fecha_ceremonia);
+                $f_cer = $f_cer->format('d-m-Y H:i:s');
+                return view('vista_invitacion', compact('evento', 'invitado', 'f_cer'));
             }
         }
 

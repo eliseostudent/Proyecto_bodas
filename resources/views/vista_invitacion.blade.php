@@ -51,18 +51,19 @@
             color: #fff;
             text-shadow: 0 0 2px #000;
         }
-	
-	h1 {
 
-	font-weight: normal;
-	}
+        h1 {
+
+            font-weight: normal;
+        }
 
         .baskerville {
             font-family: 'Libre Baskerville', serif;
-	}
-	.body{
-	    font-family: 'Libre Baskerville',serif;
-	}
+        }
+
+        .body {
+            font-family: 'Libre Baskerville', serif;
+        }
 
         .KhatijaCalligraphy {
             font-family: "KhatijaCalligraphy", sans-serif;
@@ -151,7 +152,8 @@
         <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);font-size:5vw;">
             <div class="row">
                 <div class="col">
-                    <p class="KhatijaCalligraphy text-center blanco_bordes" style="font-size: 7vw">{{ $evento->nombre_1 }} & {{ $evento->nombre_2 }}</p>
+                    <p class="KhatijaCalligraphy text-center blanco_bordes" style="font-size: 7vw">
+                        {{ $evento->nombre_1 }} & {{ $evento->nombre_2 }}</p>
                 </div>
             </div>
             <div class="row">
@@ -205,14 +207,14 @@
         <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%); ">
             <div class="row">
                 <div class="col">
-                    <h1 class="text-center  cursiva" >
+                    <h1 class="text-center  cursiva">
                         Datos del invitado
                     </h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <h1 class=" text-center baskerville" >{{ $invitado->nombre_invitado }}</h1>
+                    <h1 class=" text-center baskerville">{{ $invitado->nombre_invitado }}</h1>
                 </div>
             </div>
             <div class="row">
@@ -249,19 +251,20 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <p class="form-control-static baskerville"><b>{{ $evento->lugar->nombre_ceremonia }}</b></p>
+                            <p class="form-control-static baskerville"><b>{{ $evento->lugar->nombre_ceremonia }}</b>
+                            </p>
                         </div>
                         <div class="form-group">
-                            <p class="form-control-static baskerville"> <b>Cuando:</b> {{ $evento->lugar->fecha_ceremonia }}</p>
+                            <p class="form-control-static baskerville"> <b>Cuando:</b> {{ $f_cer }}</p>
                         </div>
                         <div class="form-group">
                             <p class="form-control-static baskerville"> <b>Direccion:</b>
                                 {{ $evento->lugar->direccion_ceremonia }}</p>
                         </div>
-                        <div class="form-group" style="text-align:center;" >
+                        <div class="form-group" style="text-align:center;">
                             <a style="width:50%;"
                                 href="{{ 'https://www.google.com.mx/maps/search/' . $evento->lugar->direccion_ceremonia }}"><button
-                                   style="width:100%;" class="btn btn-secondary btn-lg baskerville">Mapa</button></a>
+                                    style="width:100%;" class="btn btn-secondary btn-lg baskerville">Mapa</button></a>
                         </div>
                     </div>
                 </div>
@@ -285,10 +288,12 @@
                             <p class="form-control-static baskerville"><b>{{ $evento->lugar->nombre_salon }}</b></p>
                         </div>
                         <div class="form-group">
-                            <p class="form-control-static baskerville"> <b>Cuando:</b> {{ $evento->lugar->fecha_ceremonia }}</p>
+                            <p class="form-control-static baskerville"> <b>Cuando:</b>
+                                {{ $evento->lugar->fecha_ceremonia }}</p>
                         </div>
                         <div class="form-group">
-                            <p class="form-control-static baskerville"> <b>Direccion:</b> {{ $evento->lugar->direccion_salon }}
+                            <p class="form-control-static baskerville"> <b>Direccion:</b>
+                                {{ $evento->lugar->direccion_salon }}
                             </p>
                         </div>
                         <div class="form-group" style="text-align:center;">
@@ -323,7 +328,7 @@
         @if ($evento->codigo_de_vestimenta == '0')
             <h3 class=" baskerville">White tie</h3>
         @elseif ($evento->codigo_de_vestimenta == '1')
-            <h3 class=" baskerville" >Black Tie</h3>
+            <h3 class=" baskerville">Black Tie</h3>
         @elseif ($evento->codigo_de_vestimenta == '2')
             <h3 class=" baskerville">Formal</h3>
         @else
@@ -418,13 +423,16 @@
             <div class="collapse w-100" id="datosbancarios">
                 <div class="card card-body">
                     <div class="row">
-                        <p class="baskerville" style="padding-left:10%"><b>Titular:</b> {{ $evento->banco->titular_banco }}</p>
+                        <p class="baskerville" style="padding-left:10%"><b>Titular:</b>
+                            {{ $evento->banco->titular_banco }}</p>
                     </div>
                     <div class="row">
-                        <p class="baskerville"  style="padding-left:10%"><b>Cuenta banco:</b> {{ $evento->banco->cuenta_banco }}</p>
+                        <p class="baskerville" style="padding-left:10%"><b>Cuenta banco:</b>
+                            {{ $evento->banco->cuenta_banco }}</p>
                     </div>
                     <div class="row">
-                        <p class="baskerville" style="padding-left:10%"><b>Cuenta CLABE:</b> {{ $evento->banco->clabe_banco }}</p>
+                        <p class="baskerville" style="padding-left:10%"><b>Cuenta CLABE:</b>
+                            {{ $evento->banco->clabe_banco }}</p>
                     </div>
                 </div>
             </div>
@@ -489,7 +497,7 @@
         <div class="row">
             <div class="col"></div>
             <div class="col-sm-5">
-		<h1 class="cursiva"> Gracias por honrarnos con tu presencia </h1>
+                <h1 class="cursiva"> Gracias por honrarnos con tu presencia </h1>
             </div>
             <div class="col"></div>
         </div>
