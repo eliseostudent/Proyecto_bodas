@@ -114,6 +114,115 @@
             background-color: #fff;
             margin-right: 5px;
         }
+
+        #Envelope {
+            margin-top: -150px;
+            margin-left: -100px;
+        }
+
+        #backFlap {
+            height: 100px;
+            width: 265px;
+            position: absolute;
+            background-color: #cc3770;
+            margin-left: 264px;
+            margin-top: 270px;
+        }
+
+        #frontFlap1 {
+            width: 0;
+            height: 0;
+            border-bottom: 155px solid #ea4c89;
+            border-right: 265px solid transparent;
+            margin-left: 264px;
+            margin-top: 270px;
+            position: absolute;
+        }
+
+        #frontFlap2 {
+            width: 0;
+            height: 0;
+            border-bottom: 156px solid #dc447f;
+            border-left: 265px solid transparent;
+            position: absolute;
+            margin-top: 269px;
+            margin-left: 265px;
+        }
+
+        #OpenFlap {
+            width: 0;
+            height: 0;
+            border-left: 134px solid transparent;
+            border-right: 134px solid transparent;
+            border-top: 80px solid #cc3770;
+            margin-top: 270px;
+            margin-left: 263px;
+            position: absolute;
+        }
+
+        #Paper {
+            position: absolute;
+            height: 150px;
+            width: 223px;
+            background-color: #f2f2f2;
+            margin-left: 280px;
+            margin-top: 270px;
+        }
+
+        #Words {
+            position: absolute;
+            height: 10px;
+            width: 75px;
+            background-color: #d3d3d3;
+            margin-left: 15px;
+            margin-top: 30px;
+        }
+
+        #Words:after {
+            content: "";
+            position: absolute;
+            height: 10px;
+            width: 30px;
+            background-color: #d3d3d3;
+            margin-top: 20px;
+        }
+
+        #circle {
+            height: 0px;
+            width: 0px;
+            background-color: #2ecc71;
+            margin-left: 170px;
+            margin-top: -40px;
+            /*border-radius*/
+            -webkit-border-radius: 75px;
+            -moz-border-radius: 75px;
+            border-radius: 75px;
+            /*box-shadow*/
+            -webkit-box-shadow: -3px 7px 0px rgba(61, 62, 61, 0.23);
+            -moz-box-shadow: -3px 7px 0px rgba(61, 62, 61, 0.23);
+            box-shadow: -3px 7px 0px rgba(61, 62, 61, 0.23);
+        }
+
+        #OpenFlapBack {
+            width: 0;
+            height: 0;
+            border-left: 133px solid transparent;
+            border-right: 133px solid transparent;
+            border-bottom: 105px solid #cc3770;
+            position: absolute;
+            margin-top: 165px;
+            margin-left: 264px;
+            opacity: 0.0;
+        }
+
+        #Shadow {
+            background-color: #3a3d3c;
+            height: 15px;
+            width: 265px;
+            position: absolute;
+            margin-left: 265px;
+            margin-top: 420px;
+        }
     </style>
 </head>
 
@@ -230,6 +339,24 @@
                         <h6 class=" text-center baskerville">No niños</h6>
                     @endif
                 </div>
+            </div>
+        </div>
+    </div>
+    <div id="pruebas" class="container-fluid" style="padding:0px; position: relative;">
+        <img src="{{ asset('app-images/fondo_boleto.jpg') }}" alt="fondo boleto"style="width: 100%; height:400px">
+        <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%); ">
+            <div id="Envelope">
+                <div id="Shadow"></div>
+                <div id="OpenFlapBack"></div>
+                <div id="backFlap"></div>
+                <div id="Paper">
+                    <div id="Words"></div>
+                    <div id="circle"></div>
+                </div>
+                <div id="frontFlap2"></div>
+                <div id="frontFlap1"></div>
+                <div id="OpenFlap"></div>
+
             </div>
         </div>
     </div>
@@ -505,6 +632,46 @@
             <span class="glyphicon glyphicon-chevron-up"></span>
         </a>
     </footer>
+    <script>
+        $("#Envelope").mouseover(function() {
+            open();
+        });
+        $("#Envelope").mouseleave(function() {
+            close();
+        });
+
+        function open() {
+            $("#OpenFlap").animate({
+                "opacity": "0"
+            }, "slow");
+            $("#circle").animate({
+                "height": "70px",
+                "width": "70px"
+            }, "slow");
+            $("#OpenFlapBack").animate({
+                "opacity": "1"
+            }, 1);
+            $("#Paper").delay(140).animate({
+                "margin-top": "197px"
+            }, "slow");
+        }
+
+        function close() {
+            $("#Paper").animate({
+                "margin-top": "270px"
+            }, "slow");
+            $("#circle").animate({
+                "height": "-70px",
+                "width": "-70px"
+            }, "slow");
+            $("#OpenFlapBack").delay(600).animate({
+                "opacity": "0"
+            }, "slow");
+            $("#OpenFlap").delay(300).animate({
+                "opacity": "1"
+            }, "slow");
+        }
+    </script>
     <script formato="{{ $evento->fecha_formato }}">
         document.currentScript = document.currentScript || (function() {
             var scripts = document.getElementsByTagName('script');
