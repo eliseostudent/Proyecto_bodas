@@ -120,8 +120,10 @@
             margin-top: -150px;
             margin-left: -100px;
             */
-            width: 100%;
-            height: 100%;
+            width: 80%;
+            height: 80%;
+            margin: auto;
+            margin-top: 10%;
         }
 
         #backFlap {
@@ -129,8 +131,10 @@
             width: 265px;
             position: absolute;
             background-color: #cc3770;
+            /*
             margin-left: 264px;
             margin-top: 270px;
+            */
         }
 
         #frontFlap1 {
@@ -138,8 +142,10 @@
             height: 0;
             border-bottom: 155px solid #ea4c89;
             border-right: 265px solid transparent;
+            /*
             margin-left: 264px;
             margin-top: 270px;
+            */
             position: absolute;
         }
 
@@ -149,8 +155,10 @@
             border-bottom: 156px solid #dc447f;
             border-left: 265px solid transparent;
             position: absolute;
+            /*
             margin-top: 269px;
             margin-left: 265px;
+            */
         }
 
         #OpenFlap {
@@ -159,8 +167,10 @@
             border-left: 134px solid transparent;
             border-right: 134px solid transparent;
             border-top: 80px solid #cc3770;
+            /*
             margin-top: 270px;
             margin-left: 263px;
+            */
             position: absolute;
         }
 
@@ -169,8 +179,10 @@
             height: 150px;
             width: 223px;
             background-color: #f2f2f2;
+            /*
             margin-left: 280px;
             margin-top: 270px;
+            */
         }
 
         #Words {
@@ -178,8 +190,10 @@
             height: 10px;
             width: 75px;
             background-color: #d3d3d3;
+            /*
             margin-left: 15px;
             margin-top: 30px;
+            */
         }
 
         #Words:after {
@@ -188,15 +202,17 @@
             height: 10px;
             width: 30px;
             background-color: #d3d3d3;
-            margin-top: 20px;
+            margin-top: -20px;
         }
 
         #circle {
             height: 0px;
             width: 0px;
             background-color: #2ecc71;
+            /*
             margin-left: 170px;
             margin-top: -40px;
+            */
             /*border-radius*/
             -webkit-border-radius: 75px;
             -moz-border-radius: 75px;
@@ -214,8 +230,10 @@
             border-right: 133px solid transparent;
             border-bottom: 105px solid #cc3770;
             position: absolute;
+            /*
             margin-top: 165px;
             margin-left: 264px;
+            */
             opacity: 0.0;
         }
 
@@ -224,8 +242,10 @@
             height: 15px;
             width: 265px;
             position: absolute;
+            /*
             margin-left: 265px;
             margin-top: 420px;
+            */
         }
     </style>
 </head>
@@ -348,7 +368,7 @@
     </div>
     <div id="pruebas" class="container-fluid" style="padding:0px; position: relative;">
         <img src="{{ asset('app-images/fondo_boleto.jpg') }}" alt="fondo boleto"style="width: 100%; height:400px">
-        <div style="position: absolute;top: 0%; left: 0%; width:100%; height:100%; transform: translate(0%, 0%); ">
+        <div style="position: absolute;top: 0%; left: 0%; width:100%; height:100%;  ">
             <div id="Envelope">
                 <div id="Shadow"></div>
                 <div id="OpenFlapBack"></div>
