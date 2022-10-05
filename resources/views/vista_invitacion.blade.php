@@ -116,8 +116,12 @@
         }
 
         #Envelope {
+            /*
             margin-top: -150px;
             margin-left: -100px;
+            */
+            width: 100%;
+            height: 100%;
         }
 
         #backFlap {
@@ -344,7 +348,7 @@
     </div>
     <div id="pruebas" class="container-fluid" style="padding:0px; position: relative;">
         <img src="{{ asset('app-images/fondo_boleto.jpg') }}" alt="fondo boleto"style="width: 100%; height:400px">
-        <div style="position: absolute;top: 0%; left: 0%; width:100%; heigh:100%; transform: translate(0%, 0%); ">
+        <div style="position: absolute;top: 0%; left: 0%; width:100%; height:100%; transform: translate(0%, 0%); ">
             <div id="Envelope">
                 <div id="Shadow"></div>
                 <div id="OpenFlapBack"></div>
