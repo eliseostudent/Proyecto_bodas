@@ -344,7 +344,7 @@
     </div>
     <div id="pruebas" class="container-fluid" style="padding:0px; position: relative;">
         <img src="{{ asset('app-images/fondo_boleto.jpg') }}" alt="fondo boleto"style="width: 100%; height:400px">
-        <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%); ">
+        <div style="text-align:center; ">
             <div id="Envelope">
                 <div id="Shadow"></div>
                 <div id="OpenFlapBack"></div>
