@@ -289,7 +289,7 @@
                         </div>
                         <div class="form-group">
                             <p class="form-control-static baskerville"> <b>Cuando:</b>
-                                {{ $evento->lugar->fecha_ceremonia }}</p>
+                                {{ $f_sal }}</p>
                         </div>
                         <div class="form-group">
                             <p class="form-control-static baskerville"> <b>Direccion:</b>

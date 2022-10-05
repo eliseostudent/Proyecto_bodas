@@ -228,7 +228,9 @@ class EventoController extends Controller
                 $evento->load('fotos');
                 $f_cer = new DateTime($evento->lugar->fecha_ceremonia);
                 $f_cer = $f_cer->format('d-m-Y H:i:s');
-                return view('vista_invitacion', compact('evento', 'invitado', 'f_cer'));
+                $f_sal = new DateTime($evento->lugar->fecha_salon);
+                $f_sal = $f_sal->format('d-m-Y H:i:s');
+                return view('vista_invitacion', compact('evento', 'invitado', 'f_cer', 'f_sal'));
             }
         }
 
