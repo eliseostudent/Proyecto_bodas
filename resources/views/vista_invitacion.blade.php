@@ -377,7 +377,6 @@
                 <div id="backFlap"></div>
                 <div id="Paper">
                     <div id="Words"></div>
-                    <div id="circle"></div>
                 </div>
                 <div id="frontFlap2"></div>
                 <div id="frontFlap1"></div>
@@ -682,6 +681,11 @@
         of1.css("border-left", w + "px solid transparent");
         of1.css("border-right", w + "px solid transparent");
         of1.css("border-top", (w * 0.598 | 0) + "px solid #cc3770");
+
+        var p = $("#Paper");
+        var wp = (wi * 0.95 | 0)
+        back.css("width", wp + "px");
+        back.css("height", (wp * 0.67 | 0) + "px");
     </script>
     <script>
         $("#Envelope").mouseover(function() {
@@ -695,10 +699,6 @@
             $("#OpenFlap").animate({
                 "opacity": "0"
             }, "slow");
-            $("#circle").animate({
-                "height": "70px",
-                "width": "70px"
-            }, "slow");
             $("#OpenFlapBack").animate({
                 "opacity": "1"
             }, 1);
@@ -710,10 +710,6 @@
         function close() {
             $("#Paper").animate({
                 "margin-top": "270px"
-            }, "slow");
-            $("#circle").animate({
-                "height": "-70px",
-                "width": "-70px"
             }, "slow");
             $("#OpenFlapBack").delay(600).animate({
                 "opacity": "0"
