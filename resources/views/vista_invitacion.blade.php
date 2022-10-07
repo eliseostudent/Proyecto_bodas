@@ -662,6 +662,7 @@
         var wi = $("#Shadow").width();
         var w = wi / 2 | 0; // calculate & trim decimals
         var w2 = w * 0.79 | 0;
+        console.log("w2 1", w2);
         el.css("border-left", w + "px solid transparent");
         el.css("border-right", w + "px solid transparent");
         el.css("border-bottom", w2 + "px solid #cc3770");
@@ -671,6 +672,7 @@
         var back = $("#backFlap");
         back.css("width", wi + "px");
         back.css("height", w2 + "px");
+        console.log("w2 ", w2);
         var ff2 = $("#frontFlap2");
         ff2.css("border-left", wi + "px solid transparent");
         ff2.css("border-bottom", (wi * 0.588 | 0) + "px solid #dc447f");
