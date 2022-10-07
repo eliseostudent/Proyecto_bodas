@@ -131,7 +131,7 @@
             height: 100px;
             width: 265px;
             position: absolute;
-            background-color: #cc3770;
+            background-color: #7FB3D5;
             /*
             margin-left: 264px;
             margin-top: 270px;
@@ -141,7 +141,7 @@
         #frontFlap1 {
             width: 0;
             height: 0;
-            border-bottom: 155px solid #ea4c89;
+            border-bottom: 155px solid #A9CCE3;
             border-right: 265px solid transparent;
             /*
             margin-left: 264px;
@@ -153,7 +153,7 @@
         #frontFlap2 {
             width: 0;
             height: 0;
-            border-bottom: 1px solid #dc447f;
+            border-bottom: 1px solid #D4E6F1;
             border-left: 1px solid transparent;
             position: absolute;
             /*
@@ -167,7 +167,7 @@
             height: 0;
             border-left: 134px solid transparent;
             border-right: 134px solid transparent;
-            border-top: 80px solid #cc3770;
+            border-top: 80px solid #7FB3D5;
             /*
             margin-top: 270px;
             margin-left: 263px;
@@ -204,7 +204,7 @@
             height: 0;
             border-left: 1px solid transparent;
             border-right: 1px solid transparent;
-            border-bottom: 1px solid #cc3770;
+            border-bottom: 1px solid #7FB3D5;
             position: absolute;
             /*
             margin-top: 165px;
@@ -674,7 +674,7 @@
 
         el.css("border-left", w + "px solid transparent");
         el.css("border-right", w + "px solid transparent");
-        el.css("border-bottom", w2 + "px solid #cc3770");
+        el.css("border-bottom", w2 + "px solid #7FB3D5");
         el.css("width", "0 px");
         var t = w2 * .685 | 0;
         el.css("top", "-" + t + "px");
@@ -683,15 +683,15 @@
         back.css("height", w2 + "px");
         var ff2 = $("#frontFlap2");
         ff2.css("border-left", wi + "px solid transparent");
-        ff2.css("border-bottom", (wi * 0.588 | 0) + "px solid #dc447f");
+        ff2.css("border-bottom", (wi * 0.588 | 0) + "px solid #D4E6F1");
         var ff1 = $("#frontFlap1");
         ff1.css("border-right", wi + "px solid transparent");
-        ff1.css("border-bottom", (wi * 0.588 | 0) + "px solid #ea4c89");
+        ff1.css("border-bottom", (wi * 0.588 | 0) + "px solid #A9CCE3 ");
         var of1 = $("#OpenFlap");
         of1.css("border-left", (w * 1.02 | 0) + "px solid transparent");
         of1.css(
             "border-right", w + "px solid transparent");
-        of1.css("border-top", (w * 0.65 | 0) + "px solid #cc3770");
+        of1.css("border-top", (w * 0.65 | 0) + "px solid #7FB3D5");
 
         var p = $("#Paper");
         var wp = (wi * 0.97 | 0)
