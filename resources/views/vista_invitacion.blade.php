@@ -720,6 +720,9 @@
 
         function close() {
             $("#Paper").animate({
+                "z-index": "0"
+            }, 1);
+            $("#Paper").animate({
                 "margin-top": "0px"
             }, "slow");
             $("#OpenFlapBack").delay(600).animate({
