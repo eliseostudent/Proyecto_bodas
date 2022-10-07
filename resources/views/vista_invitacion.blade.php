@@ -691,7 +691,7 @@
         p.css("height", (wp * 0.60 | 0) + "px");
         p.css("padding-left", pp + "px");
         var img_f = $("#img_fondo_bolelto");
-        img_f.css("height", (wi * 1.2 | 0) + "px");
+        img_f.css("height", wi + "px");
     </script>
     <script>
         $("#Envelope").mouseover(function() {
