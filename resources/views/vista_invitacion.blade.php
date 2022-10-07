@@ -153,8 +153,8 @@
         #frontFlap2 {
             width: 0;
             height: 0;
-            border-bottom: 156px solid #dc447f;
-            border-left: 265px solid transparent;
+            border-bottom: 1px solid #dc447f;
+            border-left: 1px solid transparent;
             position: absolute;
             /*
             margin-top: 269px;
