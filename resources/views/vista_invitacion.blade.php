@@ -661,9 +661,10 @@
     <script>
         var el = document.getElementById("Shadow").style;
         var wi = $("#Shadow").width();
-        console.log("This is wi", wi)
         var w = wi * .44 | 0; // calculate & trim decimals
         var w2 = wi * .35 | 0;
+        console.log("This is w", w)
+        console.log("This is w2", w2)
         el.css("border-left", "1px " + w + "px");
         el.css("border-right", "1px " + w + "px");
         el.css("border-bottom", "1px " + w2 + "px");
