@@ -352,7 +352,8 @@
                 <div id="backFlap"></div>
                 <div id="Paper">
                     <div id="Words"></div>
-                    <div id="datosDeInvitacion" class="container-fluid" style="padding:0px; position: relative;">
+                    <div id="datosDeInvitacion" class="container-fluid"
+                        style="padding:0px; position: relative;height:100%">
                         <img src="{{ asset('app-images/fondo_boleto.jpg') }}"
                             alt="fondo boleto"style="width: 100%; height:100%">
                         <div style="position: absolute;top: 0%; left: 0%; width:100%; height:100%  ">
