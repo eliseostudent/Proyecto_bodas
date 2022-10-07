@@ -659,7 +659,7 @@
         </a>
     </footer>
     <script>
-        var el = document.getElementById("Shadow").style;
+        var el = $("#Shadow");
         var wi = $("#Shadow").width();
         var w = wi * .44 | 0; // calculate & trim decimals
         var w2 = wi * .35 | 0;
