@@ -124,6 +124,7 @@
             height: 80%;
             margin: auto;
             margin-top: 10%;
+            margin-bottom: 10%;
         }
 
         #backFlap {
@@ -223,12 +224,26 @@
             box-shadow: -3px 7px 0px rgba(61, 62, 61, 0.23);
         }
 
+        #BorderOpenFlapBack {
+            width: 0;
+            height: 0;
+            padding-left: 44% solid transparent;
+            padding-right: 44% solid transparent;
+            padding-bottom: 35% solid #cc3770;
+            position: absolute;
+            /*
+            margin-top: 165px;
+            margin-left: 264px;
+            */
+            opacity: 0.0;
+        }
+
         #OpenFlapBack {
             width: 0;
             height: 0;
-            border-left: 133px solid transparent;
-            border-right: 133px solid transparent;
-            border-bottom: 105px solid #cc3770;
+            border-left: 1px solid transparent;
+            border-right: 1px solid transparent;
+            border-bottom: 1px solid #cc3770;
             position: absolute;
             /*
             margin-top: 165px;
@@ -239,8 +254,8 @@
 
         #Shadow {
             background-color: #3a3d3c;
-            height: 15px;
-            width: 265px;
+            height: 5%;
+            width: 80%;
             position: absolute;
             /*
             margin-left: 265px;
@@ -656,6 +671,15 @@
             <span class="glyphicon glyphicon-chevron-up"></span>
         </a>
     </footer>
+    <script>
+        var el = $(".OpenFlapBack");
+        var wi = el.width()
+        var w = wi * .44 | 0; // calculate & trim decimals
+        var w2 = wi * .35 | 0;
+        el.css("border-left", "1px " + w + "px");
+        el.css("border-right", "1px " + w + "px");
+        el.css("border-bottom", "1px " + w2 + "px");
+    </script>
     <script>
         $("#Envelope").mouseover(function() {
             open();
