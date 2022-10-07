@@ -688,9 +688,9 @@
         ff1.css("border-right", wi + "px solid transparent");
         ff1.css("border-bottom", (wi * 0.588 | 0) + "px solid #ea4c89");
         var of1 = $("#OpenFlap");
-        of1.css("border-left", w + "px solid transparent");
+        of1.css("border-left", (w * 0.05 | 0) + "px solid transparent");
         of1.css("border-right", w + "px solid transparent");
-        of1.css("border-top", (w * 0.6 | 0) + "px solid #cc3770");
+        of1.css("border-top", (w * 0.65 | 0) + "px solid #cc3770");
 
         var p = $("#Paper");
         var wp = (wi * 0.97 | 0)
