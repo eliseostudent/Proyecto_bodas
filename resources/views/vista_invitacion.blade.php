@@ -686,8 +686,8 @@
 
         var p = $("#Paper");
         var wp = (wi * 0.95 | 0)
-        back.css("width", wp + "px");
-        back.css("height", (wp * 0.67 | 0) + "px");
+        p.css("width", wp + "px");
+        p.css("height", (wp * 0.67 | 0) + "px");
     </script>
     <script>
         $("#Envelope").mouseover(function() {
