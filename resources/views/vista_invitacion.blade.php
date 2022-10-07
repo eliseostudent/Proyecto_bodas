@@ -686,8 +686,10 @@
 
         var p = $("#Paper");
         var wp = (wi * 0.95 | 0)
+        var pp = (wi * 0.05 | 0)
         p.css("width", wp + "px");
         p.css("height", (wp * 0.60 | 0) + "px");
+        p.css("padding-left", pp + "px");
     </script>
     <script>
         $("#Envelope").mouseover(function() {
