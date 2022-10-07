@@ -662,7 +662,7 @@
         var wi = $("#Shadow").width();
         var w = wi / 2 | 0; // calculate & trim decimals
         var w2 = w * 0.79 | 0;
-        console.log("w2 1", w2);
+
         el.css("border-left", w + "px solid transparent");
         el.css("border-right", w + "px solid transparent");
         el.css("border-bottom", w2 + "px solid #cc3770");
@@ -672,7 +672,6 @@
         var back = $("#backFlap");
         back.css("width", wi + "px");
         back.css("height", w2 + "px");
-        console.log("w2 ", w2);
         var ff2 = $("#frontFlap2");
         ff2.css("border-left", wi + "px solid transparent");
         ff2.css("border-bottom", (wi * 0.588 | 0) + "px solid #dc447f");
@@ -685,8 +684,8 @@
         of1.css("border-top", (w * 0.598 | 0) + "px solid #cc3770");
 
         var p = $("#Paper");
-        var wp = (wi * 0.95 | 0)
-        var pp = (wi * 0.05 | 0)
+        var wp = (wi * 0.97 | 0)
+        var pp = (wi * 0.03 | 0)
         p.css("width", wp + "px");
         p.css("height", (wp * 0.60 | 0) + "px");
         p.css("padding-left", pp + "px");
@@ -700,6 +699,8 @@
         });
 
         function open() {
+            var h = $("#Paper").height();
+            console.log("height paper", h);
             $("#OpenFlap").animate({
                 "opacity": "0"
             }, "slow");
@@ -707,13 +708,13 @@
                 "opacity": "1"
             }, 1);
             $("#Paper").delay(140).animate({
-                "margin-top": "197px"
+                "margin-top": "-" + h + "px"
             }, "slow");
         }
 
         function close() {
             $("#Paper").animate({
-                "margin-top": "270px"
+                "margin-top": "0px"
             }, "slow");
             $("#OpenFlapBack").delay(600).animate({
                 "opacity": "0"
