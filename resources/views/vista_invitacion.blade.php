@@ -660,7 +660,7 @@
     </footer>
     <script>
         var el = $("#shadow");
-        var wi = el.width()
+        var wi = el.offsetWidth()
         var w = wi * .44 | 0; // calculate & trim decimals
         var w2 = wi * .35 | 0;
         el.css("border-left", "1px " + w + "px");
