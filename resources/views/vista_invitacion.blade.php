@@ -224,22 +224,9 @@
             box-shadow: -3px 7px 0px rgba(61, 62, 61, 0.23);
         }
 
-        #BorderOpenFlapBack {
-            width: 0;
-            height: 0;
-            padding-left: 44% solid transparent;
-            padding-right: 44% solid transparent;
-            padding-bottom: 35% solid #cc3770;
-            position: absolute;
-            /*
-            margin-top: 165px;
-            margin-left: 264px;
-            */
-            opacity: 0.0;
-        }
 
         #OpenFlapBack {
-            width: 0;
+            width: 100%;
             height: 0;
             border-left: 1px solid transparent;
             border-right: 1px solid transparent;
@@ -679,6 +666,7 @@
         el.css("border-left", "1px " + w + "px");
         el.css("border-right", "1px " + w + "px");
         el.css("border-bottom", "1px " + w2 + "px");
+        el.css("width", "0px ");
     </script>
     <script>
         $("#Envelope").mouseover(function() {
