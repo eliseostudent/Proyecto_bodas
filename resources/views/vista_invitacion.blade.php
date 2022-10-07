@@ -197,33 +197,6 @@
             */
         }
 
-        #Words:after {
-            content: "";
-            position: absolute;
-            height: 10px;
-            width: 30px;
-            background-color: #d3d3d3;
-            margin-top: -20px;
-        }
-
-        #circle {
-            height: 0px;
-            width: 0px;
-            background-color: #2ecc71;
-            /*
-            margin-left: 170px;
-            margin-top: -40px;
-            */
-            /*border-radius*/
-            -webkit-border-radius: 75px;
-            -moz-border-radius: 75px;
-            border-radius: 75px;
-            /*box-shadow*/
-            -webkit-box-shadow: -3px 7px 0px rgba(61, 62, 61, 0.23);
-            -moz-box-shadow: -3px 7px 0px rgba(61, 62, 61, 0.23);
-            box-shadow: -3px 7px 0px rgba(61, 62, 61, 0.23);
-        }
-
 
         #OpenFlapBack {
             width: 0;
@@ -378,6 +351,38 @@
                 <div id="backFlap"></div>
                 <div id="Paper">
                     <div id="Words"></div>
+                    <div id="datosDeInvitacion" class="container-fluid" style="padding:0px; position: relative;">
+                        <img src="{{ asset('app-images/fondo_boleto.jpg') }}"
+                            alt="fondo boleto"style="width: 100%; height:400px">
+                        <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%); ">
+                            <div class="row">
+                                <div class="col">
+                                    <h1 class="text-center  cursiva">
+                                        Datos del invitado
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h1 class=" text-center baskerville">{{ $invitado->nombre_invitado }}</h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h1 class="text-center  cursiva">
+                                        {{ $invitado->numero_boletos }} Boletos
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    @if (!$evento->no_niños)
+                                        <h6 class=" text-center baskerville">No niños</h6>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="frontFlap2"></div>
                 <div id="frontFlap1"></div>
