@@ -710,6 +710,9 @@
             $("#Paper").delay(140).animate({
                 "margin-top": "-" + h + "px"
             }, "slow");
+            $("#Paper").delay(140).animate({
+                "margin-top": "0px"
+            }, "slow");
         }
 
         function close() {
