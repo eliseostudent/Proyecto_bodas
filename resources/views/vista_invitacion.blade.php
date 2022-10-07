@@ -226,7 +226,7 @@
 
 
         #OpenFlapBack {
-            width: 100%;
+            width: 0;
             height: 0;
             border-left: 1px solid transparent;
             border-right: 1px solid transparent;
