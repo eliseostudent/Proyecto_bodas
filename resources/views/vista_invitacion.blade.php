@@ -669,6 +669,9 @@
         el.css("width", "0 px");
         var t = w2 * .685 | 0;
         el.css("top", "-" + t + "px");
+        var back = $("#backFlap");
+        back.css("width", wi + "px");
+        back.css("height", w2 + "px");
     </script>
     <script>
         $("#Envelope").mouseover(function() {
