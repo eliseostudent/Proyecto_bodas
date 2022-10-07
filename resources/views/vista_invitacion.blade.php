@@ -139,7 +139,7 @@
         }
 
         #frontFlap1 {
-            width: 0;
+            width: 100%;
             height: 0;
             border-bottom: 155px solid #ea4c89;
             border-right: 265px solid transparent;
