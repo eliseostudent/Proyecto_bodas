@@ -663,9 +663,9 @@
         var wi = el.width()
         var w = wi * .44 | 0; // calculate & trim decimals
         var w2 = wi * .35 | 0;
-        el.css("border-left", "1px " + w + "px");
-        el.css("border-right", "1px " + w + "px");
-        el.css("border-bottom", "1px " + w2 + "px");
+        el.css("border-left", w + "px");
+        el.css("border-right", w + "px");
+        el.css("border-bottom", w2 + "px");
         el.css("width", "5px ");
     </script>
     <script>
