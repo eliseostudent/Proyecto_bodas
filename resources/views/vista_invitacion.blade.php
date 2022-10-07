@@ -690,7 +690,7 @@
         var of1 = $("#OpenFlap");
         of1.css("border-left", w + "px solid transparent");
         of1.css("border-right", w + "px solid transparent");
-        of1.css("border-top", (w * 0.598 | 0) + "px solid #cc3770");
+        of1.css("border-top", (w * 0.6 | 0) + "px solid #cc3770");
 
         var p = $("#Paper");
         var wp = (wi * 0.97 | 0)
