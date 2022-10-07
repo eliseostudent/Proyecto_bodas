@@ -687,7 +687,7 @@
         var ff1 = $("#frontFlap1");
         ff1.css("border-right", wi + "px solid transparent");
         ff1.css("border-bottom", (wi * 0.588 | 0) + "px solid #ea4c89");
-        ff1.css("border-image", "url('/app-images/karft-paper-texture.jpg')");
+        ff1.css("border-image", "url('/app-images/kraft-paper-texture.jpg')");
         var of1 = $("#OpenFlap");
         of1.css("border-left", (w * 1.02 | 0) + "px solid transparent");
         of1.css(
