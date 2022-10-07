@@ -661,10 +661,12 @@
     <script>
         var el = $("#shadow");
         var wi = el.clientWidth()
+        let style = getComputedStyle(el);
+        let w3 = parseInt(style.Width) || 0;
         var w = wi * .44 | 0; // calculate & trim decimals
         var w2 = wi * .35 | 0;
         el.css("border-left", "1px " + w + "px");
-        el.css("border-right", "1px " + w + "px");
+        el.css("border-right", "1px " + w3 + "px");
         el.css("border-bottom", "1px " + w2 + "px");
         el.css("width", wi + "px");
     </script>
