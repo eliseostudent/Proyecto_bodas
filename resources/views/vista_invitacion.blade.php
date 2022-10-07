@@ -187,11 +187,12 @@
         }
 
         #Words {
+            /*
             position: absolute;
             height: 10px;
             width: 75px;
             background-color: #d3d3d3;
-            /*
+            
             margin-left: 15px;
             margin-top: 30px;
             */
