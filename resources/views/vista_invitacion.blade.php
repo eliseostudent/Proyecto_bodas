@@ -667,7 +667,7 @@
         el.css("border-right", "1px " + w + "px");
         el.css("border-bottom", "1px " + w2 + "px");
         el.css("width", wi + "px");
-        console.log(wi)
+        console.log("This is wi", wi)
         console.log(w)
     </script>
     <script>
