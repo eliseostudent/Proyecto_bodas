@@ -721,13 +721,13 @@
             var h = $("#Paper").height();
             $("#Paper").delay(140).animate({
                 "margin-top": "-" + h + "px"
-            }, "slow");
+            }, "fast");
             $("#Paper").animate({
                 "z-index": "0"
             }, 1);
             $("#Paper").animate({
                 "margin-top": "0px"
-            }, "slow");
+            }, "fast");
             $("#OpenFlapBack").delay(600).animate({
                 "opacity": "0"
             }, "slow");
