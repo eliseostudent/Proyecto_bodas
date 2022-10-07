@@ -666,7 +666,7 @@
         el.css("border-left", "1px " + w + "px");
         el.css("border-right", "1px " + w + "px");
         el.css("border-bottom", "1px " + w2 + "px");
-        el.css("width", "0px ");
+        el.css("width", "5px ");
     </script>
     <script>
         $("#Envelope").mouseover(function() {
