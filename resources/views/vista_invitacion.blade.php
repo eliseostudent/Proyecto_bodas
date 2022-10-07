@@ -353,7 +353,7 @@
                     <div id="Words"></div>
                     <div id="datosDeInvitacion" class="container-fluid" style="padding:0px; position: relative;">
                         <img src="{{ asset('app-images/fondo_boleto.jpg') }}"
-                            alt="fondo boleto"style="width: 100%; height:400px">
+                            alt="fondo boleto"style="width: 100%; height:100%">
                         <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%); ">
                             <div class="row">
                                 <div class="col">
