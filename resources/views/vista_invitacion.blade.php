@@ -700,7 +700,6 @@
 
         function open() {
             var h = $("#Paper").height();
-            console.log("height paper", h);
             $("#OpenFlap").animate({
                 "opacity": "0"
             }, "slow");
@@ -719,6 +718,10 @@
         }
 
         function close() {
+            var h = $("#Paper").height();
+            $("#Paper").delay(140).animate({
+                "margin-top": "-" + h + "px"
+            }, "slow");
             $("#Paper").animate({
                 "z-index": "0"
             }, 1);
