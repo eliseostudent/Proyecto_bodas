@@ -338,7 +338,8 @@
 
     </div>
     <div id="datosDeInvitacion" class="container-fluid" style="padding:0px; position: relative;">
-        <img src="{{ asset('app-images/fondo_boleto.jpg') }}" alt="fondo boleto"style="width: 100%; height:400px">
+        <img id="img_fondo_bolelto" src="{{ asset('app-images/fondo_boleto.jpg') }}"
+            alt="fondo boleto"style="width: 100%; height:400px">
         <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%); ">
             <div class="row">
                 <div class="col">
@@ -689,6 +690,9 @@
         p.css("width", wp + "px");
         p.css("height", (wp * 0.60 | 0) + "px");
         p.css("padding-left", pp + "px");
+        var img_f = $("#img_fondo_bolelto");
+        var h = $("#frontFlap1").height();
+        img_f.css("width", (h * 1.2 | 0) + "px");
     </script>
     <script>
         $("#Envelope").mouseover(function() {
