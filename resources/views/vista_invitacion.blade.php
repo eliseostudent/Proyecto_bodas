@@ -661,10 +661,11 @@
     <script>
         var el = $("#OpenFlapBack");
         var wi = $("#Shadow").width();
-        var w = wi * .44 | 0; // calculate & trim decimals
-        var w2 = wi * .35 | 0;
-        console.log("This is w", w)
-        console.log("This is w2", w2)
+        var w = wi / 2 | 0; // calculate & trim decimals
+        var w2 = w * .79 | 0;
+        console.log("this is wi", wi);
+        console.log("This is w", w);
+        console.log("This is w2", w2);
         el.css("border-left", w + "px solid transparent");
         el.css("border-right", w + "px solid transparent");
         el.css("border-bottom", w2 + "px solid #cc3770");
