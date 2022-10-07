@@ -660,7 +660,7 @@
     </footer>
     <script>
         var el = document.getElementById("Shadow");
-        var wi = document.getElementById("Shadow").style.width;
+        var wi = document.getElementById("Shadow").Clientwidth;
         var w = wi * .44 | 0; // calculate & trim decimals
         var w2 = wi * .35 | 0;
         el.css("border-left", "1px " + w + "px");
@@ -668,7 +668,6 @@
         el.css("border-bottom", "1px " + w2 + "px");
         el.css("width", wi + "px");
         console.log("This is wi", wi)
-        console.log(w)
     </script>
     <script>
         $("#Envelope").mouseover(function() {
