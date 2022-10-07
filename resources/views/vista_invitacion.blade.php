@@ -689,7 +689,7 @@
         var pp = (wi * 0.03 | 0)
         p.css("width", wp + "px");
         p.css("height", (wp * 0.60 | 0) + "px");
-        p.css("padding-left", pp + "px");
+        p.css("margin-left", pp + "px");
         var img_f = $("#img_fondo_bolelto");
         img_f.css("height", (wp * 0.90 | 0) + "px");
     </script>
