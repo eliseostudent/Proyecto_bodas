@@ -660,7 +660,7 @@
     </footer>
     <script>
         var el = document.getElementById("Shadow").style;
-        var wi = document.getElementById('Shadow').Clientwidth;
+        var wi = $("#Shadow").width();
         console.log("This is wi", wi)
         var w = wi * .44 | 0; // calculate & trim decimals
         var w2 = wi * .35 | 0;
