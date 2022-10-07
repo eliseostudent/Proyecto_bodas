@@ -692,7 +692,7 @@
         p.css("padding-left", pp + "px");
         var img_f = $("#img_fondo_bolelto");
         var h = $("#frontFlap1").height();
-        img_f.css("width", (h * 1.2 | 0) + "px");
+        img_f.css("height", (h * 1.2 | 0) + "px");
     </script>
     <script>
         $("#Envelope").mouseover(function() {
