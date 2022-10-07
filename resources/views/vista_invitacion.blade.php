@@ -674,10 +674,14 @@
         back.css("height", w2 + "px");
         var ff2 = $("#frontFlap2");
         ff2.css("border-left", wi + "px solid transparent");
-        ff2.css("border-bottom", (wi * 0.588 | 0) + "px solid #cc3770");
+        ff2.css("border-bottom", (wi * 0.588 | 0) + "px solid #dc447f");
         var ff1 = $("#frontFlap1");
         ff1.css("border-right", wi + "px solid transparent");
         ff1.css("border-bottom", (wi * 0.588 | 0) + "px solid #ea4c89");
+        var of1 = $("#OpenFlap");
+        of1.css("border-left", w + "px solid transparent");
+        of1.css("border-right", w + "px solid transparent");
+        of1.css("border-top", (w * 0.598 | 0) + "px solid #cc3770");
     </script>
     <script>
         $("#Envelope").mouseover(function() {
