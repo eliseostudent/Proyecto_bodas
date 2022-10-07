@@ -675,6 +675,9 @@
         var ff2 = $("#frontFlap2");
         ff2.css("border-left", wi + "px solid transparent");
         ff2.css("border-bottom", (wi * 0.588 | 0) + "px solid #cc3770");
+        var ff1 = $("#frontFlap1");
+        ff1.css("border-right", wi + "px solid transparent");
+        ff1.css("border-bottom", (wi * 0.588 | 0) + "px solid #cc3770");
     </script>
     <script>
         $("#Envelope").mouseover(function() {
