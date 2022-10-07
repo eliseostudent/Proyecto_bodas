@@ -665,9 +665,9 @@
         var w2 = wi * .35 | 0;
         console.log("This is w", w)
         console.log("This is w2", w2)
-        el.css("border-left", w + "px");
-        el.css("border-right", w + "px");
-        el.css("border-bottom", w2 + "px");
+        el.css("border-left", w + "px solid transparent");
+        el.css("border-right", w + "px solid #cc3770 transparent");
+        el.css("border-bottom", w2 + "px solid #cc3770");
         el.css("width", wi + "px");
     </script>
     <script>
