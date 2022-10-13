@@ -261,13 +261,13 @@
         <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);font-size:5vw;">
             <div class="row">
                 <div class="col">
-                    <p class="KhatijaCalligraphy text-center blanco_bordes" style="font-size: 7vw">
+                    <p class="KhatijaCalligraphy text-center blanco_bordes" style="font-size: 10vw; width: 150%; margin-left: -30%;">
                         {{ $evento->nombre_1 }} & {{ $evento->nombre_2 }}</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <p class="text-center blanco_bordes cursiva">
+                    <p class="text-center blanco_bordes cursiva" style="font-size: 3vw;">
                         {{ $evento->mensaje_principal }}
                     </p>
                 </div>
@@ -368,21 +368,17 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">
-                        <strong class=" baskerville">Ceremonia</strong>
-                    </div>
-                    <div class="card-body card-block">
-                        <div class="form-group">
+
                             @if ($evento->lugar->ruta_foto_ceremonia != '')
                                 <img src="{{ Storage::url($evento->lugar->ruta_foto_ceremonia) }}"
-                                    alt="Foto lugar ceremonia" style="width: 100%;height: 300px;">
+                                    alt="Foto lugar ceremonia" class="card-img-top"> 
                             @else
                                 <img src="{{ asset('app-images/foto_ceremonia_default.jpg') }}"
                                     alt="Foto lugar salon"style="width: 100%;height: 300px;">
                             @endif
-                        </div>
+                    <div class="card-body card-block">
                         <div class="form-group">
-                            <p class="form-control-static baskerville"><b>{{ $evento->lugar->nombre_ceremonia }}</b>
+                            <p class="form-control-static cursiva" style="text-align:center; font-size:28px;"><b>{{ $evento->lugar->nombre_ceremonia }}</b>
                             </p>
                         </div>
                         <div class="form-group">
@@ -402,21 +398,17 @@
             </div>
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">
-                        <strong class="baskerville">Evento</strong>
-                    </div>
-                    <div class="card-body card-block">
-                        <div class="form-group">
+
                             @if ($evento->lugar->ruta_foto_salon != '')
                                 <img src="{{ Storage::url($evento->lugar->ruta_foto_salon) }}" alt="Foto lugar salon"
-                                    style="width: 100%; height: 300px;">
+                                   class="card-img-top" >
                             @else
                                 <img src="{{ asset('app-images/foto_salon_default.jpg') }}"
                                     alt="Foto lugar salon"style="width: 100%; height: 300px;">
                             @endif
-                        </div>
+                    <div class="card-body card-block">
                         <div class="form-group">
-                            <p class="form-control-static baskerville"><b>{{ $evento->lugar->nombre_salon }}</b></p>
+                            <p class="form-control-static cursiva" style="text-align: center; font-size: 28px;"><b>{{ $evento->lugar->nombre_salon }}</b></p>
                         </div>
                         <div class="form-group">
                             <p class="form-control-static baskerville"> <b>Cuando:</b>
@@ -534,7 +526,7 @@
         </p>
         <div class="row">
             @foreach ($evento->mesas as $mesa)
-                <div class="col">
+                <div class="col-6">
                     <a href="{{ $mesa->enlace_mesa }}"><button type="button"
                             class="btn btn-outline-dark btn-lg btn-block" style="font-size:24px;margin-top:10px;"><i
                                 class='fas fa-gift'></i> {{ $mesa->nombre_mesa }}</button></a>
@@ -543,8 +535,8 @@
         </div>
         <br>
 
-        <div class="row"style="width:75%; padding-left: 25%;">
-            <p class="w-100 baskerville" style="font-size: 24px; margin-bottom:20px">
+        <div class="row">
+            <p class="w-100 baskerville" style="font-size: 24px; margin-bottom:20px; margin-left:5%; margin-right:5%;">
                 <a class="btn btn-outline-secondary w-100" data-toggle="collapse" href="#datosbancarios"
                     role="button" aria-expanded="false" aria-controls="datosbancarios" style="font-size: large;">
                     Datos bancarios
@@ -552,7 +544,7 @@
 
             </p>
             <div class="collapse w-100" id="datosbancarios">
-                <div class="card card-body">
+                <div class="card card-body" style="width: 90%;margin-left: 5%;">
                     <div class="row">
                         <p class="baskerville" style="padding-left:10%"><b>Titular:</b>
                             {{ $evento->banco->titular_banco }}</p>
