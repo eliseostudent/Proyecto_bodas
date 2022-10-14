@@ -316,7 +316,7 @@
 
     <div id="pruebas" class="container-fluid" style="padding:0px; position: relative;">
         <img id="img_fondo_bolelto" src="{{ asset('app-images/fondo_boleto.jpg') }}"
-            alt="fondo boleto"style="width: 100%; height:50vh">
+            alt="fondo boleto"style="width: 100%; height:400px">
         <div style="position: absolute;top: 0%; left: 0%; width:100%; height:100%;  ">
             <div id="Envelope">
                 <div id="Shadow"></div>
@@ -668,10 +668,7 @@
         p.css("height", (wp * 0.60 | 0) + "px");
         p.css("margin-left", pp / 2 + "px");
         var img_f = $("#img_fondo_bolelto");
-        img_f.css("height", "50vh");
-        var iwi = $("#img_fondo_bolelto").width();
-        var envelope = $("#Envelope");
-        envelope.css("margin-top", (iwi - (wi * 0.588 | 0)) / 2 + "px");
+        img_f.css("height", (wp * 0.90 | 0) + "px");
     </script>
     <script>
         $("#Envelope").click(function() {
