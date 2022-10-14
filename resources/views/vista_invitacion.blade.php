@@ -668,7 +668,9 @@
         p.css("height", (wp * 0.60 | 0) + "px");
         p.css("margin-left", pp / 2 + "px");
         var img_f = $("#img_fondo_bolelto");
-        img_f.css("height", (wp * 1.90 | 0) + "px");
+        var h_img_f = (wp * 1.90 | 0)
+        img_f.css("height", h_img_f + "px");
+        $("#Envelope").css("margin-top", (h_img_f - (wi * 0.588 | 0)) / 2 + "px");
     </script>
     <script>
         $("#Envelope").click(function() {
