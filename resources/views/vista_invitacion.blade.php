@@ -252,6 +252,12 @@
             </div>
         </div>
     </nav>
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>{{ $message }}</strong>
+        </div>
+    @endif
     <div class="container-fluid" style="padding:0px; position: relative;">
         @if ($evento->ruta_foto_novios != '')
             <img src="{{ Storage::url($evento->ruta_foto_novios) }}" alt="Foto novios"
