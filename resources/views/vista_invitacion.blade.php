@@ -254,7 +254,8 @@
     </nav>
     <div class="container-fluid" style="padding:0px; position: relative;">
         @if ($evento->ruta_foto_novios != '')
-            <img src="{{ Storage::url($evento->ruta_foto_novios) }}" alt="Foto novios" style="width: 100%">
+            <img src="{{ Storage::url($evento->ruta_foto_novios) }}" alt="Foto novios"
+                style="width: 100%;height: 94vh;">
         @else
             <img src="{{ asset('app-images/foto_novios_default.jpg') }}" alt="Foto novios"style="width: 100%">
         @endif
@@ -667,7 +668,7 @@
         p.css("height", (wp * 0.60 | 0) + "px");
         p.css("margin-left", pp / 2 + "px");
         var img_f = $("#img_fondo_bolelto");
-        img_f.css("height", (wp * 0.90 | 0) + "px");
+        img_f.css("height", (wp * 0.95 | 0) + "px");
     </script>
     <script>
         $("#Envelope").click(function() {
