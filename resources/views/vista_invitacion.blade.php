@@ -643,6 +643,7 @@
         el.css("border-left", w + "px solid transparent");
         el.css("border-right", w + "px solid transparent");
         el.css("border-bottom", w2 + "px solid #7FB3D5");
+        el.css("margin-top", w + "px ");
         el.css("width", "0 px");
         var t = w2 * .685 | 0;
         el.css("top", "-" + t + "px");
