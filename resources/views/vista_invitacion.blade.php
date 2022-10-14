@@ -670,9 +670,8 @@
         var img_f = $("#img_fondo_bolelto");
         img_f.css("height", "50vh");
         var iwi = $("#img_fondo_bolelto").width();
-        var ewi = $("#Envelope").width();
         var envelope = $("#Envelope");
-        envelope.css("margin-top", (iwi - ewi) / 2 + "px");
+        envelope.css("margin-top", (iwi - (wi * 0.588 | 0)) / 2 + "px");
     </script>
     <script>
         $("#Envelope").click(function() {
