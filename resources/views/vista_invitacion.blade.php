@@ -253,7 +253,7 @@
         </div>
     </nav>
     @if ($message = Session::get('success'))
-        <div class="alert alert-success alert-block">
+        <div class="alert alert-success alert-block" style="width: 95%;">
             <button type="button" class="close" data-dismiss="alert">×</button>
             <strong>{{ $message }}</strong>
         </div>
@@ -608,12 +608,7 @@
                         </div>
                     </div>
                 </div>
-                @if ($message = Session::get('success'))
-                    <div class="alert alert-success alert-block">
-                        <button type="button" class="close" data-dismiss="alert">×</button>
-                        <strong>{{ $message }}</strong>
-                    </div>
-                @endif
+
                 <div class="row form-group">
                     <button type="submit" class="btn btn-outline-light w-100 baskerville"
                         style="font-size: 20px;">Enviar</button>
