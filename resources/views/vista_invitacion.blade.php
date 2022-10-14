@@ -261,7 +261,8 @@
         <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);font-size:5vw;">
             <div class="row">
                 <div class="col">
-                    <p class="KhatijaCalligraphy text-center blanco_bordes" style="font-size: 10vw; width: 150%; margin-left: -30%;">
+                    <p class="KhatijaCalligraphy text-center blanco_bordes"
+                        style="font-size: 10vw; width: 150%; margin-left: -30%;">
                         {{ $evento->nombre_1 }} & {{ $evento->nombre_2 }}</p>
                 </div>
             </div>
@@ -369,16 +370,17 @@
             <div class="col-md-6">
                 <div class="card">
 
-                            @if ($evento->lugar->ruta_foto_ceremonia != '')
-                                <img src="{{ Storage::url($evento->lugar->ruta_foto_ceremonia) }}"
-                                    alt="Foto lugar ceremonia" class="card-img-top"> 
-                            @else
-                                <img src="{{ asset('app-images/foto_ceremonia_default.jpg') }}"
-                                    alt="Foto lugar salon"style="width: 100%;height: 300px;">
-                            @endif
+                    @if ($evento->lugar->ruta_foto_ceremonia != '')
+                        <img src="{{ Storage::url($evento->lugar->ruta_foto_ceremonia) }}" alt="Foto lugar ceremonia"
+                            class="card-img-top">
+                    @else
+                        <img src="{{ asset('app-images/foto_ceremonia_default.jpg') }}"
+                            alt="Foto lugar salon"style="width: 100%;height: 300px;">
+                    @endif
                     <div class="card-body card-block">
                         <div class="form-group">
-                            <p class="form-control-static cursiva" style="text-align:center; font-size:28px;"><b>{{ $evento->lugar->nombre_ceremonia }}</b>
+                            <p class="form-control-static cursiva" style="text-align:center; font-size:28px;">
+                                <b>{{ $evento->lugar->nombre_ceremonia }}</b>
                             </p>
                         </div>
                         <div class="form-group">
@@ -389,8 +391,7 @@
                                 {{ $evento->lugar->direccion_ceremonia }}</p>
                         </div>
                         <div class="form-group" style="text-align:center;">
-                            <a style="width:50%;"
-                                href="{{ 'https://www.google.com.mx/maps/search/' . $evento->lugar->direccion_ceremonia }}"><button
+                            <a style="width:50%;" href="https://maps.app.goo.gl/BzTs6LegLEJo1kuR9"><button
                                     style="width:100%;" class="btn btn-secondary btn-lg baskerville">Mapa</button></a>
                         </div>
                     </div>
@@ -399,16 +400,18 @@
             <div class="col-md-6">
                 <div class="card">
 
-                            @if ($evento->lugar->ruta_foto_salon != '')
-                                <img src="{{ Storage::url($evento->lugar->ruta_foto_salon) }}" alt="Foto lugar salon"
-                                   class="card-img-top" >
-                            @else
-                                <img src="{{ asset('app-images/foto_salon_default.jpg') }}"
-                                    alt="Foto lugar salon"style="width: 100%; height: 300px;">
-                            @endif
+                    @if ($evento->lugar->ruta_foto_salon != '')
+                        <img src="{{ Storage::url($evento->lugar->ruta_foto_salon) }}" alt="Foto lugar salon"
+                            class="card-img-top">
+                    @else
+                        <img src="{{ asset('app-images/foto_salon_default.jpg') }}"
+                            alt="Foto lugar salon"style="width: 100%; height: 300px;">
+                    @endif
                     <div class="card-body card-block">
                         <div class="form-group">
-                            <p class="form-control-static cursiva" style="text-align: center; font-size: 28px;"><b>{{ $evento->lugar->nombre_salon }}</b></p>
+                            <p class="form-control-static cursiva" style="text-align: center; font-size: 28px;">
+                                <b>{{ $evento->lugar->nombre_salon }}</b>
+                            </p>
                         </div>
                         <div class="form-group">
                             <p class="form-control-static baskerville"> <b>Cuando:</b>
@@ -420,8 +423,7 @@
                             </p>
                         </div>
                         <div class="form-group" style="text-align:center;">
-                            <a style="width:50%;"
-                                href="{{ 'https://www.google.com.mx/maps/search/' . $evento->lugar->direccion_salon }}"><button
+                            <a style="width:50%;" href="https://maps.app.goo.gl/ujobdFLncLwUG6Sd7"><button
                                     class="btn btn-secondary btn-lg baskerville" style="width:100%;">Mapa</button></a>
                         </div>
                     </div>
@@ -536,7 +538,8 @@
         <br>
 
         <div class="row">
-            <p class="w-100 baskerville" style="font-size: 24px; margin-bottom:20px; margin-left:5%; margin-right:5%;">
+            <p class="w-100 baskerville"
+                style="font-size: 24px; margin-bottom:20px; margin-left:5%; margin-right:5%;">
                 <a class="btn btn-outline-secondary w-100" data-toggle="collapse" href="#datosbancarios"
                     role="button" aria-expanded="false" aria-controls="datosbancarios" style="font-size: large;">
                     Datos bancarios
@@ -611,7 +614,9 @@
             </form>
         </div>
     </div>
-
+    <div>
+        <input type="hidden" name="checkenvelope" id="checkenvelope" value="closed">
+    </div>
 
 
 
@@ -665,14 +670,21 @@
         img_f.css("height", (wp * 0.90 | 0) + "px");
     </script>
     <script>
-        $("#Envelope").mouseover(function() {
-            open();
-        });
-        $("#Envelope").mouseleave(function() {
-            close();
+        $("#Envelope").click(function() {
+            var flag = document.getElementById("checkenvelope");
+            if (flag.getAttribute('value') == "opened") {
+                close();
+                flag.setAttribute('value', "closed");
+            } else {
+                open();
+                flag.setAttribute('value', "opened");
+            }
+
         });
 
         function open() {
+
+
             var h = $("#Paper").height();
             $("#OpenFlap").animate({
                 "opacity": "0"
