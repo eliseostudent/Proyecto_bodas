@@ -159,7 +159,7 @@
             
             position: absolute;
             background-image: url(  {{ asset('app-images/sobre.png') }}  );
-            background-size: contain;
+            background-size: cover;
             /*
             border-bottom: 1px solid #D4E6F1;
             border-left: 1px solid transparent;
