@@ -132,7 +132,7 @@
             width: 265px;
             position: absolute;
             background-image: url(  {{ asset('app-images/brown-texture.jpg') }}  );
-            background-size: contain;
+            background-size: cover;
             /*
             background-color: #7FB3D5;
             margin-left: 264px;
@@ -171,14 +171,18 @@
         #OpenFlap {
             width: 0;
             height: 0;
-            border-left: 134px solid transparent;
-            border-right: 134px solid transparent;
-            border-top: 80px solid #7FB3D5;
+            position: absolute;
+            background-image: url(  {{ asset('app-images/sobre tapa.png') }}  );
+            background-size: cover;
+            
             /*
             margin-top: 270px;
             margin-left: 263px;
+            border-left: 134px solid transparent;
+            border-right: 134px solid transparent;
+            border-top: 80px solid #7FB3D5;
             */
-            position: absolute;
+            
         }
 
         #Paper {
@@ -667,10 +671,12 @@
         //ff1.css("border-right", wi + "px solid transparent");
         //ff1.css("border-bottom", (wi * 0.588 | 0) + "px solid #A9CCE3 ");
         var of1 = $("#OpenFlap");
-        of1.css("border-left", (w * 1.02 | 0) + "px solid transparent");
-        of1.css(
-            "border-right", w + "px solid transparent");
-        of1.css("border-top", (w * 0.65 | 0) + "px solid #7FB3D5");
+        of1.css("width", wi + "px");
+        of1.css( "height", (w * 0.65 | 0) + "px");
+
+        //of1.css("border-left", (w * 1.02 | 0) + "px solid transparent");
+        //of1.css("border-right", w + "px solid transparent");
+        //of1.css("border-top", (w * 0.65 | 0) + "px solid #7FB3D5");
 
         var p = $("#Paper");
         var wp = (wi * 0.97 | 0)
