@@ -132,6 +132,7 @@
             width: 265px;
             position: absolute;
             background-color: #7FB3D5;
+            background-image: url("/var/www/celi-y-eli.fun/public/app-images/brown-texture.jpg");
             /*
             margin-left: 264px;
             margin-top: 270px;
