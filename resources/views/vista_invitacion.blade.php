@@ -131,8 +131,8 @@
             height: 100px;
             width: 265px;
             position: absolute;
-            
             background-image: url(  {{ asset('app-images/brown-texture.jpg') }}  );
+            background-size: contain;
             /*
             background-color: #7FB3D5;
             margin-left: 264px;
