@@ -172,7 +172,7 @@
             width: 0;
             height: 0;
             position: absolute;
-            background-image: url(  {{ asset('app-images/sobre tapa.png') }}  );
+            background-image: url(  {{ asset('app-images/sobre_tapa.png') }}  );
             background-size: cover;
             
             /*
