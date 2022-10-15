@@ -143,11 +143,12 @@
         #frontFlap1 {
             width: 0;
             height: 0;
-            border-bottom: 155px solid #A9CCE3;
-            border-right: 265px solid transparent;
+            
             /*
             margin-left: 264px;
             margin-top: 270px;
+            border-bottom: 155px solid #A9CCE3;
+            border-right: 265px solid transparent;
             */
             position: absolute;
         }
@@ -155,10 +156,11 @@
         #frontFlap2 {
             width: 0;
             height: 0;
-            border-bottom: 1px solid #D4E6F1;
-            border-left: 1px solid transparent;
+            
             position: absolute;
             /*
+            border-bottom: 1px solid #D4E6F1;
+            border-left: 1px solid transparent;
             margin-top: 269px;
             margin-left: 265px;
             */
@@ -655,11 +657,13 @@
         back.css("width", wi + "px");
         back.css("height", w2 + "px");
         var ff2 = $("#frontFlap2");
-        ff2.css("border-left", wi + "px solid transparent");
-        ff2.css("border-bottom", (wi * 0.588 | 0) + "px solid #D4E6F1");
+        //ff2.css("border-left", wi + "px solid transparent");
+        //ff2.css("border-bottom", (wi * 0.588 | 0) + "px solid #D4E6F1");
+        ff2.css("width", wi + "px solid transparent");
+        ff2.css("height", (wi * 0.588 | 0) + "px solid #D4E6F1");
         var ff1 = $("#frontFlap1");
-        ff1.css("border-right", wi + "px solid transparent");
-        ff1.css("border-bottom", (wi * 0.588 | 0) + "px solid #A9CCE3 ");
+        //ff1.css("border-right", wi + "px solid transparent");
+        //ff1.css("border-bottom", (wi * 0.588 | 0) + "px solid #A9CCE3 ");
         var of1 = $("#OpenFlap");
         of1.css("border-left", (w * 1.02 | 0) + "px solid transparent");
         of1.css(
