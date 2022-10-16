@@ -723,7 +723,7 @@
 
             $("#rotacion").animate({
                 "transform": "rotateX(3.142rad)"
-            }, "slow");
+            }, 1);
             
 
             $("#Paper").delay(140).animate({
@@ -752,7 +752,7 @@
 
             $("#rotacion").animate({
                 "transform": "rotateX(0)"
-            }, "slow");
+            }, 1);
 
         }
     </script>
