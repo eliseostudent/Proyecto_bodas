@@ -738,9 +738,11 @@
             var rot = $("#rotacion");
             rot.css("transform", "rotateX(3.142rad)");
             $("#rotacion").animate({
+                "z-index": "0"
+            }, 1);
+            $("#Paper").animate({
                 "z-index": "1"
             }, 1);
-
 
             $("#Paper").delay(140).animate({
                 "margin-top": "-" + h + "px"
