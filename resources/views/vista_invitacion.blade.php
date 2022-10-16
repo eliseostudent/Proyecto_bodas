@@ -764,7 +764,7 @@
                 }
             ];
             const newspaperTiming = {
-                duration: 400,
+                duration: 800,
                 iterations: 1,
                 delay: 940,
             }
