@@ -729,7 +729,7 @@
                     "transform": "rotateX(0)"
                 }
             ], {
-                duration: 10000,
+                duration: 140,
                 iterations: 1
             });
             var rot = $("#OpenFlap");
@@ -749,25 +749,25 @@
 
         function close() {
             var h = $("#Paper").height();
-            $("#Paper").delay(140).animate({
-                "margin-top": "-" + h + "px"
-            }, "fast");
             $("#Paper").animate({
+                "margin-top": "-" + h + "px"
+            }, "slow");
+            $("#Paper").delay(140).animate({
                 "z-index": "0"
             }, 1);
-            $("#Paper").animate({
+            $("#Paper").delay(140).animate({
                 "margin-top": "0px"
-            }, "fast");
+            }, "slow");
 
 
-            document.getElementById("rotacion").animate([{
+            document.getElementById("rotacion").delay(140).animate([{
                     "transform": "rotateX(3.142rad)"
                 },
                 {
                     "transform": "rotateX(0)"
                 }
             ], {
-                duration: 1000,
+                duration: 140,
                 iterations: 1
             });
             var rot = $("#OpenFlap");
