@@ -746,6 +746,9 @@
         }
 
         function close() {
+            var rot = $("#rotacion");
+            rot.css("transform", "rotateX(0)");
+
             var h = $("#Paper").height();
             $("#Paper").animate({
                 "margin-top": "-" + h + "px"
@@ -771,8 +774,6 @@
 
             const rotacion = document.querySelector("#rotacion");
             rotacion.animate(newspaperSpinning, newspaperTiming);
-            var rot = $("#rotacion");
-            //rot.css("transform", "rotateX(0)");
 
 
 
