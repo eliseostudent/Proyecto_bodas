@@ -766,12 +766,13 @@
             const newspaperTiming = {
                 duration: 140,
                 iterations: 1,
+                delay: 400,
             }
-            setTimeout(() => {
-                console.log("1 Segundo esperado")
-            }, 1000);
+
             const rotacion = document.querySelector("#rotacion");
             rotacion.animate(newspaperSpinning, newspaperTiming);
+            var rot = $("#rotacion");
+            rot.css("transform", "rotateX(3.142rad)");
 
 
 
