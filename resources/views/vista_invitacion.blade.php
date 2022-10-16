@@ -378,7 +378,11 @@
                 </div>
                 <div id="frontFlap2"></div>
                 <div id="frontFlap1"></div>
-                <div id="OpenFlap"></div>
+                <div id="rotacion">
+                    <div id="OpenFlap-second"></div>
+                    <div id="OpenFlap"></div>
+                </div>
+                
 
             </div>
         </div>
