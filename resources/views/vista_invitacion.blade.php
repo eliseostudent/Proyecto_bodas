@@ -735,15 +735,13 @@
             var rot = $("#rotacion");
             rot.css("transform", "rotateX(3.142rad)");
 
-            $("#rotacion").animate({
-                "z-index": "-1"
-            }, 1);
+
 
             $("#Paper").delay(140).animate({
                 "margin-top": "-" + h + "px"
             }, "slow");
             $("#Paper").animate({
-                "z-index": "1"
+                "z-index": "2"
             }, 1);
             $("#Paper").delay(140).animate({
                 "margin-top": "0px"
@@ -776,9 +774,7 @@
                 delay: 1600,
             }
 
-            $("#rotacion").animate({
-                "z-index": "0"
-            }, 1);
+
 
             const rotacion = document.querySelector("#rotacion");
             rotacion.animate(newspaperSpinning, newspaperTiming);
