@@ -722,8 +722,8 @@
 
 
             $("#rotacion").animate({
-                "transform": "rotateX(0)",
-                "transform": "rotateX(3.142rad)"
+                "transform": "rotateX(0)"},
+                {"transform": "rotateX(3.142rad)"
             }, 1);
             
 
@@ -752,8 +752,8 @@
 
 
             $("#rotacion").animate({
-                "transform": "rotateX(3.142rad)",
-                "transform": "rotateX(0)"
+                "transform": "rotateX(3.142rad)"},
+                {"transform": "rotateX(0)"
             }, 1);
 
         }
