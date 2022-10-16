@@ -774,8 +774,10 @@
             const rotacion = document.querySelector("#rotacion");
             rotacion.animate(newspaperSpinning, newspaperTiming);
 
-
-
+            setTimeout(function() {
+                var rot = $("#rotacion");
+                rot.css("transform", "rotateX(0)");
+            }, 2400);
         }
     </script>
     <script formato="{{ $evento->fecha_formato }}">
