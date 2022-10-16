@@ -729,7 +729,7 @@
                     "transform": "rotateX(3.142rad)"
                 }
             ], {
-                duration: 1000,
+                duration: 10000,
                 iterations: 1
             });
             var rot = $("#OpenFlap");
