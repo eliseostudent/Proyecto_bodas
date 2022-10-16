@@ -233,6 +233,9 @@
             margin-top: 420px;
             */
         }
+        #rotacion{
+            position: absolute;
+        }
     </style>
 </head>
 
@@ -677,6 +680,12 @@
         var of1 = $("#OpenFlap");
         of1.css("width", wi + "px");
         of1.css( "height", (w * 0.68 | 0) + "px");
+        var rot =$("#rotacion");
+        rot.css("margin-top",(w * 0.68 | 0) + "px");
+        rot.css( "height", (w * 0.68 | 0) + "px");
+        rot.css("width", wi + "px");
+        var ofsec =$("#OpenFlap-second");
+        ofsec.css( "height", (w * 0.68 | 0) + "px");
 
         //of1.css("border-left", (w * 1.02 | 0) + "px solid transparent");
         //of1.css("border-right", w + "px solid transparent");
