@@ -764,8 +764,7 @@
                 "transform": "rotateX(0)"
             }, newspaperTiming);
 
-            var rot = $("#rotacion");
-            rot.css("transform", "rotateX(0)");
+
 
         }
     </script>
