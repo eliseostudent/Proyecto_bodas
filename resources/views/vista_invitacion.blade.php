@@ -726,7 +726,7 @@
                     "transform": "rotateX(0)"
                 },
                 {
-                    "transform": "rotateX(3.142rad)"
+                    "transform": "rotateX(-3.142rad)"
                 }
             ], {
                 duration: 10000,
