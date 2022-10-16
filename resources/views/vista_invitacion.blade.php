@@ -160,6 +160,7 @@
             position: absolute;
             background-image: url({{ asset('app-images/sobre.png') }}  );
             background-size: cover;
+            z-index: 2;
             /*
             border-bottom: 1px solid #D4E6F1;
             border-left: 1px solid transparent;
@@ -174,6 +175,7 @@
             position: absolute;
             background-image: url({{ asset('app-images/sobre_tapa.png') }}  );
             background-size: cover;
+            z-index: 4;
 
             /*
             margin-top: 270px;
@@ -743,7 +745,7 @@
                 "margin-top": "-" + h + "px"
             }, "slow");
             $("#Paper").animate({
-                "z-index": "2"
+                "z-index": "5"
             }, 1);
             $("#Paper").delay(140).animate({
                 "margin-top": "0px"
@@ -758,7 +760,7 @@
                 "margin-top": "-" + h + "px"
             }, "slow");
             $("#Paper").delay(140).animate({
-                "z-index": "0"
+                "z-index": "3"
             }, 1);
             $("#Paper").delay(140).animate({
                 "margin-top": "0px"
@@ -777,7 +779,7 @@
             }
 
             $("#rotacion").animate({
-                "z-index": "0"
+                "z-index": "4"
             }, 1);
 
             const rotacion = document.querySelector("#rotacion");
