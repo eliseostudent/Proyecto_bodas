@@ -768,7 +768,7 @@
                 iterations: 1,
             }
             const rotacion = document.querySelector("#rotacion");
-            rotacion.animate(newspaperSpinning, newspaperTiming);
+            rotacion.delay(140).animate(newspaperSpinning, newspaperTiming);
 
 
 
