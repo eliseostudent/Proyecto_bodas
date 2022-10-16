@@ -757,17 +757,10 @@
                 "margin-top": "0px"
             }, "slow");
 
+            $("#Paper").delay(140).animate({
+                "transform": "rotateX(0)"
+            }, "slow");
 
-            $("#rotacion").delay(140).animate([{
-                    "transform": "rotateX(3.142rad)"
-                },
-                {
-                    "transform": "rotateX(0)"
-                }
-            ], {
-                duration: 140,
-                iterations: 1
-            });
             var rot = $("#rotacion");
             rot.css("transform", "rotateX(0)");
 
