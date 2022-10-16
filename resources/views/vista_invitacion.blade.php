@@ -760,7 +760,7 @@
                 duration: 2000,
                 iterations: 1,
             }
-            $("#Paper").delay(140).animate({
+            $("#rotacion").delay(140).animate({
                 "transform": "rotateX(0)"
             }, newspaperTiming);
 
