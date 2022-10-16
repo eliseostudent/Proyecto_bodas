@@ -721,10 +721,10 @@
             var h = $("#Paper").height();
 
 
-            $("#rotacion").animate({
+            $("#rotacion").animate([{
                 "transform": "rotateX(0)"},
                 {"transform": "rotateX(3.142rad)"
-            }, 1);
+            }],"slow" );
             
 
             $("#Paper").delay(140).animate({
@@ -751,10 +751,10 @@
             }, "fast");
 
 
-            $("#rotacion").animate({
+            $("#rotacion").animate([{
                 "transform": "rotateX(3.142rad)"},
                 {"transform": "rotateX(0)"
-            }, 1);
+            }],"slow");
 
         }
     </script>
