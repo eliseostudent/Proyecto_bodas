@@ -759,19 +759,17 @@
 
 
             document.getElementById("rotacion").delay(140).animate([{
-                    "transform": "rotateX(3.142rad)"
+                    "transform": "rotateX(0)"
                 },
                 {
-                    "transform": "rotateX(0)"
+                    "transform": "rotateX(3.142rad)"
                 }
             ], {
                 duration: 140,
                 iterations: 1
             });
-            var rot = $("#OpenFlap");
-            var hr = rot.height();
-            rot.css("margin-top", "0");
-            rot.css("transform", "rotateX(0)");
+            var rot = $("#rotacion");
+            rot.css("transform", "rotateX(3.142rad)");
 
         }
     </script>
