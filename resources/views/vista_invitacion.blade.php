@@ -732,8 +732,10 @@
                 duration: 1000,
                 iterations: 1
             });
-
-
+            var rot = $("#OpenFlap");
+            var hr = rot.height();
+            rot.css("margin-top", "-" + hr + "px");
+            rot.css("transform", "rotateX(3.142rad)");
             $("#Paper").delay(140).animate({
                 "margin-top": "-" + h + "px"
             }, "slow");
@@ -768,6 +770,10 @@
                 duration: 1000,
                 iterations: 1
             });
+            var rot = $("#OpenFlap");
+            var hr = rot.height();
+            rot.css("margin-top", "0");
+            rot.css("transform", "rotateX(0)");
 
         }
     </script>
