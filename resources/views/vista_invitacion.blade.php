@@ -764,9 +764,9 @@
                 }
             ];
             const newspaperTiming = {
-                duration: 140,
+                duration: 400,
                 iterations: 1,
-                delay: 940,
+                delay: 800,
             }
 
             const rotacion = document.querySelector("#rotacion");
