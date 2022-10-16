@@ -766,7 +766,7 @@
             const newspaperTiming = {
                 duration: 140,
                 iterations: 1,
-                delay: 800,
+                delay: 940,
             }
 
             const rotacion = document.querySelector("#rotacion");
