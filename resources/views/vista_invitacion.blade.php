@@ -722,8 +722,8 @@
 
 
             $("#rotacion").animate([{
-                "transform": "rotateX(0)"},
-                {"transform": "rotateX(360deg)"
+                "transform": "translateY(0px)"},
+                {"transform": "translateY(360px)"
             }],"slow" );
             
 
