@@ -719,12 +719,13 @@
 
 
             var h = $("#Paper").height();
-            $("#OpenFlap").animate({
-                "opacity": "0"
+
+
+            $("#rotacion").animate({
+                "transform": "rotateX(3.142rad)"
             }, "slow");
-            $("#OpenFlapBack").animate({
-                "opacity": "1"
-            }, 1);
+            
+
             $("#Paper").delay(140).animate({
                 "margin-top": "-" + h + "px"
             }, "slow");
@@ -747,12 +748,12 @@
             $("#Paper").animate({
                 "margin-top": "0px"
             }, "fast");
-            $("#OpenFlapBack").delay(600).animate({
-                "opacity": "0"
+
+
+            $("#rotacion").animate({
+                "transform": "rotateX(0)"
             }, "slow");
-            $("#OpenFlap").delay(300).animate({
-                "opacity": "1"
-            }, "slow");
+
         }
     </script>
     <script formato="{{ $evento->fecha_formato }}">
