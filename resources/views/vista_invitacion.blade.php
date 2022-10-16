@@ -192,6 +192,7 @@
             height: 150px;
             width: 223px;
             background-color: #f2f2f2;
+            z-index: 1;
             /*
             margin-left: 280px;
             margin-top: 270px;
@@ -760,7 +761,7 @@
                 "margin-top": "-" + h + "px"
             }, "slow");
             $("#Paper").delay(140).animate({
-                "z-index": "3"
+                "z-index": "1"
             }, 1);
             $("#Paper").delay(140).animate({
                 "margin-top": "0px"
