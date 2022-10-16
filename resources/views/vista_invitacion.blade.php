@@ -683,7 +683,7 @@
         of1.css("height", (w * 0.68 | 0) + "px");
         var rot = $("#rotacion");
         rot.css("margin-top", "-" + (w * 0.68 | 0) + "px");
-        rot.css("height", (w * 0.68 | 0) + "px");
+        rot.css("height", ((w * 0.68 | 0) * 2) + "px");
         rot.css("width", wi + "px");
         var ofsec = $("#OpenFlap-second");
         ofsec.css("height", (w * 0.68 | 0) + "px");
