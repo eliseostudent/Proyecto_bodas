@@ -721,10 +721,13 @@
             var h = $("#Paper").height();
 
 
-            $("#rotacion").animate([{
-                "transform": "translateY(0px)"},
-                {"transform": "translateY(360px)"
-            }],"slow" );
+            document.getElementById("rotacion").animate([
+                {"transform": "translateY(0px)"},
+                {"transform": "translateY(360px)"}
+            ],{
+                duration:1000,
+                iterations:Infinity
+            } );
             
 
             $("#Paper").delay(140).animate({
