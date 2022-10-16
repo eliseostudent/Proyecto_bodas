@@ -767,7 +767,8 @@
                 duration: 2000,
                 iterations: 1,
             }
-            $("#rotacion").delay(140).animate(newspaperSpinning, newspaperTiming);
+            const rotacion = document.querySelector("#rotacion");
+            rotacion.animate(newspaperSpinning, newspaperTiming);
 
 
 
