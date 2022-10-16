@@ -672,7 +672,7 @@
         //ff1.css("border-bottom", (wi * 0.588 | 0) + "px solid #A9CCE3 ");
         var of1 = $("#OpenFlap");
         of1.css("width", wi + "px");
-        of1.css( "height", (w * 0.65 | 0) + "px");
+        of1.css( "height", (w * 0.68 | 0) + "px");
 
         //of1.css("border-left", (w * 1.02 | 0) + "px solid transparent");
         //of1.css("border-right", w + "px solid transparent");
