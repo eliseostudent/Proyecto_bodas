@@ -726,7 +726,7 @@
                 {"transform": "translateY(360px)"}
             ],{
                 duration:1000,
-                iterations:Infinity
+                iterations:1
             } );
             
 
