@@ -131,7 +131,7 @@
             height: 100px;
             width: 265px;
             position: absolute;
-            background-image: url(  {{ asset('app-images/brown-texture.jpg') }}  );
+            background-image: url({{ asset('app-images/brown-texture.jpg') }}  );
             background-size: cover;
             /*
             background-color: #7FB3D5;
@@ -143,7 +143,7 @@
         #frontFlap1 {
             width: 0;
             height: 0;
-            
+
             /*
             margin-left: 264px;
             margin-top: 270px;
@@ -156,9 +156,9 @@
         #frontFlap2 {
             width: 0;
             height: 0;
-            
+
             position: absolute;
-            background-image: url(  {{ asset('app-images/sobre.png') }}  );
+            background-image: url({{ asset('app-images/sobre.png') }}  );
             background-size: cover;
             /*
             border-bottom: 1px solid #D4E6F1;
@@ -172,9 +172,9 @@
             width: 0;
             height: 0;
             position: absolute;
-            background-image: url(  {{ asset('app-images/sobre_tapa.png') }}  );
+            background-image: url({{ asset('app-images/sobre_tapa.png') }}  );
             background-size: cover;
-            
+
             /*
             margin-top: 270px;
             margin-left: 263px;
@@ -182,7 +182,7 @@
             border-right: 134px solid transparent;
             border-top: 80px solid #7FB3D5;
             */
-            
+
         }
 
         #Paper {
@@ -233,7 +233,8 @@
             margin-top: 420px;
             */
         }
-        #rotacion{
+
+        #rotacion {
             position: absolute;
         }
     </style>
@@ -385,7 +386,7 @@
                     <div id="OpenFlap-second"></div>
                     <div id="OpenFlap"></div>
                 </div>
-                
+
 
             </div>
         </div>
@@ -679,13 +680,13 @@
         //ff1.css("border-bottom", (wi * 0.588 | 0) + "px solid #A9CCE3 ");
         var of1 = $("#OpenFlap");
         of1.css("width", wi + "px");
-        of1.css( "height", (w * 0.68 | 0) + "px");
-        var rot =$("#rotacion");
-        rot.css("margin-top","-"+(w * 0.68 | 0) + "px");
-        rot.css( "height", (w * 0.68 | 0) + "px");
+        of1.css("height", (w * 0.68 | 0) + "px");
+        var rot = $("#rotacion");
+        rot.css("margin-top", "-" + (w * 0.68 | 0) + "px");
+        rot.css("height", (w * 0.68 | 0) + "px");
         rot.css("width", wi + "px");
-        var ofsec =$("#OpenFlap-second");
-        ofsec.css( "height", (w * 0.68 | 0) + "px");
+        var ofsec = $("#OpenFlap-second");
+        ofsec.css("height", (w * 0.68 | 0) + "px");
 
         //of1.css("border-left", (w * 1.02 | 0) + "px solid transparent");
         //of1.css("border-right", w + "px solid transparent");
@@ -721,14 +722,17 @@
             var h = $("#Paper").height();
 
 
-            document.getElementById("rotacion").animate([
-                {"transform": "translateY(0px)"},
-                {"transform": "translateY(360px)"}
-            ],{
-                duration:1000,
-                iterations:1
-            } );
-            
+            document.getElementById("rotacion").animate([{
+                    "transform": "rotateX(0)"
+                },
+                {
+                    "transform": "rotateX(3.142rad)"
+                }
+            ], {
+                duration: 1000,
+                iterations: 1
+            });
+
 
             $("#Paper").delay(140).animate({
                 "margin-top": "-" + h + "px"
@@ -754,10 +758,16 @@
             }, "fast");
 
 
-            $("#rotacion").animate([{
-                "transform": "rotateX(3.142rad)"},
-                {"transform": "rotateX(0)"
-            }],"slow");
+            document.getElementById("rotacion").animate([{
+                    "transform": "rotateX(3.142rad)"
+                },
+                {
+                    "transform": "rotateX(0)"
+                }
+            ], {
+                duration: 1000,
+                iterations: 1
+            });
 
         }
     </script>
