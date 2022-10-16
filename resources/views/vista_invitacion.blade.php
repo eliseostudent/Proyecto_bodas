@@ -764,11 +764,14 @@
                 }
             ];
             const newspaperTiming = {
-                duration: 2000,
+                duration: 140,
                 iterations: 1,
             }
+            setTimeout(() => {
+                console.log("1 Segundo esperado")
+            }, 1000);
             const rotacion = document.querySelector("#rotacion");
-            rotacion.delay(140).animate(newspaperSpinning, newspaperTiming);
+            rotacion.animate(newspaperSpinning, newspaperTiming);
 
 
 
