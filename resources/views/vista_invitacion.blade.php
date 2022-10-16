@@ -757,10 +757,10 @@
                 "margin-top": "0px"
             }, "slow");
             const newspaperSpinning = [{
-                    transform: 'rotate(0) scale(1)'
+                    transform: 'rotateX(3.142rad)'
                 },
                 {
-                    transform: 'rotate(360deg) scale(0)'
+                    transform: 'rotateX(0)'
                 }
             ];
             const newspaperTiming = {
