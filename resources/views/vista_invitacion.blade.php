@@ -756,13 +756,18 @@
             $("#Paper").delay(140).animate({
                 "margin-top": "0px"
             }, "slow");
+            const newspaperSpinning = [{
+                    transform: 'rotateX(3.142rad) '
+                },
+                {
+                    transform: 'rotateX(0)'
+                }
+            ];
             const newspaperTiming = {
                 duration: 2000,
                 iterations: 1,
             }
-            $("#rotacion").delay(140).animate({
-                "transform": "rotateX(0)"
-            }, newspaperTiming);
+            $("#rotacion").delay(140).animate(newspaperSpinning, newspaperTiming);
 
 
 
