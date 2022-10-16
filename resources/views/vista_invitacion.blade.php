@@ -741,7 +741,7 @@
                 "margin-top": "-" + h + "px"
             }, "slow");
             $("#Paper").animate({
-                "z-index": "3"
+                "z-index": "5"
             }, 1);
             $("#Paper").delay(140).animate({
                 "margin-top": "0px"
