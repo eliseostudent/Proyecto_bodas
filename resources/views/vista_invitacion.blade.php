@@ -769,7 +769,7 @@
                 iterations: 1
             });
             var rot = $("#rotacion");
-            rot.css("transform", "rotateX(3.142rad)");
+            rot.css("transform", "rotateX(0)");
 
         }
     </script>
