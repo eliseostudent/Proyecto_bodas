@@ -758,7 +758,7 @@
             }, "slow");
 
 
-            document.getElementById("rotacion").animate([{
+            $("#rotacion").delay(140).animate([{
                     "transform": "rotateX(3.142rad)"
                 },
                 {
