@@ -300,7 +300,7 @@
                     </p>
                 </div>
             </div>
-            <div class="row align-items-center" style="font-size: 1em; height:33%;">
+            <div class="row align-items-center" style="font-size: 1em; height:33%; margin-left:10%;">
                 <div class="col-xs-3 ">
                     <div class="row">
                         <p id="dias" class="text-center baskerville blanco_bordes"></p>
