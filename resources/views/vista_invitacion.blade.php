@@ -733,7 +733,7 @@
                     "transform": "rotateX(3.142rad)"
                 }
             ], {
-                duration: 140,
+                duration: 600,
                 iterations: 1
             });
             var rot = $("#rotacion");
@@ -745,13 +745,13 @@
                 "z-index": "1"
             }, 1);
 
-            $("#Paper").animate({
+            $("#Paper").delay(140).animate({
                 "margin-top": "-" + h + "px"
             }, "slow");
             $("#Paper").animate({
                 "z-index": "5"
             }, 1);
-            $("#Paper").animate({
+            $("#Paper").delay(140).animate({
                 "margin-top": "0px"
             }, "slow");
         }
