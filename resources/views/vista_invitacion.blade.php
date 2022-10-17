@@ -763,11 +763,8 @@
                 "margin-top": "-" + h + "px"
             }, "slow");
 
-            $("#rotacion").animate({
-                "z-index": "0"
-            }, 1);
             $("#Paper").animate({
-                "z-index": "1"
+                "z-index": "-3"
             }, 1);
 
 
