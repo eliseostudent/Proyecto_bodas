@@ -762,7 +762,7 @@
             $("#Paper").animate({
                 "margin-top": "-" + h + "px"
             }, "slow");
-            $("#Paper").animate({
+            $("#Paper").delay(140).animate({
                 "z-index": "1"
             }, 1);
             $("#Paper").delay(140).animate({
@@ -781,9 +781,7 @@
                 delay: 1600,
             }
 
-            $("#rotacion").animate({
-                "z-index": "4"
-            }, 1);
+
 
             const rotacion = document.querySelector("#rotacion");
             rotacion.animate(newspaperSpinning, newspaperTiming);
@@ -792,6 +790,9 @@
                 var rot = $("#rotacion");
                 rot.css("transform", "rotateX(0)");
             }, 2400);
+            $("#rotacion").delay(140).animate({
+                "z-index": "4"
+            }, 1);
         }
     </script>
     <script formato="{{ $evento->fecha_formato }}">
