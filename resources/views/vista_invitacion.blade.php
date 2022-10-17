@@ -245,31 +245,7 @@
 </head>
 
 <body id="inicio" data-spy="scroll" data-target=".navbar" data-offset="50">
-    <!-- Container principal-->
-    <nav class="navbar navbar-default navbar-fixed" style="margin-bottom: 0px;">
-        <div class="container-fluid" style="display:block">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#inicio">
-                    <h3 class="baskerville ">{{ $evento->nombre_1 }} & {{ $evento->nombre_2 }}</h3>
-                </a>
 
-            </div>
-            <div class="collapse navbar-collapse baskerville " id="myNavbar">
-                <ul class="nav navbar-nav navbar-right d-inline">
-                    <li><a href="#datosDeInvitacion">Datos de invitacion</a></li>
-                    <li><a href="#dondeYCuando">Donde y cuando</a></li>
-                    <li><a href="#myCarousel">Fotos</a></li>
-                    <li><a href="#mesaDeRegalos">Mesa de regalos</a></li>
-                    <li><a href="#confirmarAsistencia">Confirmar asistencia</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
     @if ($message = Session::get('success'))
         <div class="alert alert-success alert-block"
             style="width: 95%; margin:auto; margin-top:10px;margin-bottom:10px;">
