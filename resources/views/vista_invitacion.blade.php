@@ -244,7 +244,7 @@
     </style>
 </head>
 
-<body id="inicio" data-spy="scroll" data-target=".navbar" data-offset="50">
+<body id="inicio">
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success alert-block"
