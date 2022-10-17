@@ -762,12 +762,13 @@
             $("#Paper").animate({
                 "margin-top": "-" + h + "px"
             }, "slow");
-            $("#rotacion").animate({
-                "z-index": "0"
-            }, 1);
             $("#Paper").animate({
                 "z-index": "1"
             }, 1);
+            $("#rotacion").animate({
+                "z-index": "0"
+            }, 1);
+
             $("#Paper").delay(140).animate({
                 "margin-top": "0px"
             }, "slow");
