@@ -766,7 +766,7 @@
                 "z-index": "1"
             }, 1);
 
-            $("#Paper").delay(140).animate({
+            $("#Paper").animate({
                 "margin-top": "0px"
             }, "slow");
             const newspaperSpinning = [{
