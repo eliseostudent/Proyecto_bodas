@@ -244,7 +244,7 @@
     </style>
 </head>
 
-<body id="inicio" style="max-width: 1000px;margin:auto;">
+<body id="inicio" style="max-width: 800px;margin:auto;">
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success alert-block"
