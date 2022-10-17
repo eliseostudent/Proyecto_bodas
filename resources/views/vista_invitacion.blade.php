@@ -294,7 +294,8 @@
             </div>
             <div class="row align-items-center" style="height: 33%;">
                 <div class="col">
-                    <p class="text-center blanco_bordes cursiva" style="font-size: 1.3em; ">
+                    <p class="text-center blanco_bordes cursiva"
+                        style="font-size: 1.3em; text-shadow: 2px 2px 1px #0">
                         {{ $evento->mensaje_principal }}
                     </p>
                 </div>
