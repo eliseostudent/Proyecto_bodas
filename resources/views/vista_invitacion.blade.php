@@ -765,7 +765,7 @@
             $("#rotacion").animate({
                 "z-index": "0"
             }, 1);
-            $("#Paper").delay(140).animate({
+            $("#Paper").animate({
                 "z-index": "1"
             }, 1);
             $("#Paper").delay(140).animate({
