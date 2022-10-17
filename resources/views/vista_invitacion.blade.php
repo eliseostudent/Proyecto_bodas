@@ -284,23 +284,23 @@
         @else
             <img src="{{ asset('app-images/foto_novios_default.jpg') }}" alt="Foto novios"style="width: 100%">
         @endif
-        <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);font-size:5vw;">
-            <div class="row">
+        <div style="position: absolute;top: 0%; left: 0%; width:100%;height:100%;">
+            <div class="row align-items-center">
                 <div class="col">
                     <p class="KhatijaCalligraphy text-center blanco_bordes"
-                        style="font-size: 10vw; width: 150%; margin-left: -27%;">{{ $evento->nombre_1 }} &
+                        style="font-size: 2.1em; width: 150%; margin-left: -27%;">{{ $evento->nombre_1 }} &
                         {{ $evento->nombre_2 }}</p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col">
                     <p class="text-center blanco_bordes cursiva"
-                        style="font-size: 5vw; width: 150%; margin-left: -27%;">
+                        style="font-size: 1em; width: 150%; margin-left: -27%;">
                         {{ $evento->mensaje_principal }}
                     </p>
                 </div>
             </div>
-            <div class="row" style="font-size: 3vw;">
+            <div class="row align-items-center" style="font-size: 1em;">
                 <div class="col-xs-3 ">
                     <div class="row">
                         <p id="dias" class="text-center baskerville blanco_bordes"></p>
