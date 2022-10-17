@@ -260,7 +260,7 @@
         @else
             <img src="{{ asset('app-images/foto_novios_default.jpg') }}" alt="Foto novios"style="width: 100%">
         @endif
-        <div style="position: absolute;top: 0%; left: 0%; width:100%;height:100%;">
+        <div class="col" style="position: absolute;top: 0%; left: 0%; width:100%;height:100%;">
             <div class="row align-items-center" style="height: 33%;">
                 <div class="col">
                     <p class="KhatijaCalligraphy text-center blanco_bordes" style="font-size: 2.8em; ">
