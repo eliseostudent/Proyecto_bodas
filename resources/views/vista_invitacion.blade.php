@@ -736,8 +736,11 @@
                 duration: 600,
                 iterations: 1
             });
-            var rot = $("#rotacion");
-            rot.css("transform", "rotateX(3.142rad)");
+
+            setTimeout(function() {
+                var rot = $("#rotacion");
+                rot.css("transform", "rotateX(3.142rad)");
+            }, 600);
             $("#rotacion").delay(600).animate({
                 "z-index": "0"
             }, 1);
