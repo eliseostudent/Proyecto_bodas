@@ -119,16 +119,20 @@
     <!-- Main JS-->
     <script src="{{ asset('cool_admin/js/main.js') }}"></script>
     <script>
+        function customAlert(msg, duration) {
+            var styler = document.createElement("div");
+            styler.setAttribute("style",
+                "border: solid 5px Red;width:auto;height:auto;top:50%;left:40%;background-color:#444;color:Silver");
+            styler.innerHTML = "<h1>" + msg + "</h1>";
+            setTimeout(function() {
+                styler.parentNode.removeChild(styler);
+            }, duration);
+            document.body.appendChild(styler);
+        }
+
         function copyurl(id, item) {
             navigator.clipboard.writeText(id);
-            const el = document.createElement("div", {
-                class: "alert alert-success",
-                role: "alert",
-                id: "copiedidalert"
-            });
-            el.appendChild(document.createTextNode("Copied!"););
-            document.getElementById(item).appendChild(el);
-            $('#copiedidalert').alert();
+            customAlert("Message copied", "1000");
         }
     </script>
 </body>

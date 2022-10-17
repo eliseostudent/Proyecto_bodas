@@ -63,9 +63,9 @@
 
                                         </td>
                                         <td>
-                                            <div class="table-data-feature" id="copied-{{ $invitado->id }}">
+                                            <div class="table-data-feature">
                                                 <button class="item"
-                                                    onclick="copyurl('https://celi-y-eli.fun/inv/{{ $invitado->hash }}' , 'copied-{{ $invitado->id }}')">
+                                                    onclick="copyurl('https://celi-y-eli.fun/inv/{{ $invitado->hash }}' ">
                                                     <i class="zmdi zmdi-copy"></i>
                                                 </button>
                                                 <a href="{{ route('enviar_invitacion', [$invitado->evento, $invitado]) }}"
