@@ -737,15 +737,12 @@
                 duration: 600,
                 iterations: 1
             });
-
-            setTimeout(function() {
-                var rot = $("#rotacion");
-                rot.css("transform", "rotateX(3.142rad)");
-            }, 600);
-            $("#rotacion").delay(600).animate({
+            var rot = $("#rotacion");
+            rot.css("transform", "rotateX(3.142rad)");
+            $("#rotacion").animate({
                 "z-index": "0"
             }, 1);
-            $("#Paper").delay(600).animate({
+            $("#Paper").animate({
                 "z-index": "1"
             }, 1);
 
