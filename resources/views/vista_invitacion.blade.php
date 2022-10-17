@@ -746,7 +746,7 @@
                 "z-index": "1"
             }, 1);
 
-            $("#Paper").delay(600).animate({
+            $("#Paper").animate({
                 "margin-top": "-" + h + "px"
             }, "slow");
             $("#Paper").animate({
