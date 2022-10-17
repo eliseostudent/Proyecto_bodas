@@ -49,7 +49,7 @@
 
         .blanco_bordes {
             color: #fff;
-            text-shadow: 0 0 2px #000;
+            text-shadow: 5px 5px 10px #000;
         }
 
         h1 {
