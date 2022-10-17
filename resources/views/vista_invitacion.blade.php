@@ -295,12 +295,13 @@
             <div class="row align-items-center" style="height: 33%;">
                 <div class="col">
                     <p class="text-center blanco_bordes cursiva"
-                        style="font-size: 1.3em; text-shadow: 2px 2px 1px #000">
+                        style="font-size: 1.3em; text-shadow: 2px 2px 2px #000;">
                         {{ $evento->mensaje_principal }}
                     </p>
                 </div>
             </div>
-            <div class="row align-items-center blanco_bordes" style="font-size: 1em; height:33%; margin-left:10%;">
+            <div class="row align-items-center blanco_bordes"
+                style="font-size: 1em; height:33%; margin-left:10%;text-shadow: 2px 2px 2px #000;">
                 <div class="col-xs-3 ">
                     <div class="row">
                         <p id="dias" class="text-center baskerville "></p>
