@@ -739,10 +739,10 @@
             });
             var rot = $("#rotacion");
             rot.css("transform", "rotateX(3.142rad)");
-            $("#rotacion").animate({
+            $("#rotacion").delay(600).animate({
                 "z-index": "0"
             }, 1);
-            $("#Paper").animate({
+            $("#Paper").delay(600).animate({
                 "z-index": "1"
             }, 1);
 
