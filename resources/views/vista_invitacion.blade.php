@@ -277,7 +277,7 @@
                 </div>
             </div>
             <div class="row align-items-center blanco_bordes"
-                style="font-size: 1em; height:33%; margin-left:10%;text-shadow: 2px 2px 2px #000;">
+                style="font-size: 1em; height:33%; text-shadow: 2px 2px 2px #000;">
                 <div class="col-xs-3 ">
                     <div class="row">
                         <p id="dias" class="text-center baskerville "></p>
