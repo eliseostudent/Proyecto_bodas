@@ -256,7 +256,7 @@
     <div class="container-fluid" style="padding:0px; position: relative;">
         @if ($evento->ruta_foto_novios != '')
             <img src="{{ Storage::url($evento->ruta_foto_novios) }}" alt="Foto novios"
-                style="width: 100%;height: 94vh;">
+                style="width: 100%;height: 100vh;">
         @else
             <img src="{{ asset('app-images/foto_novios_default.jpg') }}" alt="Foto novios"style="width: 100%">
         @endif
