@@ -285,14 +285,14 @@
             <img src="{{ asset('app-images/foto_novios_default.jpg') }}" alt="Foto novios"style="width: 100%">
         @endif
         <div style="position: absolute;top: 0%; left: 0%; width:100%;height:100%;">
-            <div class="row align-items-center">
+            <div class="row align-items-center" style="height: 33%;">
                 <div class="col">
                     <p class="KhatijaCalligraphy text-center blanco_bordes"
                         style="font-size: 2.1em; width: 150%; margin-left: -27%;">{{ $evento->nombre_1 }} &
                         {{ $evento->nombre_2 }}</p>
                 </div>
             </div>
-            <div class="row align-items-center">
+            <div class="row align-items-center" style="height: 33%;">
                 <div class="col">
                     <p class="text-center blanco_bordes cursiva"
                         style="font-size: 1em; width: 150%; margin-left: -27%;">
@@ -300,7 +300,7 @@
                     </p>
                 </div>
             </div>
-            <div class="row align-items-center" style="font-size: 1em;">
+            <div class="row align-items-center" style="font-size: 1em; height:33%;">
                 <div class="col-xs-3 ">
                     <div class="row">
                         <p id="dias" class="text-center baskerville blanco_bordes"></p>
