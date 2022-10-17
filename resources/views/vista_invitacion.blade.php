@@ -288,7 +288,7 @@
             <div class="row align-items-center" style="height: 33%;">
                 <div class="col">
                     <p class="KhatijaCalligraphy text-center blanco_bordes"
-                        style="font-size: 2.1em; width: 150%; margin-left: -27%;">{{ $evento->nombre_1 }} &
+                        style="font-size: 2.8em; width: 150%; margin-left: -27%;">{{ $evento->nombre_1 }} &
                         {{ $evento->nombre_2 }}</p>
                 </div>
             </div>
