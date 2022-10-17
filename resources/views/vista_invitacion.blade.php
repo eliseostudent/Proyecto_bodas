@@ -280,34 +280,34 @@
                 style="font-size: 1em; height:33%; text-shadow: 2px 2px 2px #000; ">
                 <div class="col-xs-3 ">
                     <div class="row">
-                        <p id="dias" class="text-center baskerville "></p>
+                        <p id="dias" class="text-center baskerville " style="width: 100%;"></p>
                     </div>
                     <div class="row">
-                        <p class="text-center ">Dias.</p>
-                    </div>
-                </div>
-                <div class="col-xs-3 ">
-                    <div class="row">
-                        <p id="horas" class="text-center "></p>
-                    </div>
-                    <div class="row">
-                        <p class="text-center ">Hrs.</p>
+                        <p class="text-center " style="width: 100%;">Dias.</p>
                     </div>
                 </div>
                 <div class="col-xs-3 ">
                     <div class="row">
-                        <p id="minutos" class="text-center "></p>
+                        <p id="horas" class="text-center " style="width: 100%;"></p>
                     </div>
                     <div class="row">
-                        <p class="text-center ">Min.</p>
+                        <p class="text-center " style="width: 100%;">Hrs.</p>
                     </div>
                 </div>
                 <div class="col-xs-3 ">
                     <div class="row">
-                        <p id="segundos" class="text-center "></p>
+                        <p id="minutos" class="text-center " style="width: 100%;"></p>
                     </div>
                     <div class="row">
-                        <p class="text-center ">Seg.</p>
+                        <p class="text-center " style="width: 100%;">Min.</p>
+                    </div>
+                </div>
+                <div class="col-xs-3 ">
+                    <div class="row">
+                        <p id="segundos" class="text-center " style="width: 100%;"></p>
+                    </div>
+                    <div class="row">
+                        <p class="text-center " style="width: 100%;">Seg.</p>
                     </div>
                 </div>
             </div>
