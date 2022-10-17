@@ -762,13 +762,19 @@
             $("#Paper").animate({
                 "margin-top": "-" + h + "px"
             }, "slow");
+
+            $("#rotacion").animate({
+                "z-index": "0"
+            }, 1);
             $("#Paper").animate({
                 "z-index": "1"
             }, 1);
 
+
             $("#Paper").animate({
                 "margin-top": "0px"
             }, "slow");
+
             const newspaperSpinning = [{
                     transform: 'rotateX(3.142rad)'
                 },
