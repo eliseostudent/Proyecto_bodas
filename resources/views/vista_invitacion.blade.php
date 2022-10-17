@@ -786,12 +786,13 @@
             }
 
 
-            $("#rotacion").animate({
-                "z-index": "4"
-            }, 1);
+
             const rotacion = document.querySelector("#rotacion");
             rotacion.animate(newspaperSpinning, newspaperTiming);
-
+            setTimeout(function() {
+                var rot = $("#rotacion");
+                rot.css("z-index", "4");
+            }, 1600);
             setTimeout(function() {
 
                 var rot = $("#rotacion");
