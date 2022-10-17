@@ -160,7 +160,7 @@
             position: absolute;
             background-image: url({{ asset('app-images/sobre.png') }}  );
             background-size: cover;
-            z-index: 2;
+            z-index: 3;
             /*
             border-bottom: 1px solid #D4E6F1;
             border-left: 1px solid transparent;
@@ -764,9 +764,6 @@
             }, "slow");
             $("#Paper").animate({
                 "z-index": "1"
-            }, 1);
-            $("#rotacion").animate({
-                "z-index": "0"
             }, 1);
 
             $("#Paper").delay(140).animate({
