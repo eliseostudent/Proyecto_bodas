@@ -300,37 +300,37 @@
                     </p>
                 </div>
             </div>
-            <div class="row align-items-center" style="font-size: 1em; height:33%; margin-left:10%;">
+            <div class="row align-items-center blanco_bordes" style="font-size: 1em; height:33%; margin-left:10%;">
                 <div class="col-xs-3 ">
                     <div class="row">
-                        <p id="dias" class="text-center baskerville blanco_bordes"></p>
+                        <p id="dias" class="text-center baskerville "></p>
                     </div>
                     <div class="row">
-                        <p class="text-center blanco_bordes">Dias.</p>
+                        <p class="text-center ">Dias.</p>
                     </div>
                 </div>
                 <div class="col-xs-3 ">
                     <div class="row">
-                        <p id="horas" class="text-center blanco_bordes"></p>
+                        <p id="horas" class="text-center "></p>
                     </div>
                     <div class="row">
-                        <p class="text-center blanco_bordes">Hrs.</p>
-                    </div>
-                </div>
-                <div class="col-xs-3 ">
-                    <div class="row">
-                        <p id="minutos" class="text-center blanco_bordes"></p>
-                    </div>
-                    <div class="row">
-                        <p class="text-center blanco_bordes">Min.</p>
+                        <p class="text-center ">Hrs.</p>
                     </div>
                 </div>
                 <div class="col-xs-3 ">
                     <div class="row">
-                        <p id="segundos" class="text-center blanco_bordes"></p>
+                        <p id="minutos" class="text-center "></p>
                     </div>
                     <div class="row">
-                        <p class="text-center blanco_bordes">Seg.</p>
+                        <p class="text-center ">Min.</p>
+                    </div>
+                </div>
+                <div class="col-xs-3 ">
+                    <div class="row">
+                        <p id="segundos" class="text-center "></p>
+                    </div>
+                    <div class="row">
+                        <p class="text-center ">Seg.</p>
                     </div>
                 </div>
             </div>
