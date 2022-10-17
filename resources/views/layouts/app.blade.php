@@ -119,10 +119,17 @@
     <!-- Main JS-->
     <script src="{{ asset('cool_admin/js/main.js') }}"></script>
     <script>
-        function copyurl(id) {
-		navigator.clipboard.writeText(id);
+        function copyurl(id, item) {
+            navigator.clipboard.writeText(id);
+            const el = document.createElement("div", {
+                class: "alert alert-success",
+                role: "alert",
+                id: "copiedidalert"
+            });
+            el.appendChild(document.createTextNode("Copied!"););
+            document.getElementById(item).appendChild(el);
+            $('#copiedidalert').alert();
         }
-
     </script>
 </body>
 
