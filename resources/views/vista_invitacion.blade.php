@@ -764,7 +764,7 @@
             }, "slow");
 
             $("#Paper").animate({
-                "z-index": "-3"
+                "z-index": "1"
             }, 1);
 
 
@@ -793,10 +793,11 @@
             setTimeout(function() {
                 var rot = $("#rotacion");
                 rot.css("transform", "rotateX(0)");
+                $("#rotacion").animate({
+                    "z-index": "4"
+                }, 1);
             }, 2400);
-            $("#rotacion").delay(140).animate({
-                "z-index": "4"
-            }, 1);
+
         }
     </script>
     <script formato="{{ $evento->fecha_formato }}">
