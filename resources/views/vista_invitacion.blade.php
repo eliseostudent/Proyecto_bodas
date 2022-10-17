@@ -799,7 +799,7 @@
                 var rot = $("#rotacion");
                 rot.css("transform", "rotateX(0)");
 
-            }, 2400);
+            }, 1800);
 
         }
     </script>
