@@ -791,11 +791,12 @@
             rotacion.animate(newspaperSpinning, newspaperTiming);
 
             setTimeout(function() {
-                var rot = $("#rotacion");
-                rot.css("transform", "rotateX(0)");
                 $("#rotacion").animate({
                     "z-index": "4"
                 }, 1);
+                var rot = $("#rotacion");
+                rot.css("transform", "rotateX(0)");
+
             }, 2400);
 
         }
