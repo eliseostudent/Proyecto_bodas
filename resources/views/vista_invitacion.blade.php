@@ -293,7 +293,8 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <p class="text-center blanco_bordes cursiva" style="font-size: 3vw;">
+                    <p class="text-center blanco_bordes cursiva"
+                        style="font-size: 5vw; width: 150%; margin-left: -27%;">
                         {{ $evento->mensaje_principal }}
                     </p>
                 </div>
@@ -780,9 +781,9 @@
                 }
             ];
             const newspaperTiming = {
-                duration: 800,
+                duration: 600,
                 iterations: 1,
-                delay: 1600,
+                delay: 1200,
             }
 
 
@@ -792,7 +793,7 @@
             setTimeout(function() {
                 var rot = $("#rotacion");
                 rot.css("z-index", "4");
-            }, 1600);
+            }, 1200);
             setTimeout(function() {
 
                 var rot = $("#rotacion");
