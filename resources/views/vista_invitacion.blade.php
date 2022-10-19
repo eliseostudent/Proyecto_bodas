@@ -680,7 +680,7 @@
         p.css("width", wp + "px");
         p.css("height", (wp * 0.60 | 0) + "px");
         p.css("margin-left", pp / 2 + "px");
-        p.css("margin-top", (wp * 0.10 | 0) + "px");
+        p.css("margin-top", (wp * 0.073 | 0) + "px");
         var img_f = $("#img_fondo_bolelto");
         var h_img_f = (wp * 1.90 | 0)
         img_f.css("height", h_img_f + "px");
@@ -725,13 +725,13 @@
             }, 1);
 
             $("#Paper").animate({
-                "margin-top": "-" + (h * 1.10 | 0) + "px"
+                "margin-top": "-" + (h * 1.073 | 0) + "px"
             }, "slow");
             $("#Paper").animate({
                 "z-index": "5"
             }, 1);
             $("#Paper").animate({
-                "margin-top": (h * 0.10 | 0) + "px"
+                "margin-top": (h * 0.073 | 0) + "px"
             }, "slow");
         }
 
@@ -740,7 +740,7 @@
 
             var h = $("#Paper").height();
             $("#Paper").animate({
-                "margin-top": "-" + (h * 1.10 | 0) + "px"
+                "margin-top": "-" + (h * 1.073 | 0) + "px"
             }, "slow");
 
             $("#Paper").animate({
@@ -749,7 +749,7 @@
 
 
             $("#Paper").animate({
-                "margin-top": (h * 0.10 | 0) + "px"
+                "margin-top": (h * 0.073 | 0) + "px"
             }, "slow");
 
             const newspaperSpinning = [{
