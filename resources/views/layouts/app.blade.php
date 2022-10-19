@@ -120,8 +120,12 @@
     <script src="{{ asset('cool_admin/js/main.js') }}"></script>
     <script>
         function copyurl(id) {
-            navigator.clipboard.writeText(id);
-            alert("lilnk:" + id + "\n Copied");
+            navigator.clipboard.writeText(id).then(() => {
+                    alert("successfully copied");
+                })
+                .catch(() => {
+                    alert("something went wrong");
+                });
         }
     </script>
 </body>
