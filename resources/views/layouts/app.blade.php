@@ -119,9 +119,9 @@
     <!-- Main JS-->
     <script src="{{ asset('cool_admin/js/main.js') }}"></script>
     <script>
-        function copyurl(id, item) {
+        function copyurl(id) {
             navigator.clipboard.writeText(id);
-            alert("copied!");
+            alert("lilnk:" + id + "\n Copied");
         }
     </script>
 </body>
