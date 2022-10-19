@@ -639,8 +639,8 @@
     <script>
         var el = $("#OpenFlapBack");
         var wi = $("#Shadow").width();
-        var w = wi / 2 | 0; // calculate & trim decimals
-        var w2 = w * 0.79 | 0;
+        var w = wi / 2 | 0; // mitad del ancho
+        var w2 = w * 0.6671 | 0; //altura en propocion
 
         el.css("border-left", w + "px solid transparent");
         el.css("border-right", w + "px solid transparent");
@@ -662,13 +662,13 @@
         //ff1.css("border-bottom", (wi * 0.588 | 0) + "px solid #A9CCE3 ");
         var of1 = $("#OpenFlap");
         of1.css("width", wi + "px");
-        of1.css("height", (w * 0.68 | 0) + "px");
+        of1.css("height", (wi * 0.3328 | 0) + "px");
         var rot = $("#rotacion");
-        rot.css("margin-top", "-" + (w * 0.68 | 0) + "px");
-        rot.css("height", ((w * 0.68 | 0) * 2) + "px");
+        rot.css("margin-top", "-" + (wi * 0.3328 | 0) + "px");
+        rot.css("height", ((wi * 0.3328 | 0) * 2) + "px");
         rot.css("width", wi + "px");
         var ofsec = $("#OpenFlap-second");
-        ofsec.css("height", (w * 0.68 | 0) + "px");
+        ofsec.css("height", (wi * 0.3328 | 0) + "px");
 
         //of1.css("border-left", (w * 1.02 | 0) + "px solid transparent");
         //of1.css("border-right", w + "px solid transparent");
