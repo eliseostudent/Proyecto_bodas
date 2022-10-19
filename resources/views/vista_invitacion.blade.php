@@ -656,7 +656,7 @@
         //ff2.css("border-left", wi + "px solid transparent");
         //ff2.css("border-bottom", (wi * 0.588 | 0) + "px solid #D4E6F1");
         ff2.css("width", wi + "px ");
-        ff2.css("height", (wi * 0.588 | 0) + "px");
+        ff2.css("height", (wi * 0.6625 | 0) + "px");
         var ff1 = $("#frontFlap1");
         //ff1.css("border-right", wi + "px solid transparent");
         //ff1.css("border-bottom", (wi * 0.588 | 0) + "px solid #A9CCE3 ");
