@@ -321,7 +321,7 @@
     </div>
 
     <div id="pruebas" class="container-fluid" style="padding:0px; position: relative;">
-        <img id="img_fondo_bolelto" src="{{ asset('app-images/fondo_boleto.jpg') }}"
+        <img id="img_fondo_bolelto" src="{{ asset('app-images/fondo_boleto.png') }}"
             alt="fondo boleto"style="width: 100%; height:400px">
         <div style="position: absolute;top: 0%; left: 0%; width:100%; height:100%;  ">
             <div id="Envelope">
