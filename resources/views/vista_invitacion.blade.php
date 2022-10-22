@@ -341,7 +341,7 @@
                             <div class="row h-25 " style="align-items: end;">
                                 <div class="col">
                                     <h1 class="text-center  cursiva" style="font-size: 1.5em;">
-                                        Datos del invitado
+                                        Apreciable
                                     </h1>
                                 </div>
                             </div>
@@ -361,7 +361,7 @@
                             <div class="row h-25 ">
                                 <div class="col">
                                     @if (!$evento->no_niños)
-                                        <h6 class=" text-center baskerville" style="font-size: 0.5em;">No niños</h6>
+                                        <h6 class=" text-center baskerville" style="font-size: 0.7em;">No niños</h6>
                                     @endif
                                 </div>
                             </div>
