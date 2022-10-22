@@ -355,7 +355,7 @@
                             </div>
                             <div class="row h-25 align-items-center">
                                 <div class="col">
-                                    <h1 class="text-center  cursiva" style="font-size: 1em;">
+                                    <h1 class="text-center " style="font-family: 'Century Gothic', sans-serif; font-size: 1em;">
                                         {{ $invitado->numero_boletos }} Boletos
                                     </h1>
                                 </div>
@@ -363,7 +363,7 @@
                             <div class="row h-25 ">
                                 <div class="col">
                                     @if (!$evento->no_niños)
-                                        <h6 class=" text-center " style="font-family: 'Century Gothic', sans-serif; font-size: 0.7em;">No niños</h6>
+                                        <h6 class=" text-center baskerville" style="font-size: 0.7em;">No niños</h6>
                                     @endif
                                 </div>
                             </div>
