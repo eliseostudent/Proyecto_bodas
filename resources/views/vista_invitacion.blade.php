@@ -704,13 +704,16 @@
         $("#Envelope").click(function() {
             var flag = document.getElementById("checkenvelope");
             if (flag.getAttribute('value') == "opened") {
+                flag.setAttribute('value', "temp");
                 close();
                 flag.setAttribute('value', "closed");
             } else {
-                open();
-                flag.setAttribute('value', "opened");
+                if (flag.getAttribute('value') == "closed"){
+                    flag.setAttribute('value', "temp");
+                    open();
+                    flag.setAttribute('value', "opened");
+                }
             }
-
         });
 
         function open() {
