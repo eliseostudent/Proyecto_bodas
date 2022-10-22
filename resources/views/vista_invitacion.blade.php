@@ -329,7 +329,7 @@
                     <div id="Words"></div>
                     <div id="datosDeInvitacion" class="container-fluid"
                         style="padding:0px; position: relative;height:100%">
-                        <img src="{{ asset('app-images/fondo_boleto.jpg') }}"
+                        <img src="{{ asset('app-images/boleto.jpg') }}"
                             alt="fondo boleto"style="width: 100%; height:100%">
                         <div style="position: absolute;top: 0%; left: 0%; width:100%; height:100%  ">
                             <div class="row h-25 align-items-center">
@@ -366,7 +366,10 @@
                 <div id="frontFlap1"></div>
                 <div id="rotacion">
                     <div id="OpenFlap-second"></div>
-                    <div id="OpenFlap"></div>
+                    <div id="OpenFlap">
+                        <img src="{{ asset('app-images/sobre_tapa.png') }}"
+                            alt="sobre tapa"style="width: 100%; height:100%">
+                    </div> 
                 </div>
 
 
