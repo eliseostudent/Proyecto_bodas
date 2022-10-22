@@ -338,14 +338,14 @@
                         <img src="{{ asset('app-images/boleto.jpg') }}"
                             alt="fondo boleto"style="width: 100%; height:100%">
                         <div style="position: absolute;top: 0%; left: 0%; width:100%; height:100%  ">
-                            <div class="row h-25 align-items-center">
+                            <div class="row h-25 " style="align-items: end;">
                                 <div class="col">
                                     <h1 class="text-center  cursiva" style="font-size: 1.5em;">
                                         Datos del invitado
                                     </h1>
                                 </div>
                             </div>
-                            <div class="row h-25 align-items-center">
+                            <div class="row h-25 " style="align-items: end;">
                                 <div class="col">
                                     <h1 class=" text-center baskerville" style="font-size: 1.5em;">
                                         {{ $invitado->nombre_invitado }}</h1>
