@@ -46,6 +46,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+        @import url('http://fonts.cdnfonts.com/css/century-gothic');
+
 
         .blanco_bordes {
             color: #fff;
@@ -361,7 +363,7 @@
                             <div class="row h-25 ">
                                 <div class="col">
                                     @if (!$evento->no_niños)
-                                        <h6 class=" text-center baskerville" style="font-size: 0.7em;">No niños</h6>
+                                        <h6 class=" text-center " style="font-family: 'Century Gothic', sans-serif; font-size: 0.7em;">No niños</h6>
                                     @endif
                                 </div>
                             </div>
