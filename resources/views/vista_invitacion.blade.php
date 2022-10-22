@@ -173,11 +173,12 @@
             width: 0;
             height: 0;
             position: absolute;
-            background-image: url({{ asset('app-images/sobre_tapa.png') }}  );
-            background-size: cover;
+            
             z-index: 4;
 
             /*
+            background-image: url({{ asset('app-images/sobre_tapa.png') }}  );
+            background-size: cover;
             margin-top: 270px;
             margin-left: 263px;
             border-left: 134px solid transparent;
