@@ -279,6 +279,10 @@
                         style="font-size: 1.3em; text-shadow: 2px 2px 2px #000;">
                         {{ $evento->mensaje_principal }}
                     </p>
+                    <p class="text-center blanco_bordes cursiva"
+                        style="font-size: 1.3em; text-shadow: 2px 2px 2px #000;">
+                        CT 8 7
+                    </p>
                 </div>
             </div>
             <div class="row align-items-center blanco_bordes"
@@ -457,7 +461,7 @@
         <h1 class="cursiva">Dresscode</h1>
         <div class="row">
             <div class="col"></div>
-            <div class="col-3">
+            <div class="col-9">
                 @if ($evento->codigo_de_vestimenta == '0')
                     <img src="{{ asset('app-images/white_tie_icon.jpg') }}"
                         alt="white_tie_icon"style="width: 100%; ">
@@ -465,7 +469,7 @@
                     <img src="{{ asset('app-images/black_tie_icon.jpg') }}"
                         alt="black_tie_icon"style="width: 100%; ">
                 @elseif ($evento->codigo_de_vestimenta == '2')
-                    <img src="{{ asset('app-images/formal_icon.jpg') }}" alt="formal_icon"style="width: 100%; ">
+                    <img src="{{ asset('app-images/formal_icon.png') }}" alt="formal_icon"style="width: 100%; ">
                 @else
                     <img src="{{ asset('app-images/cocktail_icon.png') }}" alt="cocktail_icon"style="width: 100%; ">
                 @endif
