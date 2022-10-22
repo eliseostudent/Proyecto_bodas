@@ -277,11 +277,7 @@
                 <div class="col">
                     <p class="text-center blanco_bordes cursiva"
                         style="font-size: 1.3em; text-shadow: 2px 2px 2px #000;">
-                        {{ $evento->mensaje_principal }}
-                    </p>
-                    <p class="text-center blanco_bordes cursiva"
-                        style="font-size: 1.3em; text-shadow: 2px 2px 2px #000;">
-                        CT 8 7
+                        "{{ $evento->mensaje_principal }}"
                     </p>
                 </div>
             </div>
@@ -458,7 +454,7 @@
         </div>
     </div>
     <div class="container text-center">
-        <h1 class="cursiva">Dresscode</h1>
+        <h1 class="cursiva" style="margin-bottom: 15px;">Dresscode</h1>
         <div class="row">
             <div class="col"></div>
             <div class="col-9">
@@ -481,7 +477,7 @@
         @elseif ($evento->codigo_de_vestimenta == '1')
             <h3 class=" baskerville">Black Tie</h3>
         @elseif ($evento->codigo_de_vestimenta == '2')
-            <h3 class=" baskerville">Formal</h3>
+            <h3 class=" baskerville" style="margin-top:15px;">Formal</h3>
         @else
             <h3 class=" baskerville">Cocktail</h3>
         @endif
