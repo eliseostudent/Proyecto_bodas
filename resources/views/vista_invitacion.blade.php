@@ -131,9 +131,10 @@
             height: 100px;
             width: 265px;
             position: absolute;
+            
+            /*
             background-image: url({{ asset('app-images/brown-texture.jpg') }}  );
             background-size: cover;
-            /*
             background-color: #7FB3D5;
             margin-left: 264px;
             margin-top: 270px;
@@ -158,10 +159,11 @@
             height: 0;
 
             position: absolute;
-            background-image: url({{ asset('app-images/sobre.png') }}  );
-            background-size: cover;
+            
             z-index: 3;
             /*
+            background-image: url({{ asset('app-images/sobre.png') }}  );
+            background-size: cover;
             border-bottom: 1px solid #D4E6F1;
             border-left: 1px solid transparent;
             margin-top: 269px;
@@ -325,7 +327,10 @@
             <div id="Envelope">
                 <div id="Shadow"></div>
                 <div id="OpenFlapBack"></div>
-                <div id="backFlap"></div>
+                <div id="backFlap">
+                    <img src="{{ asset('app-images/brown-texture.jpg') }}"
+                            alt="fondo boleto"style="width: 100%; height:100%">
+                </div>
                 <div id="Paper">
                     <div id="Words"></div>
                     <div id="datosDeInvitacion" class="container-fluid"
@@ -363,7 +368,10 @@
                         </div>
                     </div>
                 </div>
-                <div id="frontFlap2"></div>
+                <div id="frontFlap2">
+                    <img src="{{ asset('app-images/sobre.png') }}"
+                            alt="sobre tapa"style="width: 100%; height:100%">
+                </div>
                 <div id="frontFlap1"></div>
                 <div id="rotacion">
                     <div id="OpenFlap-second"></div>
