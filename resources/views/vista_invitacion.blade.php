@@ -717,8 +717,10 @@
         });
 
         function open() {
-
-
+            
+            $("#mensaje_sobre").animate({
+                "opacity": "-=1"
+            }, "slow");
             var h = $("#Paper").height();
 
 
