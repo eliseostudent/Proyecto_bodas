@@ -327,6 +327,9 @@
             alt="fondo boleto"style="width: 100%; height:400px">
         <div style="position: absolute;top: 0%; left: 0%; width:100%; height:100%;  ">
             <div id="Envelope">
+                <div class="cursiva " id="mensaje_sobre" style="font-size: 2em; position: absolute; top: 20%; width: 80%; text-align: center;">
+                    Ábreme
+                </div>
                 <div id="Shadow"></div>
                 <div id="OpenFlapBack"></div>
                 <div id="backFlap">
