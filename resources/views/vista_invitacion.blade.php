@@ -602,7 +602,7 @@
             <form action="{{ route('confirm', $invitado) }}" method="post" class="form-horizontal">
                 @method('PATCH')
                 @csrf
-                <div class="row form-group">
+                <div class="row form-group" style="width: 150%">
                     <p class="form-control-static text-white baskerville" style="padding-left: 16px"><b>Nombre:
                         </b>{{ $invitado->nombre_invitado }}</p>
                 </div>
