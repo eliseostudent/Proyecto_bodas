@@ -707,11 +707,22 @@
         $("#Envelope").click(function() {
             var flag = document.getElementById("checkenvelope");
             if (flag.getAttribute('value') == "opened") {
+                flag.setAttribute('value', "loading");
                 close();
-                flag.setAttribute('value', "closed");
+                setTimeout(function() {
+                    flag.setAttribute('value', "closed");
+                }, 1800);
+                
             } else {
-                open();
-                flag.setAttribute('value', "opened");
+                if (flag.getAttribute('value') == "closed"){
+                    flag.setAttribute('value', "loading");
+                    open();
+                    setTimeout(function() {
+                        flag.setAttribute('value', "opened");
+                    }, 1800);
+                    
+                }
+                
             }
 
         });
