@@ -711,7 +711,7 @@
                 close();
                 setTimeout(function() {
                     flag.setAttribute('value', "closed");
-                }, 1800);
+                }, 1900);
                 
             } else {
                 if (flag.getAttribute('value') == "closed"){
@@ -719,7 +719,7 @@
                     open();
                     setTimeout(function() {
                         flag.setAttribute('value', "opened");
-                    }, 1800);
+                    }, 1900);
                     
                 }
                 
