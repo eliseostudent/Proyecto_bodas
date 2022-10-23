@@ -807,10 +807,10 @@
 
                 var rot = $("#rotacion");
                 rot.css("transform", "rotateX(0)");
-                $("#mensaje_sobre").animate({
-                    "opacity": "-=1"
-                }, "slow");
             }, 1800);
+            $("#mensaje_sobre").animate({
+                "opacity": "-=1"
+            }, "slow");
 
         }
     </script>
