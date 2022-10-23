@@ -809,7 +809,7 @@
                 rot.css("transform", "rotateX(0)");
             }, 1800);
             $("#mensaje_sobre").animate({
-                "opacity": "-=1"
+                "opacity": "+=1"
             }, "slow");
 
         }
