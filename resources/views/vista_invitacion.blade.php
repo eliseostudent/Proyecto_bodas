@@ -618,7 +618,7 @@
                                         class="form-check-input baskerville" checked>Asistire
                                 </label>
                             </div>
-                            <div class="radio">
+                            <div class="radio" style="width: 150%">
                                 <label for="radio2" class="form-check-label text-white baskerville">
                                     <input type="radio" id="radio2" name="confirmacion" value="1"
                                         class="form-check-input baskerville">No asistire</label>
