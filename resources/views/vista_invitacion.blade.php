@@ -808,7 +808,7 @@
                 var rot = $("#rotacion");
                 rot.css("transform", "rotateX(0)");
             }, 1800);
-            $("#mensaje_sobre").animate({
+            $("#mensaje_sobre").delay(1800).animate({
                 "opacity": "+=1"
             }, "slow");
 
