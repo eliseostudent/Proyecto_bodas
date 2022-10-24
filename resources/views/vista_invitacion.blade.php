@@ -133,7 +133,7 @@
             height: 100px;
             width: 265px;
             position: absolute;
-            
+
             /*
             background-image: url({{ asset('app-images/brown-texture.jpg') }}  );
             background-size: cover;
@@ -161,7 +161,7 @@
             height: 0;
 
             position: absolute;
-            
+
             z-index: 3;
             /*
             background-image: url({{ asset('app-images/sobre.png') }}  );
@@ -177,7 +177,7 @@
             width: 0;
             height: 0;
             position: absolute;
-            
+
             z-index: 4;
 
             /*
@@ -327,14 +327,15 @@
             alt="fondo boleto"style="width: 100%; height:400px">
         <div style="position: absolute;top: 0%; left: 0%; width:100%; height:100%;  ">
             <div id="Envelope">
-                <div class="cursiva " id="mensaje_sobre" style="font-size: 2em; position: absolute; top: 20%; width: 80%; text-align: center;">
+                <div class="cursiva " id="mensaje_sobre"
+                    style="font-size: 2em; position: absolute; top: 20%; width: 80%; text-align: center;">
                     Ábreme
                 </div>
                 <div id="Shadow"></div>
                 <div id="OpenFlapBack"></div>
                 <div id="backFlap">
                     <img src="{{ asset('app-images/brown-texture.jpg') }}"
-                            alt="fondo boleto"style="width: 100%; height:100%">
+                        alt="fondo boleto"style="width: 100%; height:100%">
                 </div>
                 <div id="Paper">
                     <div id="Words"></div>
@@ -358,7 +359,8 @@
                             </div>
                             <div class="row h-25 align-items-center">
                                 <div class="col">
-                                    <h1 class="text-center " style="font-family: 'Century Gothic', sans-serif; font-size: 1em;">
+                                    <h1 class="text-center "
+                                        style="font-family: 'Century Gothic', sans-serif; font-size: 1em;">
                                         {{ $invitado->numero_boletos }} Boletos
                                     </h1>
                                 </div>
@@ -374,8 +376,7 @@
                     </div>
                 </div>
                 <div id="frontFlap2">
-                    <img src="{{ asset('app-images/sobre.png') }}"
-                            alt="sobre tapa"style="width: 100%; height:100%">
+                    <img src="{{ asset('app-images/sobre.png') }}" alt="sobre tapa"style="width: 100%; height:100%">
                 </div>
                 <div id="frontFlap1"></div>
                 <div id="rotacion">
@@ -383,7 +384,7 @@
                     <div id="OpenFlap">
                         <img src="{{ asset('app-images/sobre_tapa.png') }}"
                             alt="sobre tapa"style="width: 100%; height:100%">
-                    </div> 
+                    </div>
                 </div>
 
 
@@ -704,6 +705,72 @@
         $("#Envelope").css("margin-top", (h_img_f - (wi * 0.588 | 0)) / 2 + "px");
     </script>
     <script>
+        window.onscroll = function() {
+            myFunction()
+        };
+
+        function myFunction() {
+            var wi = $("#Shadow").width();
+            var eh = $("#img_fondo_bolelto").width();
+            var mw = (eh - (wi * 0.588 | 0)) / 2
+            if (document.documentElement.scrollTop > mw) {
+                var flag = document.getElementById("checkenvelope");
+                if (flag.getAttribute('value') == "closed") {
+                    document.getElementById("Envelope").animate([
+                        0 % {
+                            transform: translate(1 px, 1 px) rotate(0 deg);
+                        }
+                        5 % {
+                            transform: translate(-1 px, -2 px) rotate(-1 deg);
+                        }
+                        10 % {
+                            transform: translate(-3 px, 0 px) rotate(1 deg);
+                        }
+                        15 % {
+                            transform: translate(3 px, 2 px) rotate(0 deg);
+                        }
+                        20 % {
+                            transform: translate(1 px, -1 px) rotate(1 deg);
+                        }
+                        25 % {
+                            transform: translate(-1 px, 2 px) rotate(-1 deg);
+                        }
+                        36 % {
+                            transform: translate(-3 px, 1 px) rotate(0 deg);
+                        }
+                        74 % {
+                            transform: translate(-3 px, 1 px) rotate(0 deg);
+                        }
+                        75 % {
+                            transform: translate(1 px, -1 px) rotate(1 deg);
+                        }
+                        80 % {
+                            transform: translate(-1 px, 2 px) rotate(-1 deg);
+                        }
+                        85 % {
+                            transform: translate(-3 px, 1 px) rotate(0 deg);
+                        }
+                        90 % {
+                            transform: translate(3 px, 1 px) rotate(-1 deg);
+                        }
+                        95 % {
+                            transform: translate(-1 px, -1 px) rotate(1 deg);
+                        }
+                        98 % {
+                            transform: translate(1 px, 2 px) rotate(0 deg);
+                        }
+                        100 % {
+                            transform: translate(1 px, -2 px) rotate(-1 deg);
+                        }
+                    ], {
+                        duration: 1000,
+                        iterations: 15
+                    });
+                }
+            }
+        }
+    </script>
+    <script>
         $("#Envelope").click(function() {
             var flag = document.getElementById("checkenvelope");
             if (flag.getAttribute('value') == "opened") {
@@ -712,23 +779,23 @@
                 setTimeout(function() {
                     flag.setAttribute('value', "closed");
                 }, 1900);
-                
+
             } else {
-                if (flag.getAttribute('value') == "closed"){
+                if (flag.getAttribute('value') == "closed") {
                     flag.setAttribute('value', "loading");
                     open();
                     setTimeout(function() {
                         flag.setAttribute('value', "opened");
                     }, 1900);
-                    
+
                 }
-                
+
             }
 
         });
 
         function open() {
-            
+
             $("#mensaje_sobre").animate({
                 "opacity": "-=1"
             }, "slow");
