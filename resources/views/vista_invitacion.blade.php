@@ -716,8 +716,8 @@
             if (document.documentElement.scrollTop > mw) {
                 var flag = document.getElementById("checkenvelope");
                 if (flag.getAttribute('value') == "closed") {
-                    document.getElementById("Envelope").animate([
-                        0 % {
+
+                    const shakekeyframes = [0 % {
                             transform: translate(1 px, 1 px) rotate(0 deg)
                         }
                         5 % {
@@ -762,10 +762,14 @@
                         100 % {
                             transform: translate(1 px, -2 px) rotate(-1 deg)
                         }
-                    ], {
+                    ];
+                    const shaketime = {
                         duration: 1000,
-                        iterations: 15
-                    });
+                        iterations: 15,
+                    }
+                    const rotacion = document.querySelector("#Envelope");
+                    rotacion.animate(shakekeyframes, shaketime);
+
                 }
             }
         }
