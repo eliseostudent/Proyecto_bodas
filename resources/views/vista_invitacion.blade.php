@@ -381,7 +381,7 @@
                 </div>
             </div>
             <span class="glyphicon glyphicon-chevron-down"
-                style="position: absolute;width: 90%;margin-top: 90vh;color: black;font-size: 1.5em;text-align: center;"></span>
+                style="position: absolute;width: 90%;margin-top: 90vh;color: rgba(0,0,0,0.8);font-size: 1.5em;text-align: center;"></span>
         </div>
 
 
