@@ -127,6 +127,8 @@
             margin: auto;
             margin-top: 10%;
             margin-bottom: 10%;
+            animation: shake 1s;
+            animation-iteration-count: 0;
         }
 
         #backFlap {
@@ -245,6 +247,68 @@
         #rotacion {
             position: absolute;
             z-index: 4;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translate(1px, 1px) rotate(0deg);
+            }
+
+            5% {
+                transform: translate(-1px, -2px) rotate(-1deg);
+            }
+
+            10% {
+                transform: translate(-3px, 0px) rotate(1deg);
+            }
+
+            15% {
+                transform: translate(3px, 2px) rotate(0deg);
+            }
+
+            20% {
+                transform: translate(1px, -1px) rotate(1deg);
+            }
+
+            25% {
+                transform: translate(-1px, 2px) rotate(-1deg);
+            }
+
+            36% {
+                transform: translate(-3px, 1px) rotate(0deg);
+            }
+
+            74% {
+                transform: translate(-3px, 1px) rotate(0deg);
+            }
+
+            75% {
+                transform: translate(1px, -1px) rotate(1deg);
+            }
+
+            80% {
+                transform: translate(-1px, 2px) rotate(-1deg);
+            }
+
+            85% {
+                transform: translate(-3px, 1px) rotate(0deg);
+            }
+
+            90% {
+                transform: translate(3px, 1px) rotate(-1deg);
+            }
+
+            95% {
+                transform: translate(-1px, -1px) rotate(1deg);
+            }
+
+            98% {
+                transform: translate(1px, 2px) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(1px, -2px) rotate(-1deg);
+            }
         }
     </style>
 </head>
@@ -716,61 +780,7 @@
             if (document.documentElement.scrollTop > mw) {
                 var flag = document.getElementById("checkenvelope");
                 if (flag.getAttribute('value') == "closed") {
-
-                    const shakekeyframes = [{
-                        transform: 'translate(1 px, 1 px)',
-                        transform: 'rotate(0 deg)',
-                        offset: '0.0'
-                    }, {
-                        transform: 'translate(-1 px, -2 px) rotate(-1 deg)',
-                        offset: '0.05'
-                    }, {
-                        transform: 'translate(-3 px, 0 px) rotate(1 deg)',
-                        offset: '0.1'
-                    }, {
-                        transform: 'translate(3 px, 2 px) rotate(0 deg)',
-                        offset: '0.15'
-                    }, {
-                        transform: 'translate(1 px, -1 px) rotate(1 deg)',
-                        offset: '0.20'
-                    }, {
-                        transform: 'translate(-1 px, 2 px) rotate(-1 deg)',
-                        offset: '0.25'
-                    }, {
-                        transform: 'translate(-3 px, 1 px) rotate(0 deg)',
-                        offset: '0.36'
-                    }, {
-                        transform: 'translate(-3 px, 1 px) rotate(0 deg)',
-                        offset: '0.74'
-                    }, {
-                        transform: 'translate(1 px, -1 px) rotate(1 deg)',
-                        offset: '0.75'
-                    }, {
-                        transform: 'translate(-1 px, 2 px) rotate(-1 deg)',
-                        offset: '0.80'
-                    }, {
-                        transform: 'translate(-3 px, 1 px) rotate(0 deg)',
-                        offset: '0.85'
-                    }, {
-                        transform: 'translate(3 px, 1 px) rotate(-1 deg)',
-                        offset: '0.90'
-                    }, {
-                        transform: 'translate(-1 px, -1 px) rotate(1 deg)',
-                        offset: '0.95'
-                    }, {
-                        transform: 'translate(1 px, 2 px) rotate(0 deg)',
-                        offset: '0.98'
-                    }, {
-                        transform: 'translate(1 px, -2 px) rotate(-1 deg)',
-                        offset: '1.0'
-                    }];
-                    const shaketime = {
-                        duration: 1000,
-                        iterations: 15,
-                    }
-                    const anenvelope = document.querySelector("#Envelope");
-                    anenvelope.animate(shakekeyframes, shaketime);
-
+                    $("#Envelope").css("animation-iteration-count", "infinite");
                 }
             }
         }
@@ -800,7 +810,7 @@
         });
 
         function open() {
-
+            $("#Envelope").css("animation-iteration-count", "0");
             $("#mensaje_sobre").animate({
                 "opacity": "-=1"
             }, "slow");
