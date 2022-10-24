@@ -717,49 +717,49 @@
                 var flag = document.getElementById("checkenvelope");
                 if (flag.getAttribute('value') == "closed") {
 
-                    const shakekeyframes = [0 % {
+                    const shakekeyframes = ["0 %" {
                             "transform": "translate(1 px, 1 px) rotate(0 deg)"
                         }
-                        5 % {
+                        "5 %" {
                             "transform": "translate(-1 px, -2 px) rotate(-1 deg)"
                         }
-                        10 % {
+                        "10 %" {
                             "transform": "translate(-3 px, 0 px) rotate(1 deg)"
                         }
-                        15 % {
+                        "15 %" {
                             "transform": "translate(3 px, 2 px) rotate(0 deg)"
                         }
-                        20 % {
+                        "20 %" {
                             "transform": "translate(1 px, -1 px) rotate(1 deg)"
                         }
-                        25 % {
+                        "25 %" {
                             "transform": "translate(-1 px, 2 px) rotate(-1 deg)"
                         }
-                        36 % {
+                        "36 %" {
                             "transform": "translate(-3 px, 1 px) rotate(0 deg)"
                         }
-                        74 % {
+                        "74 %" {
                             "transform": " translate(-3 px, 1 px) rotate(0 deg)"
                         }
-                        75 % {
+                        "75 %" {
                             "transform": "translate(1 px, -1 px) rotate(1 deg)"
                         }
-                        80 % {
+                        "80 %" {
                             "transform": "translate(-1 px, 2 px) rotate(-1 deg)"
                         }
-                        85 % {
+                        "85 %" {
                             "transform": "translate(-3 px, 1 px) rotate(0 deg)"
                         }
-                        90 % {
+                        "90 %" {
                             "transform": "translate(3 px, 1 px) rotate(-1 deg)"
                         }
-                        95 % {
+                        "95 %" {
                             "transform": "translate(-1 px, -1 px) rotate(1 deg)"
                         }
-                        98 % {
+                        "98 %" {
                             "transform": "translate(1 px, 2 px) rotate(0 deg)"
                         }
-                        100 % {
+                        "100 %" {
                             "transform": "translate(1 px, -2 px) rotate(-1 deg)"
                         }
                     ];
