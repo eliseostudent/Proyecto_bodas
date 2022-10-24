@@ -718,7 +718,8 @@
                 if (flag.getAttribute('value') == "closed") {
 
                     const shakekeyframes = [{
-                        transform: translate(1 px, 1 px) rotate(0 deg),
+                        transform: 'translate(1 px, 1 px)',
+                        transform: 'rotate(0 deg)',
                         offset: '0.0'
                     }, {
                         transform: 'translate(-1 px, -2 px) rotate(-1 deg)',
