@@ -717,52 +717,52 @@
                 var flag = document.getElementById("checkenvelope");
                 if (flag.getAttribute('value') == "closed") {
 
-                    const shakekeyframes = ["0 %" {
-                            "transform": "translate(1 px, 1 px) rotate(0 deg)"
-                        }
-                        "5 %" {
-                            "transform": "translate(-1 px, -2 px) rotate(-1 deg)"
-                        }
-                        "10 %" {
-                            "transform": "translate(-3 px, 0 px) rotate(1 deg)"
-                        }
-                        "15 %" {
-                            "transform": "translate(3 px, 2 px) rotate(0 deg)"
-                        }
-                        "20 %" {
-                            "transform": "translate(1 px, -1 px) rotate(1 deg)"
-                        }
-                        "25 %" {
-                            "transform": "translate(-1 px, 2 px) rotate(-1 deg)"
-                        }
-                        "36 %" {
-                            "transform": "translate(-3 px, 1 px) rotate(0 deg)"
-                        }
-                        "74 %" {
-                            "transform": " translate(-3 px, 1 px) rotate(0 deg)"
-                        }
-                        "75 %" {
-                            "transform": "translate(1 px, -1 px) rotate(1 deg)"
-                        }
-                        "80 %" {
-                            "transform": "translate(-1 px, 2 px) rotate(-1 deg)"
-                        }
-                        "85 %" {
-                            "transform": "translate(-3 px, 1 px) rotate(0 deg)"
-                        }
-                        "90 %" {
-                            "transform": "translate(3 px, 1 px) rotate(-1 deg)"
-                        }
-                        "95 %" {
-                            "transform": "translate(-1 px, -1 px) rotate(1 deg)"
-                        }
-                        "98 %" {
-                            "transform": "translate(1 px, 2 px) rotate(0 deg)"
-                        }
-                        "100 %" {
-                            "transform": "translate(1 px, -2 px) rotate(-1 deg)"
-                        }
-                    ];
+                    const shakekeyframes = [{
+                        transform: 'translate(1 px, 1 px) rotate(0 deg)',
+                        offset: '0.0'
+                    }, {
+                        transform: 'translate(-1 px, -2 px) rotate(-1 deg)',
+                        offset: '0.05'
+                    }, {
+                        transform: 'translate(-3 px, 0 px) rotate(1 deg)',
+                        offset: '0.1'
+                    }, {
+                        transform: 'translate(3 px, 2 px) rotate(0 deg)',
+                        offset: '0.15'
+                    }, {
+                        transform: 'translate(1 px, -1 px) rotate(1 deg)',
+                        offset: '0.20'
+                    }, {
+                        transform: 'translate(-1 px, 2 px) rotate(-1 deg)',
+                        offset: '0.25'
+                    }, {
+                        transform: 'translate(-3 px, 1 px) rotate(0 deg)',
+                        offset: '0.36'
+                    }, {
+                        transform: 'translate(-3 px, 1 px) rotate(0 deg)',
+                        offset: '0.74'
+                    }, {
+                        transform: 'translate(1 px, -1 px) rotate(1 deg)',
+                        offset: '0.75'
+                    }, {
+                        transform: 'translate(-1 px, 2 px) rotate(-1 deg)',
+                        offset: '0.80'
+                    }, {
+                        transform: 'translate(-3 px, 1 px) rotate(0 deg)',
+                        offset: '0.85'
+                    }, {
+                        transform: 'translate(3 px, 1 px) rotate(-1 deg)',
+                        offset: '0.90'
+                    }, {
+                        transform: 'translate(-1 px, -1 px) rotate(1 deg)',
+                        offset: '0.95'
+                    }, {
+                        transform: 'translate(1 px, 2 px) rotate(0 deg)',
+                        offset: '0.98'
+                    }, {
+                        transform: 'translate(1 px, -2 px) rotate(-1 deg)',
+                        offset: '1.0'
+                    }];
                     const shaketime = {
                         duration: 1000,
                         iterations: 15,
