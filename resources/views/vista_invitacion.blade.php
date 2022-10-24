@@ -767,8 +767,8 @@
                         duration: 1000,
                         iterations: 15,
                     }
-                    const rotacion = document.querySelector("#Envelope");
-                    rotacion.animate(shakekeyframes, shaketime);
+                    const anenvelope = document.querySelector("#Envelope");
+                    anenvelope.animate(shakekeyframes, shaketime);
 
                 }
             }
