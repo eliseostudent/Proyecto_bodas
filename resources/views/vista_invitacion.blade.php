@@ -310,6 +310,24 @@
                 transform: translate(1px, -2px) rotate(-1deg);
             }
         }
+
+        #button_enviar {
+            animation: latidos 1s infinite;
+        }
+
+        @keyframes latidos {
+            from {
+                transform: none;
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            to {
+                transform: none;
+            }
+        }
     </style>
 </head>
 
@@ -697,7 +715,7 @@
 
                 <div class="row form-group">
                     <button type="submit" class="btn btn-outline-light w-100 baskerville"
-                        style="font-size: 20px;">Enviar</button>
+                        style="font-size: 20px;"id="button_enviar">Enviar</button>
                 </div>
             </form>
         </div>
