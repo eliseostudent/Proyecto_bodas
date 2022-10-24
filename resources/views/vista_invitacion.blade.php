@@ -4,7 +4,7 @@
 <head>
     <!-- Theme Made By www.w3schools.com - No Copyright -->
     <title>{{ $evento->nombre_1 }} & {{ $evento->nombre_2 }} : {{ $invitado->nombre_invitado }}</title>
-    <meta property="og:image" content="{{ Storage::url($evento->ruta_foto_novios) }}" />
+    <meta property="og:image" content="{{ asset('app-images/save_the_date.jpg') }}" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
