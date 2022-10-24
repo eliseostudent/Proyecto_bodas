@@ -718,49 +718,49 @@
                 if (flag.getAttribute('value') == "closed") {
                     document.getElementById("Envelope").animate([
                         0 % {
-                            transform: translate(1 px, 1 px) rotate(0 deg);
+                            transform: translate(1 px, 1 px) rotate(0 deg)
                         }
                         5 % {
-                            transform: translate(-1 px, -2 px) rotate(-1 deg);
+                            transform: translate(-1 px, -2 px) rotate(-1 deg)
                         }
                         10 % {
-                            transform: translate(-3 px, 0 px) rotate(1 deg);
+                            transform: translate(-3 px, 0 px) rotate(1 deg)
                         }
                         15 % {
-                            transform: translate(3 px, 2 px) rotate(0 deg);
+                            transform: translate(3 px, 2 px) rotate(0 deg)
                         }
                         20 % {
-                            transform: translate(1 px, -1 px) rotate(1 deg);
+                            transform: translate(1 px, -1 px) rotate(1 deg)
                         }
                         25 % {
-                            transform: translate(-1 px, 2 px) rotate(-1 deg);
+                            transform: translate(-1 px, 2 px) rotate(-1 deg)
                         }
                         36 % {
-                            transform: translate(-3 px, 1 px) rotate(0 deg);
+                            transform: translate(-3 px, 1 px) rotate(0 deg)
                         }
                         74 % {
-                            transform: translate(-3 px, 1 px) rotate(0 deg);
+                            transform: translate(-3 px, 1 px) rotate(0 deg)
                         }
                         75 % {
-                            transform: translate(1 px, -1 px) rotate(1 deg);
+                            transform: translate(1 px, -1 px) rotate(1 deg)
                         }
                         80 % {
-                            transform: translate(-1 px, 2 px) rotate(-1 deg);
+                            transform: translate(-1 px, 2 px) rotate(-1 deg)
                         }
                         85 % {
-                            transform: translate(-3 px, 1 px) rotate(0 deg);
+                            transform: translate(-3 px, 1 px) rotate(0 deg)
                         }
                         90 % {
-                            transform: translate(3 px, 1 px) rotate(-1 deg);
+                            transform: translate(3 px, 1 px) rotate(-1 deg)
                         }
                         95 % {
-                            transform: translate(-1 px, -1 px) rotate(1 deg);
+                            transform: translate(-1 px, -1 px) rotate(1 deg)
                         }
                         98 % {
-                            transform: translate(1 px, 2 px) rotate(0 deg);
+                            transform: translate(1 px, 2 px) rotate(0 deg)
                         }
                         100 % {
-                            transform: translate(1 px, -2 px) rotate(-1 deg);
+                            transform: translate(1 px, -2 px) rotate(-1 deg)
                         }
                     ], {
                         duration: 1000,
