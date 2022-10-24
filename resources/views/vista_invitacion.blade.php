@@ -352,7 +352,7 @@
             <div class="row align-items-center" style="height: 33%;">
                 <div class="col">
                     <p class="KhatijaCalligraphy text-center blanco_bordes"
-                        style="font-size: 2.8em;text-shadow: 3px 2px 2px #000; ">
+                        style="font-size: 2.8em;text-shadow: 3px 3px 2px #000; ">
                         {{ $evento->nombre_1 }} &
                         {{ $evento->nombre_2 }}</p>
                 </div>
