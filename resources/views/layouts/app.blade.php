@@ -121,7 +121,7 @@
     <script>
         function copyurl(id) {
             navigator.clipboard.writeText(id).then(() => {
-                    alert("successfully copied");
+                    alert("successfully copied:" + id);
                 })
                 .catch(() => {
                     alert("something went wrong");
