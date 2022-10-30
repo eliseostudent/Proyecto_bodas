@@ -49,7 +49,7 @@ class InvitadoController extends Controller
         Auth::user()->setEventoActual($request->evento_id);
         $request->validate([
             'nombre_invitado' => 'required',
-            'correo_invitado' => 'required|email',
+            'correo_invitado' => 'email',
             'numero_boletos' => 'required|integer'
 
         ]);
