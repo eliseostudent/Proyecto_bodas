@@ -115,7 +115,7 @@
     </div>
     <x-slot name="tablescript">
 
-
+        <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
         <script>
             $(document).ready(function() {
                 $('#index_table_invitados').DataTable();
