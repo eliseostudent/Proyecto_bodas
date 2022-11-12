@@ -9,7 +9,7 @@
 
     </x-slot>
     <x-slot name="tablescript">
-        <script> $(document).ready(function() { $('.index_table_invitados').DataTable(); });</script>
+        <script> $(document).ready(function() { $('#index_table_invitados').DataTable(); });</script>
     </x-slot>
     <x-slot name="header_mobile">
         @include('layouts.header_mobile_menu')
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <div class="table-responsive table-responsive-data2">
-                        <table class="table table-data2 index_table_invitados">
+                        <table class="table table-data2 " id="index_table_invitados">
                             <thead>
                                 <tr>
                                     <th>Nombre</th>
