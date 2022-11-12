@@ -50,6 +50,7 @@
     @endif
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
+
 </head>
 
 <body class="font-sans antialiased" id="inicio" data-spy="scroll" data-target=".navbar" data-offset="50">

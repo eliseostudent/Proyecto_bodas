@@ -1,4 +1,11 @@
 <x-app-layout>
+
+    <x-slot name="estilos">
+        <link rel="stylesheet" type="text/css"
+            href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" />
+        <link rel="stylesheet" type="text/css"
+            href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css" />
+    </x-slot>
     <x-slot name="header_mobile">
         @include('layouts.header_mobile_menu')
     </x-slot>
@@ -34,7 +41,7 @@
                         </div>
                     </div>
                     <div class="table-responsive table-responsive-data2">
-                        <table class="table table-data2">
+                        <table class="table table-data2 index_table_invitados">
                             <thead>
                                 <tr>
                                     <th>Nombre</th>
@@ -108,5 +115,19 @@
         </div>
     </div>
 
+    <x-slot name="scriptsExtras">
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+        <script src="//cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+        <script src="//cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('.index_table_invitados').DataTable({
+                    responsive: true
+                });
+            });
+        </script>
+    </x-slot>
 
 </x-app-layout>
