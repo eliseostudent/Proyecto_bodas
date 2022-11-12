@@ -9,11 +9,7 @@
 
     </x-slot>
     <x-slot name="tablescript">
-        <script>
-            $(document).ready(function() {
-                $('.index_table_invitados').DataTable();
-            });
-        </script>
+        <script> $(document).ready(function() { $('.index_table_invitados').DataTable(); });</script>
     </x-slot>
     <x-slot name="header_mobile">
         @include('layouts.header_mobile_menu')
