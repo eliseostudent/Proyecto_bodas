@@ -129,9 +129,11 @@
                 });
         }
     </script>
+
     @if (isset($tablescript))
         {{ $tablescript }}
     @endif
+
 </body>
 
 </html>
