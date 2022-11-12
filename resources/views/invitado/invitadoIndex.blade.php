@@ -8,7 +8,7 @@
 
 
     </x-slot>
-    <x-slot name="scriptsExtras">
+    <x-slot name="tablescript">
         <script>
             $(document).ready(function() {
                 $('.index_table_invitados').DataTable();
