@@ -24,7 +24,7 @@ class InvitadoController extends Controller
             abort(403);
         }
         Auth::user()->setEventoActual($evento);
-        $invitados = $evento->invitados;
+        $invitados = $evento->invitados->orderedBy('confirmacion','desc');
         return view('invitado/invitadoIndex', compact('invitados', 'evento'));
     }
 
