@@ -9,6 +9,11 @@
 
     </x-slot>
     <x-slot name="tablescript">
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+<script src="//cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
         <script> $(document).ready(function() { $('.index_table_invitados').DataTable(); });</script>
     </x-slot>
     <x-slot name="header_mobile">
