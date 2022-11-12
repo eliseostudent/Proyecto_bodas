@@ -2,10 +2,10 @@
 
     <x-slot name="estilos">
 
-        <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet"
-            type="text/css" />
-        <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css" rel="stylesheet"
-            type="text/css" />
+        <link rel="stylesheet" type="text/css"
+            href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" />
+        <link rel="stylesheet" type="text/css"
+            href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css" />
 
     </x-slot>
 
