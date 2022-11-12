@@ -114,7 +114,7 @@
         </div>
     </div>
     <x-slot name="tablescript">
-        <script src="//code.jquery.com/jquery-3.5.1.js"></script>
+        
         <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 
         <script>

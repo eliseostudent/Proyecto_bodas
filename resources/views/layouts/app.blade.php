@@ -101,7 +101,8 @@
         {{ $scriptsExtras }}
     @endif
     <!-- Jquery JS -->
-    <script src="{{ asset('cool_admin/vendor/jquery-3.2.1.min.js') }}"></script>
+
+    <script src="//code.jquery.com/jquery-3.5.1.js"></script>
     <!-- Bootstrap JS-->
     <script src="{{ asset('cool_admin/vendor/bootstrap-4.1/popper.min.js') }}"></script>
     <script src="{{ asset('cool_admin/vendor/bootstrap-4.1/bootstrap.min.js') }}"></script>
