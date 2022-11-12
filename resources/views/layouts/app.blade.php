@@ -129,10 +129,7 @@
                 });
         }
     </script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js">
-    </script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js">
-    </script>
+
     @if (isset($tablescript))
         {{ $tablescript }}
     @endif
