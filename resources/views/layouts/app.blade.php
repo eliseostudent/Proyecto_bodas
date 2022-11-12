@@ -101,9 +101,7 @@
         {{ $scriptsExtras }}
     @endif
     <!-- Jquery JS -->
-
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
-    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="{{ asset('cool_admin/vendor/jquery-3.2.1.min.js') }}"></script>
     <!-- Bootstrap JS-->
     <script src="{{ asset('cool_admin/vendor/bootstrap-4.1/popper.min.js') }}"></script>
     <script src="{{ asset('cool_admin/vendor/bootstrap-4.1/bootstrap.min.js') }}"></script>
