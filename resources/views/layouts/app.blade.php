@@ -116,7 +116,9 @@
     <script src="{{ asset('cool_admin/vendor/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
     <script src="{{ asset('cool_admin/vendor/chartjs/Chart.bundle.min.js') }}"></script>
     <script src="{{ asset('cool_admin/vendor/select2/select2.min.js') }}"></script>
-
+    @if (isset($tablescript))
+        {{ $tablescript }}
+    @endif
     <!-- Main JS-->
     <script src="{{ asset('cool_admin/js/main.js') }}"></script>
     <script>
@@ -130,9 +132,7 @@
         }
     </script>
 
-    @if (isset($tablescript))
-        {{ $tablescript }}
-    @endif
+
 
 </body>
 
