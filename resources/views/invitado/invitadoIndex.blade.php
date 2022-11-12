@@ -2,10 +2,6 @@
 
     <x-slot name="estilos">
 
-        <link rel="stylesheet" type="text/css"
-            href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" />
-        <link rel="stylesheet" type="text/css"
-            href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css" />
 
     </x-slot>
 
@@ -118,11 +114,6 @@
         </div>
     </div>
     <x-slot name="tablescript">
-        <script src="https://code.jquery.com/jquery-3.6.1.min.js"
-            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-        <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-        <script src="//cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
-        <script src="//cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
 
 
         <script>
