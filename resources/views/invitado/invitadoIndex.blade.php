@@ -8,6 +8,8 @@
 
     </x-slot>
     <x-slot name="tablescript">
+        
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <script> $(document).ready(function() { $('#index_table_invitados').DataTable(); });</script>
     </x-slot>
     <x-slot name="header_mobile">
